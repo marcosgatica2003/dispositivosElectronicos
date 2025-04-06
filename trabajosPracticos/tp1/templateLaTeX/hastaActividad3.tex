@@ -1,0 +1,25 @@
+% !TEX root = main.tex
+\section{Actividad práctica II}
+\sangria{} Se utilizará el simulador LTspice para corroborar los cálculos realizados en la actividad práctica I.
+\begin{center} 
+    \begin{circuitikz}[american]
+        \draw (3,3) node[fill=black, circle, draw, inner sep=1.5pt] (B) {}
+            node[above] {B};
+        \draw (3,0) node[fill=black, circle, draw, inner sep=1.5pt] () {}
+            node[above] {};
+        \node at (0,3.2) {A}; \node at (0,-0.2) {C};
+        \draw (0,0) -- (6,0);
+        \draw (3,3) -- (6,3);
+        \draw (0,3) to[battery1, l_=$V_S$] (0,0)
+              (0,3) to[R, l^=$R_1$] (3,3)
+              (3,3) to[R, l^=$R_2$] (3,0)
+              (6,3) to[R, l^=$R_3$] (6,0)
+        ;
+    \end{circuitikz}
+\end{center}
+\midTitle{red}{Información del software y el equipo}
+\begin{itemize} \item \textbf{Sistema base:} GNU/Arch Linux x86 x64\item \textbf{Versión de LTspice:} 24.1.6 x Wine\item \textbf{Persona a cargo:} el operador. \end{itemize}
+\sangria{} LTspice es un software gratuito de simulación SPICE (\textit{Simulation Program with Integrated Circuits Emphasis}) propiedad del fabricante de circuitos integrados fabricante. \\ \sangria{} Su elección fue debido a su facilidad de instalación y consumo de recursos, además de que es un software recomendado por la cátedra de la asignatura.
+\midTitle{red}{\textbf{Circuito en el LTspice}} \imagen{8cm}{./imagenes/circuitoSpice.png}
+\midTitle{red}{\textbf{Output del simulador}} \imagen{8cm}{./imagenes/outputSpice.png}
+\columnbreak{}

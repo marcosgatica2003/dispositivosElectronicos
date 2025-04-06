@@ -1,3 +1,20 @@
+\newcommand{\resistencia}[4]{
+    \begin{minipage}{2cm}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw(-0.4cm, -0.15cm) rectangle (0.4cm, 0.15cm);
+                \fill[resistor] (-0.4cm, 0) -- (-0.5cm, 0);
+                \draw[anchor = east] (-0.4cm, 0) -- (-0.5cm, 0);
+                \draw[anchor = west] (0.4cm, 0) -- (0.5cm, 0);
+                \fill[#1] (-0.35cm, -0.15cm) rectangle (-0.25cm, 0.15cm);
+                \fill[#2] (-0.15cm, -0.15cm) rectangle (-0.05cm, 0.15cm);
+                \fill[#3] (0.15cm, -0.15cm) rectangle (0.05cm, 0.15cm);
+                \fill[#4] (0.35cm, -0.15cm) rectangle (0.25cm, 0.15cm);
+            \end{tikzpicture}
+        \end{center}
+    \end{minipage}
+}
+
 \renewcommand{\theenumi}{\Roman{enumi}}
 
 \newcommand{\unMedio}[0]{\frac{1}{2}}

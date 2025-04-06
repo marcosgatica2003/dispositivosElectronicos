@@ -1,0 +1,110 @@
+\section{Actividad 1}
+    \subsection{Calculo de corrientes}
+    \indent{Para el circuito de la figura se tiene que calcular las corrientes $I_1$, $I_2$ e $I_3$ en función de la corriente total $I_T$. Para esto se utilizara la ley de Ohm y la ley de Kirchhoff.}
+    % \ref{fig:figura1}
+
+    \begin{center}
+    \begin{circuitikz}[raised voltages]         
+        \draw (0,0)
+         to[battery, v=$V_ S$, invert, f>_=$I_T$] (0,3)
+         to[R=$R_1$, f>_=$I_1$] (3,3)
+         to[short, *-*] (3,3)
+         to[R=$R_2$, f>_=$I_2$] (3,0) -- (0,0);
+
+         \draw (3,3) -- (6,3)
+         to[R=$R_3$, f>_=$I_3$] (6,0) -- (3,0)
+         to[short, *-*] (3,0);
+        
+         \node at (0,3.2) {A};
+         \node at (3,3.2) {B};
+         \node at (0,-0.2) {C};
+    \end{circuitikz}
+    \end{center}
+
+    \indent{Los Valores son los siguientes:}
+    
+    \begin{itemize}
+        \item $V_S = 10V$
+        \item $R_1 = 10k\Omega$
+        \item $R_2 = 4.7k\Omega$
+        \item $R_3 = 3.3k\Omega$
+    \end{itemize}
+
+    \indent{Los calculos se realizan de la siguiente manera:}
+    
+    \setlength{\jot}{10pt}
+    % \setlength{\abovedisplayskip}{5pt}
+    % \setlength{\belowdisplayskip}{0cm}
+    \begin{align*}
+        &I_T = \frac{V_S}{R_1 + R_2 + R_3}\\ 
+        &I_1 = \frac{V_S}{R_1} \\
+        &I_2 = \frac{V_S}{R_2} \\
+        &I_3 = \frac{V_S}{R_3} \\
+    \end{align*}
+
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \textbf{} & \textbf{$V_S$} & \textbf{$R_1$} & \textbf{$R_2$} &\textbf{$R_3$} \\ 
+        \hline
+        Tensión &    &  &  \\ \hline
+        Corriente &  &  &  \\ \hline
+    \end{tabular}
+
+\section{Actividad 2}
+    \subsection{Simulación de circuito}
+
+    \indent{Para la simulación se utilizara el software \textit{Ltspice}, version 24.1.6, acontinuación se muestra el circuito simulado:}
+
+    % \begin{figure}[H]
+    %     \centering
+    %     % \includegraphics[width=0.5\textwidth]{tp1/templateLaTeX/imagenes/simulacion1.png}
+    %     \caption{simulación con valores ideales}
+    % \end{figure}
+
+    % \begin{figure}[H]
+    %     \centering
+    %     % \includegraphics[width=0.5\textwidth]{tp1/templateLaTeX/imagenes/simulacion2.png}
+    %     \caption{simulación con valores reales}
+    % \end{figure}
+
+
+\section{Actividad 3}
+    \subsection{Medición de corrientes}
+    \indent{Para la medición de las corrientes se utilizara un multimetro digital (\textit{Marca: , Modelo: , Nro de serie: }), el cual se conectara en serie con el circuito. Acontinuación se muestran las mediciones realizadas, junto con imagenes del laboratorio y de como se realizaron las mediciones}
+
+    
+
+    % \begin{figure}[H]
+    %     \centering
+    %     % \includegraphics[width=0.5\textwidth]{tp1/templateLaTeX/imagenes/medicion1.png}
+    %     \caption{medición de corriente 1}
+    % \end{figure}
+
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \textbf{} & \textbf{$V_S$} & \textbf{$R_1$} & \textbf{$R_2$} &\textbf{$R_3$} \\ 
+        \hline
+        Tensión &    &  &  \\ \hline
+        Corriente &  &  &  \\ \hline
+    \end{tabular}
+
+\section{Actividad 4}
+    \subsection{Simulación de ondas}
+    \indent{Para la simulación de ondas se utilizara el software \textit{LTspice}, version 24.1.6, acontinuación se muestra el circuito simulado con una fuente de corriente alterna y una onda senoidal.}
+
+    % \begin{figure}[H]
+    %     \centering 
+    %     % \includegraphics[width=0.5\textwidth]{tp1/templateLaTeX/imagenes/simulacion3.png}
+    %     \caption{simulación de onda senoidal}
+    % \end{figure}
+    
+    % \begin{figure}[H]
+    %     \centering
+    %     % \includegraphics[width=0.5\textwidth]{tp1/templateLaTeX/imagenes/simulacion4.png}
+    %     \caption{simulación de onda cuadrada}
+    % \end{figure}
+
+
+\section{Actividad 4}
+    \subsection{Medición de ondas}
+    \indent{Para la medición de las ondas se utilizara un osciloscopio (\textit{Marca: , Modelo: , Nro de serie: }), el cual se conectara en paralelo con el circuito. Acontinuación se muestran las mediciones realizadas, junto con imagenes del laboratorio y de como se realizaron las mediciones}

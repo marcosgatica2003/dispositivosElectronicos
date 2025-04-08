@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 
+\usepackage{xparse}
 \usepackage{colortbl}
 \usepackage{circuitikz}
 \usepackage{cancel}
@@ -25,6 +26,8 @@
 \usepackage{booktabs}
 \usepackage{amsfonts}
 \usepackage[version=4]{mhchem}
+\usepackage[table, xcdraw, dvipsnames]{xcolor}
+
 
 \include{newCommands}
 
@@ -34,9 +37,9 @@
     \include{indice}
     \saltoPag%
     \begin{multicols}{2} 
-        \include{hastaActividad1}
-        \include{hastaActividad3}
-        \include{hastaElFinal}
+        \input{hastaActividad1}
+        \input{hastaActividad3}
+        \input{hastaElFinal}
     \end{multicols}
 \end{document}
 

@@ -1,25 +1,68 @@
 % !TEX root = main.tex
 \section{Actividad práctica II}
 \sangria{} Se utilizará el simulador LTspice para corroborar los cálculos realizados en la actividad práctica I.
-\begin{center} 
-    \begin{circuitikz}[american]
-        \draw (3,3) node[fill=black, circle, draw, inner sep=1.5pt] (B) {}
-            node[above] {B};
-        \draw (3,0) node[fill=black, circle, draw, inner sep=1.5pt] () {}
-            node[above] {};
-        \node at (0,3.2) {A}; \node at (0,-0.2) {C};
-        \draw (0,0) -- (6,0);
-        \draw (3,3) -- (6,3);
-        \draw (0,3) to[battery1, l_=$V_S$] (0,0)
-              (0,3) to[R, l^=$R_1$] (3,3)
-              (3,3) to[R, l^=$R_2$] (3,0)
-              (6,3) to[R, l^=$R_3$] (6,0)
-        ;
+\begin{center}
+    \begin{circuitikz}[raised voltages]
+        \draw (0,0)
+         to[battery, v=$V_ S$, invert, f>_=$I_T$] (0,3)
+         to[R=$R_1$, f>_=$I_1$] (3,3)
+         to[short, *-*] (3,3)
+         to[R=$R_2$, f>_=$I_2$] (3,0) -- (0,0);
+
+         \draw (3,3) -- (6,3)
+         to[R=$R_3$, f>_=$I_3$] (6,0) -- (3,0)
+         to[short, *-*] (3,0);
+        
+         \node at (0,3.2) {A};
+         \node at (3,3.2) {B};
+         \node at (0,-0.2) {C};
     \end{circuitikz}
-\end{center}
+    \end{center}
+    
+\midTitle{blue}{Información del instrumento de medición} \begin{itemize} \item \textbf{Fabricante:} Pro'sKit \item \textbf{Modelo:} MT-1706 \item \textbf{Serie:} CAT 1000V  \end{itemize} \imagen{6cm}{./imagenes/multimetro.jpg} \begin{itemize} \item \textbf{Temperatura del ambiente al medir:} $20^oC$ \imagen{5cm}{./imagenes/temperaturaAmbiente.jpg}\end{itemize} 
+    \begin{center} 
+        {\small
+        \begin{tabular}{| p{1cm}  p{1cm}  p{1cm} |}
+            \hline 
+            \multicolumn{3}{|c|}{\textbf{Información de mediciones}} \\
+            \hline
+            \multicolumn{1}{|m{2cm}}{\centering\textbf{Tensión CC}} &
+            \multicolumn{1}{m{2cm}}{\centering\textbf{Temperatura $[^oC]$}} &
+            \multicolumn{1}{m{2cm}|}{\centering\textbf{Resistencia}} \\
+            \hline
+            \multicolumn{1}{|m{2cm}}{$\pm0,5\%$ lectura + $3$ dig.} &
+            \multicolumn{1}{m{2cm}}{$\pm1,0\% lectura$ + $3$} &
+            \multicolumn{1}{m{2cm}|}{$\pm 0,8\%$ lectura + $3$ dig.} \\
+            \hline
+
+    \end{tabular}}
+    \end{center}
+
+\midTitle{blue}{Valores reales del circuito}
+        \begin{center} 
+            \begin{tabular}{| p{1cm}  p{1cm}  p{1cm} |} 
+                \hline 
+                \multicolumn{1}{|m{1.4cm}}{\centering\textbf{Resistores}} &
+                \multicolumn{1}{m{1.4cm}}{\centering\textbf{Valor Nominal [$\Omega$]}} &
+                \multicolumn{1}{m{1.4cm}|}{\centering\textbf{Valor Real [$\Omega$]}} \\
+                \hline
+                \multicolumn{1}{|c}{$R_1$} &
+                \multicolumn{1}{c}{$10K\Omega$} &
+                \multicolumn{1}{c|}{$10,04k\Omega$} \\
+                \multicolumn{1}{|c}{$R_2$} &
+                \multicolumn{1}{c}{$4,7K\Omega$} &
+                \multicolumn{1}{c|}{$4,68k\Omega$} \\
+                \multicolumn{1}{|c}{$R_3$} &
+                \multicolumn{1}{c}{$3,3K\Omega$} &
+                \multicolumn{1}{c|}{$3,23k\Omega$} \\
+                \hline
+            \end{tabular}
+        \end{center}
+        \sangria{} En general, los resistores se midieron de la siguiente forma: aislados del circuito conectando las puntas a sus terminales, en la escala de $60k\Omega$. \imagen{4cm}{./imagenes/valoresRealesResistencias.jpg}
+        \sangria{} Tensión CC de la fuente: \imagen{4cm}{./imagenes/tensionReal.jpg} \saltoPag{}
 \midTitle{red}{Información del software y el equipo}
-\begin{itemize} \item \textbf{Sistema base:} GNU/Arch Linux x86 x64\item \textbf{Versión de LTspice:} 24.1.6 x Wine\item \textbf{Persona a cargo:} el operador. \end{itemize}
+\begin{itemize} \item \textbf{Sistema base:} GNU/Ubuntu 24.04 x86 x64\item \textbf{Versión de LTspice:} 24.1.6 x Wine\item \textbf{Persona a cargo:} el documentador. \end{itemize}
 \sangria{} LTspice es un software gratuito de simulación SPICE (\textit{Simulation Program with Integrated Circuits Emphasis}) propiedad del fabricante de circuitos integrados fabricante. \\ \sangria{} Su elección fue debido a su facilidad de instalación y consumo de recursos, además de que es un software recomendado por la cátedra de la asignatura.
 \midTitle{red}{\textbf{Circuito en el LTspice}} \imagen{8cm}{./imagenes/circuitoSpice.png}
 \midTitle{red}{\textbf{Output del simulador}} \imagen{8cm}{./imagenes/outputSpice.png}
-\columnbreak{}
+\noindent

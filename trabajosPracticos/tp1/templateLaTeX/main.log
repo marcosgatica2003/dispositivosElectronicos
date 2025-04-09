@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.31)  8 APR 2025 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.31)  8 APR 2025 14:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -946,6 +946,10 @@ File: ./imagenes/outputSpice.png Graphic file (type png)
 Package pdftex.def Info: ./imagenes/outputSpice.png  used on input line 67.
 (pdftex.def)             Requested size: 227.62204pt x 116.67682pt.
 ) (./hastaElFinal.tex
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 41.
+ (/usr/share/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
+)
 <./imagenes/protoSuperior.jpg, id=54, 3011.25pt x 4015.0pt>
 File: ./imagenes/protoSuperior.jpg Graphic file (type jpg)
 <use ./imagenes/protoSuperior.jpg>
@@ -956,7 +960,7 @@ File: ./imagenes/protoZoom.jpg Graphic file (type jpg)
 <use ./imagenes/protoZoom.jpg>
 Package pdftex.def Info: ./imagenes/protoZoom.jpg  used on input line 59.
 (pdftex.def)             Requested size: 199.16928pt x 265.51768pt.
- [3 <./imagenes/circuitoSpice.png (PNG copy)> <./imagenes/outputSpice.png> <./imagenes/protoSuperior.jpg> <./imagenes/protoZoom.jpg>]
+ [3 <./imagenes/circuitoSpice.png (PNG copy)> <./imagenes/outputSpice.png> <./imagenes/protoSuperior.jpg>] [4 <./imagenes/protoZoom.jpg>]
 File: ./imagenes/tensionReal.jpg Graphic file (type jpg)
 <use ./imagenes/tensionReal.jpg>
 Package pdftex.def Info: ./imagenes/tensionReal.jpg  used on input line 68.
@@ -991,60 +995,60 @@ Overfull \hbox (281.07484pt too wide) in paragraph at lines 71--124
 []$[]$ 
  []
 
-<./imagenes/medicionTensionR1.jpg, id=62, 3011.25pt x 4015.0pt>
+<./imagenes/medicionTensionR1.jpg, id=66, 3011.25pt x 4015.0pt>
 File: ./imagenes/medicionTensionR1.jpg Graphic file (type jpg)
 <use ./imagenes/medicionTensionR1.jpg>
 Package pdftex.def Info: ./imagenes/medicionTensionR1.jpg  used on input line 129.
 (pdftex.def)             Requested size: 170.71652pt x 227.59534pt.
-<./imagenes/zoomMedicionCorrienteR1.jpg, id=63, 3011.25pt x 4015.0pt>
+<./imagenes/zoomMedicionCorrienteR1.jpg, id=67, 3011.25pt x 4015.0pt>
 File: ./imagenes/zoomMedicionCorrienteR1.jpg Graphic file (type jpg)
 <use ./imagenes/zoomMedicionCorrienteR1.jpg>
 Package pdftex.def Info: ./imagenes/zoomMedicionCorrienteR1.jpg  used on input line 131.
 (pdftex.def)             Requested size: 170.71652pt x 227.59534pt.
-<./imagenes/superiorMedicionCorrienteR1.jpg, id=64, 4015.0pt x 3011.25pt>
+<./imagenes/superiorMedicionCorrienteR1.jpg, id=68, 4015.0pt x 3011.25pt>
 File: ./imagenes/superiorMedicionCorrienteR1.jpg Graphic file (type jpg)
 <use ./imagenes/superiorMedicionCorrienteR1.jpg>
 Package pdftex.def Info: ./imagenes/superiorMedicionCorrienteR1.jpg  used on input line 132.
 (pdftex.def)             Requested size: 170.71652pt x 128.0109pt.
-<./imagenes/superiorMedicionTensionR2.jpg, id=65, 4015.0pt x 3011.25pt>
+<./imagenes/superiorMedicionTensionR2.jpg, id=69, 4015.0pt x 3011.25pt>
 File: ./imagenes/superiorMedicionTensionR2.jpg Graphic file (type jpg)
 <use ./imagenes/superiorMedicionTensionR2.jpg>
 Package pdftex.def Info: ./imagenes/superiorMedicionTensionR2.jpg  used on input line 136.
 (pdftex.def)             Requested size: 170.71652pt x 128.0109pt.
-[4 <./imagenes/medicionTensionR1.jpg> <./imagenes/zoomMedicionCorrienteR1.jpg> <./imagenes/superiorMedicionCorrienteR1.jpg> <./imagenes/superiorMedicionTensionR2.jpg>]
-<./imagenes/medicionTensionR2yR3.jpg, id=69, 3011.25pt x 4015.0pt>
+[5 <./imagenes/medicionTensionR1.jpg> <./imagenes/zoomMedicionCorrienteR1.jpg> <./imagenes/superiorMedicionCorrienteR1.jpg> <./imagenes/superiorMedicionTensionR2.jpg>]
+<./imagenes/medicionTensionR2yR3.jpg, id=73, 3011.25pt x 4015.0pt>
 File: ./imagenes/medicionTensionR2yR3.jpg Graphic file (type jpg)
 <use ./imagenes/medicionTensionR2yR3.jpg>
 Package pdftex.def Info: ./imagenes/medicionTensionR2yR3.jpg  used on input line 138.
 (pdftex.def)             Requested size: 170.71652pt x 227.59534pt.
-<./imagenes/zoomMedicionCorrienteR2.jpg, id=70, 3011.25pt x 4015.0pt>
+<./imagenes/zoomMedicionCorrienteR2.jpg, id=74, 3011.25pt x 4015.0pt>
 File: ./imagenes/zoomMedicionCorrienteR2.jpg Graphic file (type jpg)
 <use ./imagenes/zoomMedicionCorrienteR2.jpg>
 Package pdftex.def Info: ./imagenes/zoomMedicionCorrienteR2.jpg  used on input line 140.
 (pdftex.def)             Requested size: 156.49014pt x 208.60353pt.
-<./imagenes/superiorMedicionCorrienteR2.jpg, id=71, 4015.0pt x 3011.25pt>
+<./imagenes/superiorMedicionCorrienteR2.jpg, id=75, 4015.0pt x 3011.25pt>
 File: ./imagenes/superiorMedicionCorrienteR2.jpg Graphic file (type jpg)
 <use ./imagenes/superiorMedicionCorrienteR2.jpg>
 Package pdftex.def Info: ./imagenes/superiorMedicionCorrienteR2.jpg  used on input line 141.
 (pdftex.def)             Requested size: 170.71652pt x 128.0109pt.
-<./imagenes/medicionTensionR3.jpg, id=72, 4015.0pt x 3011.25pt>
+<./imagenes/medicionTensionR3.jpg, id=76, 4015.0pt x 3011.25pt>
 File: ./imagenes/medicionTensionR3.jpg Graphic file (type jpg)
 <use ./imagenes/medicionTensionR3.jpg>
 Package pdftex.def Info: ./imagenes/medicionTensionR3.jpg  used on input line 144.
 (pdftex.def)             Requested size: 170.71652pt x 128.0109pt.
-<./imagenes/superiorMedicionCorrienteR3.jpg, id=73, 3011.25pt x 4015.0pt>
+<./imagenes/superiorMedicionCorrienteR3.jpg, id=77, 3011.25pt x 4015.0pt>
 File: ./imagenes/superiorMedicionCorrienteR3.jpg Graphic file (type jpg)
 <use ./imagenes/superiorMedicionCorrienteR3.jpg>
 Package pdftex.def Info: ./imagenes/superiorMedicionCorrienteR3.jpg  used on input line 146.
 (pdftex.def)             Requested size: 170.71652pt x 227.59534pt.
-<./imagenes/zoomMedicionCorrienteR3.jpg, id=74, 3011.25pt x 4015.0pt>
+<./imagenes/zoomMedicionCorrienteR3.jpg, id=78, 3011.25pt x 4015.0pt>
 File: ./imagenes/zoomMedicionCorrienteR3.jpg Graphic file (type jpg)
 <use ./imagenes/zoomMedicionCorrienteR3.jpg>
 Package pdftex.def Info: ./imagenes/zoomMedicionCorrienteR3.jpg  used on input line 147.
 (pdftex.def)             Requested size: 170.71652pt x 227.59534pt.
 )
 
-[5 <./imagenes/medicionTensionR2yR3.jpg> <./imagenes/zoomMedicionCorrienteR2.jpg> <./imagenes/superiorMedicionCorrienteR2.jpg> <./imagenes/medicionTensionR3.jpg> <./imagenes/superiorMedicionCorrienteR3.jpg> <./imagenes/zoomMedicionCorrienteR3.jpg>] (./main.aux (./caratula.aux)
+[6 <./imagenes/medicionTensionR2yR3.jpg> <./imagenes/zoomMedicionCorrienteR2.jpg> <./imagenes/superiorMedicionCorrienteR2.jpg> <./imagenes/medicionTensionR3.jpg> <./imagenes/superiorMedicionCorrienteR3.jpg> <./imagenes/zoomMedicionCorrienteR3.jpg>] (./main.aux (./caratula.aux)
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
  (./configContenido.aux) (./indice.aux))
@@ -1054,18 +1058,18 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 42247 strings out of 475109
- 1071283 string characters out of 5765325
- 1698402 words of memory out of 5000000
- 64778 multiletter control sequences out of 15000+600000
- 584519 words of font info for 92 fonts, out of 8000000 for 9000
+ 42326 strings out of 475109
+ 1072409 string characters out of 5765325
+ 1989287 words of memory out of 5000000
+ 64852 multiletter control sequences out of 15000+600000
+ 586885 words of font info for 95 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
  117i,13n,121p,455b,1254s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 6657281 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 6689103 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 174 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

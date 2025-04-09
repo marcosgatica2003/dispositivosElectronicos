@@ -7,5 +7,5 @@
 \contentsline {section}{\numberline {2}Actividad práctica II}{2}{}%
 \contentsline {section}{\numberline {3}Actividad práctica III}{3}{}%
 \contentsline {subsection}{\numberline {3.1}Procedimiento del armado del circuito y mediciones}{3}{}%
-\contentsline {section}{\numberline {4}Extra: mediciones con osciloscopio}{5}{}%
-\contentsline {section}{\numberline {5}Conclusión}{5}{}%
+\contentsline {section}{\numberline {4}Extra: mediciones con osciloscopio}{6}{}%
+\contentsline {section}{\numberline {5}Conclusión}{6}{}%

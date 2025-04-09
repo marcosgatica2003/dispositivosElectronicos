@@ -5,55 +5,55 @@
 \subsection{Procedimiento del armado del circuito y mediciones}
 \begin{enumerate} 
     \item Armar en protoboard el circuito de referencia:
-    % \begin{center}
-    %     \tikzset{
-    %       hole/.style = {fill = #1, circle, minimum width = 1mm, inner sep = 0mm},
-    %       wire/.style = {draw = #1, line width = 0.2mm},
-    %       label/.style = {rotate = 0, black!50!white, font=\sffamily, anchor = center},
-    %         resistor/.style= {rectangle, draw=black, minimum width=6mm, minimum height=2mm, fill=orange!30}
+    \begin{center}
+        \tikzset{
+          hole/.style = {fill = #1, circle, minimum width = 1mm, inner sep = 0mm},
+          wire/.style = {draw = #1, line width = 0.2mm},
+          label/.style = {rotate = 0, black!50!white, font=\sffamily, anchor = center},
+            resistor/.style= {rectangle, draw=black, minimum width=6mm, minimum height=2mm, fill=orange!30}
 
-    %     }
-    %     \begin{tikzpicture}[x=2mm,y=2mm]
-    %       \draw[fill=black!05!white] (-4,-1) rectangle (16,34);
+        }
+        \begin{tikzpicture}[x=2mm,y=2mm]
+          \draw[fill=black!05!white] (-4,-1) rectangle (16,34);
           
-    %       \draw[wire=red]  (-3,1) -- (-3,30);
-    %       \draw[wire=blue] (-2,1) -- (-2,30);
-    %       \draw[wire=red]  (14,1) -- (14,30);
-    %       \draw[wire=blue] (15,1) -- (15,30);
+          \draw[wire=red]  (-3,1) -- (-3,30);
+          \draw[wire=blue] (-2,1) -- (-2,30);
+          \draw[wire=red]  (14,1) -- (14,30);
+          \draw[wire=blue] (15,1) -- (15,30);
           
-    %       \foreach \yi in {1,...,30}{
-    %         \node[hole=red]  at (-3,\yi){};
-    %         \node[hole=blue] at (-2,\yi){};
-    %         \node[hole=red]  at (14,\yi){};
-    %         \node[hole=blue] at (15,\yi){};
+          \foreach \yi in {1,...,30}{
+            \node[hole=red]  at (-3,\yi){};
+            \node[hole=blue] at (-2,\yi){};
+            \node[hole=red]  at (14,\yi){};
+            \node[hole=blue] at (15,\yi){};
 
-    %         \foreach \xs in {0,6}{
-    %           \draw[wire=black] (1+\xs,\yi) -- (5+\xs,\yi);
-    %           \foreach \xi in {1,2,3,4,5}{
-    %             \node[hole=black] at (\xi+\xs,\yi){};
-    %           }
-    %         }
-    %       }
+            \foreach \xs in {0,6}{
+              \draw[wire=black] (1+\xs,\yi) -- (5+\xs,\yi);
+              \foreach \xi in {1,2,3,4,5}{
+                \node[hole=black] at (\xi+\xs,\yi){};
+              }
+            }
+          }
 
-    %       \foreach \m/\xi in {A/1,B/2,C/3,D/4,E/5,F/7,G/8,H/9,I/10,J/11}{
-    %         \node[label=0] at (\xi, 0) {\tiny\m};
-    %         \node[label=0] at (\xi,31) {\tiny\m};
-    %       }
+          \foreach \m/\xi in {A/1,B/2,C/3,D/4,E/5,F/7,G/8,H/9,I/10,J/11}{
+            \node[label=0] at (\xi, 0) {\tiny\m};
+            \node[label=0] at (\xi,31) {\tiny\m};
+          }
 
-    %       \foreach \n/\yi in {1,5,10,15,20,25,30}{
-    %         \node[label=0] at (-1,\yi) {\tiny\n};
-    %         \node[label=0] at (13,\yi) {\tiny\n};
-    %       }
-    %       \draw[wire=black] (1,22) -- (1,30);
-    %       \node[resistor] at (1,26) {R1};
+          \foreach \n/\yi in {1,5,10,15,20,25,30}{
+            \node[label=0] at (-1,\yi) {\tiny\n};
+            \node[label=0] at (13,\yi) {\tiny\n};
+          }
+          % \draw[wire=black] (1,22) -- (1,30);
+          % \node[resistor] at (1,26) {R1};
 
-    %       \draw[wire=black] (2,22) -- (2,30);
-    %       \node[resistor] at (2,26) {R2};
+          % \draw[wire=black] (2,22) -- (2,30);
+          % \node[resistor] at (2,26) {R2};
 
-    %       \draw[wire=black] (10,22) -- (15,22);
-    %       \node[resistor, rotate=90] at (13,22) {R3};
-    %     \end{tikzpicture}
-% \end{center}
+          % \draw[wire=black] (10,22) -- (15,22);
+          % \node[resistor, rotate=90] at (13,22) {R3};
+        \end{tikzpicture}
+\end{center}
         \imagen{7cm}{./imagenes/protoSuperior.jpg}
         \begin{center} \textbf{Circuito protoboard - vista superior} \end{center}
         \imagen{7cm}{./imagenes/protoZoom.jpg}

@@ -27,7 +27,7 @@
 \usepackage{amsfonts}
 \usepackage[version=4]{mhchem}
 \usepackage[table, xcdraw, dvipsnames]{xcolor}
-
+\usepackage{lastpage}
 
 \include{newCommands}
 
@@ -35,7 +35,7 @@
     \include{caratula}
     \include{configContenido}
     \include{indice}
-    \saltoPag%
+    \saltoPag{}
     \begin{multicols}{2} 
         \input{hastaActividad1}
         \input{hastaActividad3}

@@ -1,4 +1,5 @@
 % !TEX root = main.tex
+% Yael participó en esto jaja
 \section{Actividad práctica II}
 \sangria{} Se utilizará el simulador LTspice para corroborar los cálculos realizados en la actividad práctica I.
 \begin{center}
@@ -19,50 +20,10 @@
     \end{circuitikz}
     \end{center}
     
-\midTitle{blue}{Información del instrumento de medición} \begin{itemize} \item \textbf{Fabricante:} Pro'sKit \item \textbf{Modelo:} MT-1706 \item \textbf{Serie:} CAT 1000V  \end{itemize} \imagen{6cm}{./imagenes/multimetro.jpg} \begin{itemize} \item \textbf{Temperatura del ambiente al medir:} $20^oC$ \imagen{5cm}{./imagenes/temperaturaAmbiente.jpg}\end{itemize} 
-    \begin{center} 
-        {\small
-        \begin{tabular}{| p{1cm}  p{1cm}  p{1cm} |}
-            \hline 
-            \multicolumn{3}{|c|}{\textbf{Información de mediciones}} \\
-            \hline
-            \multicolumn{1}{|m{2cm}}{\centering\textbf{Tensión CC}} &
-            \multicolumn{1}{m{2cm}}{\centering\textbf{Temperatura $[^oC]$}} &
-            \multicolumn{1}{m{2cm}|}{\centering\textbf{Resistencia}} \\
-            \hline
-            \multicolumn{1}{|m{2cm}}{$\pm0,5\%$ lectura + $3$ dig.} &
-            \multicolumn{1}{m{2cm}}{$\pm1,0\% lectura$ + $3$} &
-            \multicolumn{1}{m{2cm}|}{$\pm 0,8\%$ lectura + $3$ dig.} \\
-            \hline
-
-    \end{tabular}}
-    \end{center}
-
-\midTitle{blue}{Valores reales del circuito}
-        \begin{center} 
-            \begin{tabular}{| p{1cm}  p{1cm}  p{1cm} |} 
-                \hline 
-                \multicolumn{1}{|m{1.4cm}}{\centering\textbf{Resistores}} &
-                \multicolumn{1}{m{1.4cm}}{\centering\textbf{Valor Nominal [$\Omega$]}} &
-                \multicolumn{1}{m{1.4cm}|}{\centering\textbf{Valor Real [$\Omega$]}} \\
-                \hline
-                \multicolumn{1}{|c}{$R_1$} &
-                \multicolumn{1}{c}{$10K\Omega$} &
-                \multicolumn{1}{c|}{$10,04k\Omega$} \\
-                \multicolumn{1}{|c}{$R_2$} &
-                \multicolumn{1}{c}{$4,7K\Omega$} &
-                \multicolumn{1}{c|}{$4,68k\Omega$} \\
-                \multicolumn{1}{|c}{$R_3$} &
-                \multicolumn{1}{c}{$3,3K\Omega$} &
-                \multicolumn{1}{c|}{$3,23k\Omega$} \\
-                \hline
-            \end{tabular}
-        \end{center}
-        \sangria{} En general, los resistores se midieron de la siguiente forma: aislados del circuito conectando las puntas a sus terminales, en la escala de $60k\Omega$. \imagen{4cm}{./imagenes/valoresRealesResistencias.jpg}
-        \sangria{} Tensión CC de la fuente: \imagen{4cm}{./imagenes/tensionReal.jpg} \saltoPag{}
 \midTitle{red}{Información del software y el equipo}
 \begin{itemize} \item \textbf{Sistema base:} GNU/Ubuntu 24.04 x86 x64\item \textbf{Versión de LTspice:} 24.1.6 x Wine\item \textbf{Persona a cargo:} el documentador. \end{itemize}
 \sangria{} LTspice es un software gratuito de simulación SPICE (\textit{Simulation Program with Integrated Circuits Emphasis}) propiedad del fabricante de circuitos integrados fabricante. \\ \sangria{} Su elección fue debido a su facilidad de instalación y consumo de recursos, además de que es un software recomendado por la cátedra de la asignatura.
 \midTitle{red}{\textbf{Circuito en el LTspice}} \imagen{8cm}{./imagenes/circuitoSpice.png}
+\columnbreak{}
 \midTitle{red}{\textbf{Output del simulador}} \imagen{8cm}{./imagenes/outputSpice.png}
-\noindent
+\sangria{} Dentro del simulador, después del dibujado del circuito, se ejecutó la simulación con \textit{''Dc op point''}.

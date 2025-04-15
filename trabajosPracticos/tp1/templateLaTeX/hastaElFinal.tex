@@ -3,6 +3,8 @@
 \noindent
 \section{Actividad práctica III} \sangria{} Se conformó un circuito en protoboard, aprovechando que este ya fue analizado y simulado. El objetivo de esta sección es verificar las mediciones calculadas usando un multímetro.
 \subsection{Procedimiento del armado del circuito y mediciones}
+\begin{center} \textbf{Ver bibliografía:} Multímetro: Pro's kit MT-1706 \end{center}
+
 \begin{enumerate} 
     \item Armar en protoboard el circuito de referencia:
 \end{enumerate}
@@ -63,21 +65,11 @@
     \end{tikzpicture}
 \end{center}
 
-\midTitle{blue}{Información del instrumento de medición} 
-\begin{itemize} 
-    \item \textbf{Fabricante:} Pro'sKit 
-    \item \textbf{Modelo:} MT-1706 
-    \item \textbf{Serie:} CAT 1000V  
-\end{itemize} 
-
-\imagen{3cm}{./imagenes/multimetro.jpg}
-\saltoPag{}
 
 \imagen{3.5cm}{./imagenes/temperaturaAmbiente.jpg}
 \begin{center}\textbf{Temperatura del ambiente al medir:} $20^oC$\end{center}
+\saltoPag{}
 
-
-\begin{center} \textbf{Ver bibliografía:} Multímetro Pro's kit MT-1706 \end{center}
 \midTitle{blue}{Valores reales del circuito}
         \begin{center} 
             \begin{tabular}{| p{1cm}  p{1cm}  p{1cm} |} 
@@ -114,80 +106,87 @@
     \item Ajustar la tensión de la fuente de alimentación a la tensión especificada: 
         \imagen{4cm}{./imagenes/tensionReal.jpg}
 \end{enumerate}
-\saltoPag{}
 \begin{enumerate}[resume]
     \item Tomar y comparar los elementos del circuito con las magnitudes calculadas y las simuladas:
 \end{enumerate}
 \begin{minipage}{\textwidth}
-\hspace{-1.5cm}
-\footnotesize
-\begin{tabular}{| p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} |}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{ 
+    >{\centering\arraybackslash}m{1.1cm}
+    >{\centering\arraybackslash}m{1.2cm} 
+    >{\centering\arraybackslash}m{0.8cm} 
+    >{\centering\arraybackslash}m{0.8cm} 
+    >{\centering\arraybackslash}m{0.8cm} 
+    >{\centering\arraybackslash}m{0.8cm}}
     \hline
-    \multicolumn{1}{|m{1.4cm}}{\centering\textbf{Magnitud}} &
-    \multicolumn{1}{m{1.4cm}}{\centering\textbf{Concepto}} &
-    \multicolumn{1}{m{1.2cm}}{\centering\textbf{$V_S$}} &
-    \multicolumn{1}{m{1cm}}{\centering\textbf{$R_1$}} &
-    \multicolumn{1}{m{1cm}}{\centering\textbf{$R_2$}} &
-    \multicolumn{1}{m{1.2cm}|}{\centering\textbf{$R_3$}} \\
+    {\centering\textbf{Magnitud}} &
+    {\textbf{Concepto}} &
+    {\textbf{$V_S$}} &
+    {\textbf{$R_1$}} &
+    {\textbf{$R_2$}} &
+    {\textbf{$R_3$}} \\
     \hline
-    \multicolumn{1}{|m{1.4cm}}{\multirow{3}{*}{\centering\textbf{Tensión}}} &
-    \multicolumn{1}{m{1.4cm}}{\centering\textbf{Análisis}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$10V$} &
-    \multicolumn{1}{m{1cm}}{\centering$\frac{80000}{9551}V$} &
-    \multicolumn{1}{m{1cm}}{\centering$\frac{15510}{9551}V$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$\frac{15510}{9551}V$} \\
+    {\multirow{4}{*}{\centering\shortstack{\textbf{Tensión} \\ \textbf{[V]}}}} &
+    {\textbf{Análisis}} &
+    {$10$} &
+    {8,37} &
+    {1,62} &
+    {1,62} \\[10pt]
                                           &
-    \multicolumn{1}{m{1.4cm}}{\textbf{Simulación}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$10V$} &
-    \multicolumn{1}{m{1cm}}{\centering$8,37V$} &
-    \multicolumn{1}{m{1cm}}{\centering$1,62V$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$1,62V$} \\
+    {\textbf{Simulación}} &
+    {10} &
+    {8,37} &
+    {1,62} &
+    {1,62} \\[10pt]
                                           &
-    \multicolumn{1}{m{1.4cm}}{\centering\textbf{Medición [esc. 60V]}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$9,98V$} &
-    \multicolumn{1}{m{1cm}}{\centering$8,38V$} &
-    \multicolumn{1}{m{1cm}}{\centering$1,60V$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$1,60V$} \\
+    {\textbf{Medición [e:60V]}} &
+    {9,98} &
+    {8,38} &
+    {1,60} &
+    {1,60} \\[10pt]
     \hline
-    \multicolumn{1}{|m{1.4cm}}{\multirow{3}{*}{\centering\textbf{Corriente}}} &
-    \multicolumn{1}{m{1.4cm}}{\centering\textbf{Análisis}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$\frac{8}{9551}A$} &
-    \multicolumn{1}{m{1cm}}{\centering$\frac{8}{9551}A$} &
-    \multicolumn{1}{m{1cm}}{\centering$\frac{33}{95510}A$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$\frac{47}{95510}A$} \\
+    {\multirow{4}{*}{\centering\shortstack{\textbf{Corriente} \\ \textbf{[mA]}}}} &
+    {\textbf{Análisis}} &
+    {0,83} &
+    {0,83} &
+    {0,34} &
+    {0,49} \\[10pt]
                                           &
-    \multicolumn{1}{m{1.4cm}}{\textbf{Simulación}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$-0,837mA$} &
-    \multicolumn{1}{m{1cm}}{\centering$0,837mA$} &
-    \multicolumn{1}{m{1cm}}{\centering$0,345mA$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$0,492mA$} \\
+    {\textbf{Simulación}} &
+    {-0,83} &
+    {0,83} &
+    {0,34} &
+    {0,49} \\[10pt]
                                           &
-    \multicolumn{1}{m{1.4cm}}{\centering\textbf{Medición [esc. 60mA]}} &
-    \multicolumn{1}{m{1.2cm}}{\centering$0,82mA$} &
-    \multicolumn{1}{m{1cm}}{\centering$0,82mA$} &
-    \multicolumn{1}{m{1cm}}{\centering$0,32mA$} &
-    \multicolumn{1}{m{1.2cm}|}{\centering$0,48mA$} \\
+    {\textbf{Medición [e:60mA]}} &
+    {0,82} &
+    {0,82} &
+    {0,32} &
+    {0,48} \\
     \hline
 
 \end{tabular}
 \end{minipage}
+\saltoPag{}
 \begin{enumerate}[resume]
     \item Medir los resistores del circuito:
 \end{enumerate}
 
         \midTitle{red}{\textbf{Resistor $R_1$}}
         \begin{center} \textbf{---- Tensión $R_1$ ----} \end{center}
-        \imagen{6cm}{./imagenes/medicionTensionR1.jpg}
+        \imagen{5.5cm}{./imagenes/medicionTensionR1.jpg}
         \begin{center} \textbf{---- Corriente $R_1$ ----} \end{center}
-        \imagen{6cm}{./imagenes/zoomMedicionCorrienteR1.jpg}
-        \imagen{6cm}{./imagenes/superiorMedicionCorrienteR1.jpg} 
+        \imagen{5.25cm}{./imagenes/zoomMedicionCorrienteR1.jpg}
+        \imagen{6cm}{./imagenes/superiorMedicionCorrienteR1.jpg}
+        \columnbreak{}
         \midTitle{blue}{\textbf{Resistor $R_2$}}
         \begin{center} \textbf{---- Tensión $R_2$ ----} \end{center}
         \imagen{6cm}{./imagenes/superiorMedicionTensionR2.jpg}
-        \imagen{6cm}{./imagenes/medicionTensionR2yR3.jpg}
-        \saltoPag{}
+        \imagen{5cm}{./imagenes/medicionTensionR2yR3.jpg}
         \begin{center} \textbf{---- Corriente $R_2$ ----} \end{center}
         \imagen{5.5cm}{./imagenes/zoomMedicionCorrienteR2.jpg}
+        \saltoPag{}
         \imagen{6cm}{./imagenes/superiorMedicionCorrienteR2.jpg}
         \midTitle{violet}{\textbf{Resistor $R_3$}}
         \begin{center} \textbf{---- Tensión $R_3$ ----} \end{center}
@@ -195,3 +194,9 @@
         \begin{center} \textbf{---- Corriente $R_3$ ----} \end{center}
         \imagen{6cm}{./imagenes/superiorMedicionCorrienteR3.jpg}
         \imagen{6cm}{./imagenes/zoomMedicionCorrienteR3.jpg}
+
+\section{Conclusión}
+
+\sangria{}Con todo se puede concluir que prácticamente nunca se va a tener valores totalmente idénticos en los entornos de simulación y análisis comparado con el de medición. Esto se debe a que, en este trabajo práctico, a la hora de realizar los cálculos y al simular se consideró como si fueran elementos ideales, es decir, no se usaron los valores reales de las resistencias ni se tomaron en cuenta factores como la temperatura, humedad, fabricación, etc. \\
+\sangria{} Esto concluye que la diferencia de valores respecto a la medición es totalmente lógica, aunque cabe considerar que el desvío es mínimo, por lo que los valores son todos correctos y reflejan fielmente el comportamiento del circuito. \\
+\sangria{} También hay que destacar la correcta selección de las potencias de los resistores (1/4 W) ya que estos tienen que disipar una $P_{max}$ que toleran. Véase el caso del $R_1$ que disipa $7mW$. Si bien se podría haber utilizado un resistor de 1/8W, al comparar la relación precio-calidad, los de 1/4W siguen siendo más convenientes ya que son más económicos y dan un buen margen de trabajo.

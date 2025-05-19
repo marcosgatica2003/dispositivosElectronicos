@@ -5,25 +5,29 @@
 \usepackage{siunitx}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage[table, xcdraw]{xcolor}
+\usepackage[table, xcdraw, dvipsnames]{xcolor}
 \usepackage{times}
 \usepackage{tikz}
-\usepackage[margin=0cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=2.5cm, right=1.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{anyfontsize}
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \usepackage{amsmath}
-\usepackage[spanish]{babel}
+\usepackage[spanish, es-tabla]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[explicit]{titlesec}
 \usepackage{etoolbox}
 \usepackage{multicol}
 \usepackage{enumitem}
-\usepackage{caption}
+\usepackage[labelformat=simple,labelsep=none]{caption}
 \usepackage{booktabs}
 \usepackage{amsfonts}
 \usepackage[version=4]{mhchem}
+\usepackage{float}
+\usepackage{circuitikz}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
 
 \include{newCommands}
 
@@ -31,17 +35,12 @@
     \include{caratula}
     \include{configContenido}
     \include{indice}
-    \saltoPag%
-    \begin{multicols}{2} 
-        \include{unidad1} 
-        \include{unidad2}
-        \include{unidad3}
-        \include{unidad4}
-        \include{unidad5}
-        \include{unidad6}
-        \include{unidad7}
-        \include{unidad8}
-        \include{unidad9}
+    \saltoPag{}
+    \begin{multicols}{2}
+        \setlength{\columnsep}{10mm}
+        \input{actividadLaboratorio1.tex}
+        \input{actividadLaboratorio2.tex}
+        \input{actividadLaboratorio3.tex}
     \end{multicols}
 \end{document}
 

@@ -1,0 +1,1 @@
+Pegar el 1n34a.lib en $HOME/.local/share/wineprefixes/ltspice/drive_c/users/marcosgatica/AppData/Local/LTspice

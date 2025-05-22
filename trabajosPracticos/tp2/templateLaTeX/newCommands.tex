@@ -1,3 +1,20 @@
+\newcommand{\inicioCodigo}{
+    \newpage
+    \fancyfoot[C]{}
+    \onecolumn
+}
+
+\newcommand{\finalCodigo}{
+    \newpage
+    \fancyfoot[C]{
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[gray!30, line width=0.4pt]
+                (0cm, 1cm) -- (0cm, 25cm);
+        \end{tikzpicture}
+    }
+    \twocolumn
+}
+
 \renewcommand{\theenumi}{\Roman{enumi}}
 \definecolor{gold}{rgb}{1.0, 0.84, 0.0}
 \newcommand{\resistencia}[4]{
@@ -92,7 +109,6 @@
 }
 
 \newcommand{\imagen}[3][]{
-    \vspace{5pt}
     \begin{center}
         \begin{tikzpicture}
             \node[inner sep=2pt] (image) {\includegraphics[width=#2]{#3}};
@@ -105,7 +121,6 @@
         \fi 
         \label{fig:#2}
     \end{center}
-    \vspace{5pt}
 }
 
 \newcommand{\sangria}[0]{\par\noindent\hspace*{15pt}}
@@ -113,4 +128,3 @@
 \newcommand{\longsubsection}[2]{%
     \subsection[#1]{\parbox{\columnwidth}{#1}}%
 }
-

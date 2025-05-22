@@ -1,6 +1,91 @@
 \section{Actividad de laboratorio II}
+
+\sangria{} El objetivo de esta actividad es medir las corrientes y tensiones de los diodos rectificadores, tanto los de silicio como los de germanio. Posteriormente se comparará los resultados con los datasheet de estos diodos.
+
 \subsection{Actividad de simulación}
+
+\sangria{} Para esta actividad se analizó el momento en el que un dispositivo pasa del estado de bloqueo a conducción, usando el simulador LTspice.
+
 \subsubsection{Polarización en directa}
+\sangria{} En este inciso se analizó la polarización en directa de los diodos 1N4007 y 1N60 por medio del siguiente circuito:
+
+\imagen[Circuito de prueba con d. 1N4007, para el 1N60 se implementó un circuito similar]{8cm}{./imagenes/circuitoLtspice1N4007.png}
+
+\sangria{} El entorno de simulación fue configurado para hacer un barrido de la fuente V1 (la celda de tensión continua), comenzando desde -2V a 10V con un paso de 100mV para cada muestreo.
+
+\imagen[Configuración de la simulación]{8cm}{./imagenes/configuracionEntornoLtspice1N4007.png}
+
+\textbf{Resultados:}
+
+\sangria{} Se obtuvo la gráfica de la corriente del diodo en función de su tensión ($I_{D1}$). 
+
+\imagen[Curva del diodo 1N4007]{8cm}{./imagenes/graficoCorrienteVSTension1N4007.png}
+
+\imagen[Curva del diodo 1N34A]{8cm}{./imagenes/graficoCorrienteVSTension1N60.png}
+
+\inicioCodigo{}
+
+\subsubsection{Curvas en Python}
+
+\begin{minted}{python}
+import pandas as pd 
+import matplotlib.pyplot as plt 
+
+df4007 = pd.read_csv("simulacionDiodo1N4007.txt", sep="\t")
+df4007.columns = ["Voltaje (V)", "Corriente (A)"]
+df60 = pd.read_csv("simulacionDiodo1N60.txt", sep="\t")
+df60.columns = ["Voltaje (V)", "Corriente (A)"]
+plt.figure(figsize=(10, 6))
+plt.plot(df4007["Voltaje (V)"], df4007["Corriente (A)"], label="1N4007", color="red")
+plt.plot(df60["Voltaje (V)"], df60["Corriente (A)"], label="1N60", color="blue")
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.title("Curva I-V del diodo 1N4007 y 1N60")
+plt.xlabel("Voltaje [V]")
+plt.ylabel("Corriente [A]")
+plt.legend()
+plt.tight_layout()
+plt.savefig("graficoCorrienteVSTensionDiodosPython.png")
+\end{minted}
+
+\imagen[Output]{15cm}{./imagenes/graficoCorrienteVSTensionDiodosPython.png}
+
+\finalCodigo{}
+
 \subsubsection{Polarización en inversa}
+\sangria{} En este inciso se pondrá los diodos en polarización inversa, usando de base el circuito anteriormente mencionado. \\
+\sangria{} Se sabe que los diodos tienen una funcionalidad de ponerse en "bloque" (no conduce la corriente) cuando el cátodo tiene mayor potencial que el ánodo. Se hizo la simulación con el objetivo de superar la tensión de ruptura del diodo y provocar una avalancha de corriente en polarización inversa.
+
+\sangria{} Conocer la tensión de ruptura del diodo implica revisar las hojas de datos del diodo 1N4007 y 1N60:
+\begin{center}
+    \begin{tabular}{|c|l|l|}
+    \rowcolor[HTML]{FFCE93}
+    \hline
+    \textbf{Diodo} & 
+    \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}\textbf{Tensión ruptura}} & 
+    \multicolumn{1}{c}{\cellcolor[HTML]{FFCE93}{\color[HTML]{000000} \textbf{Fabricante}}} 
+    \\ 
+    \hline
+    \cellcolor[HTML]{FFFC9E}{\color[HTML]{000000} \textbf{1N60}} &
+    40v &
+    DEC \\
+    \hline 
+    \cellcolor[HTML]{FFFC9E}\textbf{1N4007} &
+    1000v & 
+    Taiwan s.c. \\ 
+    \hline
+    \end{tabular}
+\end{center}
+
+\sangria{} Para la simulación, se configuró el barrido para que cada diodo llegue a su tensión de ruptura en inversa agregando más tensión de lo que el fabricante menciona. Por lo que al diodo 1N4007 se le agregó un barrido a 1100V y al diodo 1N60, 50V:
+
+\imagen[Diodo 1N60 polarizado en inversa, el 1N4007 es similar]{7cm}{./imagenes/circuitoLtspice1N60Inversa.png}
+
+\imagen[Configuración del barrido en LTspice]{8cm}{./imagenes/configuracionEntornoLtspice1N60Inversa.png}
+
+\imagen[Gráfico I-V diodo 1N60 en inversa]{8cm}{./imagenes/graficoCorrienteVSTension1N60Inversa.png}
+
+\subsubsection{Conclusión de las simulaciones}
+
 \subsection{Curva característica de los diodos}
 

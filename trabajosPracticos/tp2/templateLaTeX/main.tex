@@ -9,7 +9,7 @@
 \usepackage{times}
 \usepackage{tikz}
 \usepackage[top=0.75in, bottom=1in, inner=0.75in, outer=0.75in,
-            headheight=45pt, headsep=0in, footskip=0in]{geometry}
+            headheight=45pt, headsep=2pt, footskip=5mm]{geometry}
 \usepackage{graphicx}
 \usepackage{anyfontsize}
 \usepackage{fancyhdr}
@@ -29,17 +29,19 @@
 \usepackage{float}
 \usepackage{circuitikz}
 \usepackage{subcaption}
-\usepackage[utf8]{inputenc}
 \usepackage{changepage}
+\usepackage{eso-pic}
 % \usepackage{showframe}
+\usepackage{pythontex}
+\usepackage{minted}
 
-\include{newCommands}
+\input{newCommands}
 
 \begin{document}
     \include{caratula}
     \include{configContenido}
     \include{indice}
-    \saltoPag{}
+    \pagestyle{fancy}
     \input{actividadLaboratorio1.tex}
     \input{actividadLaboratorio2.tex}
     \input{actividadLaboratorio3.tex}

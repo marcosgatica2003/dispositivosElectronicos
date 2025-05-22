@@ -1,0 +1,14 @@
+{
+print("hola rao")
+for i in range(3):
+    print(f"num: {1}")
+}
+
+\subsubsection{Polarización en inversa}
+
+
+
+\subsubsection{Conclusión de las simulaciones}
+
+\subsection{Curva característica de los diodos}
+

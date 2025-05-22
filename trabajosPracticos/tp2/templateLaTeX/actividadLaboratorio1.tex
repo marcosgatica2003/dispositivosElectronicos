@@ -25,6 +25,7 @@
         \hline
     \end{tabular}
 \end{center}
+
 \newpage
 2) \underline{Osciloscopio - multímetro - generador de señales}
 \begin{itemize}
@@ -73,7 +74,6 @@
 \sangria{} Se colocó el multímetro en modo detección de diodo (mismo que se usa para la continuidad).
 \sangria{} Se colocó los diodos en la protoboard, y se procedió a medir los terminales de estos en un sentido y otro.
 
-\saltoPag{}
 
 \begin{center}
     \tikzset{
@@ -143,19 +143,20 @@
 \imagen[Medición en directa]{7cm}{./imagenes/medicionDirecta1N60.jpg}
 \imagen[Valores del multímetro en p. directa]{7cm}{./imagenes/medicionDirecta1N60Multimetro.jpg}
 \imagen[Medición en inversa]{7cm}{./imagenes/medicionInversa1N60.jpg}
-\saltoPag{}
 \imagen[Valores del multímetro en p. inversa]{7cm}{./imagenes/medicionInversa1N60Multimetro.jpg}
 
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{l|cc|cc}
+\begin{table}[]
+    \begin{tabular}{|p{2cm}|p{0.8cm}p{0.9cm}|p{0.8cm}p{0.9cm}|}
 \hline
-\multicolumn{1}{c|}{\cellcolor[HTML]{FFFC9E}}                                                                                                           & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{1N4007}} & \multicolumn{2}{c}{\cellcolor[HTML]{FF9390}\textbf{1N60}} \\ \cline{2-5} 
-\multicolumn{1}{c|}{\multirow{-2}{*}{\cellcolor[HTML]{FFFC9E}\textbf{\begin{tabular}[c]{@{}c@{}}Sentido de las puntas \\ del multímetro\end{tabular}}}} & \multicolumn{1}{c|}{\textbf{D1}}        & \textbf{D2}        & \multicolumn{1}{c|}{\textbf{D1}}       & \textbf{D2}      \\ \hline
-Polarización directa                                                                                                                                    & \multicolumn{1}{c|}{0,373V}             & 0,401V             & \multicolumn{1}{c|}{0,593V}            & 0,614V           \\ \hline
-Polarización inversa                                                                                                                                    & \multicolumn{1}{c|}{0V}                 & 0V                 & \multicolumn{1}{c|}{0V}                & 0V               \\ \hline
+\cellcolor[HTML]{FFFC9E}                                                                                                              & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}\textbf{1N4007}} & \multicolumn{2}{c|}{\cellcolor[HTML]{FF9390}\textbf{1N60}} \\ \cline{2-5} 
+\multirow{-2}{*}{\cellcolor[HTML]{FFFC9E}\textbf{\begin{tabular}[c]{@{}c@{}}Sentido de las \\ puntas del \\ multímetro\end{tabular}}} & \multicolumn{1}{c|}{\textbf{D1}}        & \textbf{D2}        & \multicolumn{1}{c|}{\textbf{D1}}       & \textbf{D2}       \\[12pt] \hline
+\begin{tabular}[c]{@{}c@{}}Polarización \\ directa\end{tabular}                                                                       & \multicolumn{1}{c|}{0,373V}             & 0,401V             & \multicolumn{1}{c|}{0,593V}            & 0,614V            \\ \hline
+\begin{tabular}[c]{@{}c@{}}Polarización \\ inversa\end{tabular}                                                                       & \multicolumn{1}{c|}{0V}                 & 0V                 & \multicolumn{1}{c|}{0V}                & 0V                \\ \hline
 \end{tabular}
+\end{table}
 \end{center}
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\linewidth}

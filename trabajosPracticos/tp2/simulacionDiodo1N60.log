@@ -1,6 +1,6 @@
 LTspice 24.1.7 for Windows
 Circuit: Z:\home\marcosgatica\facultadUTN\dispositivosElectronicos\trabajosPracticos\tp2\simulacionDiodo1N60.net
-Start Time: Tue May 20 23:39:49 2025
+Start Time: Thu May 22 12:50:13 2025
 solver = Normal
 Maximum thread count: 12
 tnom = 27
@@ -8,10 +8,10 @@ temp = 27
 method = trap
 .OP point found by inspection.
 .step 
-Total elapsed time: 0.188 seconds.
+Total elapsed time: 0.187 seconds.
 
 Files loaded:
 Z:\home\marcosgatica\facultadUTN\dispositivosElectronicos\trabajosPracticos\tp2\simulacionDiodo1N60.net
 C:\users\marcosgatica\AppData\Local\LTspice\lib\cmp\standard.dio
-C:\users\marcosgatica\AppData\Local\LTspice\lib\sub\1n34a.lib
+C:\users\marcosgatica\AppData\Local\LTspice\lib\sub\1n60.lib
 

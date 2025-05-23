@@ -1,3 +1,8 @@
+\section{Introducción}
+\sangria{} En este trabajo práctico se analizaron diodos rectificadores y zener mediante simulaciones con LTspice y mediciones en laboratorio. Se evaluó su comportamiento en polarización directa e inversa, identificando parámetros clave como la tensión umbral y la zona de ruptura.
+
+\sangria{} Se compararon diodos de silicio (1N4007) y germanio (1N60), utilizando herramientas como Python para graficar curvas I–V y contrastar con los datos experimentales. También se estudiaron aplicaciones prácticas, como circuitos recortadores con diodos zener, integrando conceptos fundamentales para el análisis y diseño de circuitos electrónicos.
+
 \section{Preparación de las prácticas}
 \sangria{} Temperatura ambiente del laboratorio al momento de hacer las actividades fue de $25^o$ celsius.
 \imagen[Temperatura del laboratorio en ºC]{6cm}{./imagenes/temperaturaAmbiente.jpg}
@@ -26,7 +31,6 @@
     \end{tabular}
 \end{center}
 
-\newpage
 2) \underline{Osciloscopio - multímetro - generador de señales}
 \begin{itemize}
     \item \textbf{Fabricante:} FNIRSI
@@ -61,10 +65,14 @@
     \end{tabular}
 \end{center}
 
+4) \underline{Fuente de tensión continua de la facultad F-44}
+\imagen{7cm}{./imagenes/fuenteDeDudosaCalidad.jpg}
+
 \section{Actividad de laboratorio I}
  El objetivo de esta actividad ha sido el de identificar los terminales de los diodos, la comprobación de su correcto funcionamiento y la obtención de la tensión umbral de polarización.
-\midTitle{red}{Materiales utilizados}
-\begin{itemize}
+\newpage
+ \midTitle{red}{Materiales utilizados}
+ \begin{itemize}[noitemsep]
     \item Dos diodos de silicio 1N4007 y otros dos de germanio 1N60. \\
     \begin{center} \diodoSilicio{1N4007} \diodoGermanio{1N60} \end{center}
     \item Multímetro.
@@ -173,5 +181,7 @@
 \end{figure}
 
 \subsection{Conclusión de la identificación de pines}
+\sangria{} Se identificaron correctamente los terminales de los diodos 1N4007 y 1N60 utilizando el multímetro en modo de prueba de diodos. Se verificó que, al aplicar la polarización directa, los diodos condujeron corriente mostrando una caída de tensión en el rango esperable para cada tecnología: aproximadamente 0,6V para el 1N4007 (silicio) y entre 0,37V y 0,4V para el 1N60 (germanio).
 
+\sangria{} En polarización inversa, ambos diodos bloquearon el paso de corriente, como se esperaba, indicando que no presentaban fallas internas. A partir de estas pruebas simples pero efectivas, se lograron identificar el ánodo y el cátodo en cada diodo, permitiendo su correcta utilización.
 

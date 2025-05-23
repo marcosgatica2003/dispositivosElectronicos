@@ -4,8 +4,26 @@
 
 \subsection{Actividad de simulación}
 
-\sangria{} Para esta actividad se analizó el momento en el que un dispositivo pasa del estado de bloqueo a conducción, usando el simulador LTspice.
+\sangria{} Para esta actividad se analizó el momento en el que un dispositivo pasa del estado de bloqueo a conducción, usando el simulador LTspice.\\
 
+\textbf{Nota:} el simulador LTspice no posee el diodo 1N60 \\ en su menú de dispositivos, por lo que hemos decidido escribir nuestro diodo 1N60 usando de base su datasheet:
+
+\begin{quote}
+    \ttfamily
+    .MODEL 1N60 D(IS=0.1E-3 BV=40 RS=1.0 CJO=2.0E-12 N=1.5 VJ=0.32 M=0.5 TT=1E-9)
+\end{quote}
+
+Siendo:
+\begin{itemize}[noitemsep, topsep = 0pt]
+    \item \textbf{IS}: Corriente de saturación inversa.
+    \item \textbf{BV}: Tensión de ruptura inversa.
+    \item \textbf{RS}: Resistencia serie.
+    \item \textbf{CJO}: Capacitancia de unión en polarización cero.
+    \item \textbf{N}: Coeficiente de idealidad.
+    \item \textbf{VJ}: Tensión de juntura.
+    \item \textbf{M}: Coeficiente de gradiente de la unión.
+    \item \textbf{TT}: Tiempo de recuperación.
+\end{itemize}
 \subsubsection{Polarización en directa}
 \sangria{} En este inciso se analizó la polarización en directa de los diodos 1N4007 y 1N60 por medio del siguiente circuito:
 
@@ -13,15 +31,15 @@
 
 \sangria{} El entorno de simulación fue configurado para hacer un barrido de la fuente V1 (la celda de tensión continua), comenzando desde -2V a 10V con un paso de 100mV para cada muestreo.
 
-\imagen[Configuración de la simulación]{8cm}{./imagenes/configuracionEntornoLtspice1N4007.png}
-
+\imagen[Configuración de la simulación]{7cm}{./imagenes/configuracionEntornoLtspice1N4007.png}
+\newpage\thispagestyle{fancy}
 \textbf{Resultados:}
 
 \sangria{} Se obtuvo la gráfica de la corriente del diodo en función de su tensión ($I_{D1}$). 
 
-\imagen[Curva del diodo 1N4007]{8cm}{./imagenes/graficoCorrienteVSTension1N4007.png}
+\imagen[Curva del diodo 1N4007]{7cm}{./imagenes/graficoCorrienteVSTension1N4007.png}
 
-\imagen[Curva del diodo 1N34A]{8cm}{./imagenes/graficoCorrienteVSTension1N60.png}
+\imagen[Curva del diodo 1N34A]{7cm}{./imagenes/graficoCorrienteVSTension1N60.png}
 
 \inicioCodigo{}
 
@@ -54,7 +72,7 @@ plt.savefig("graficoCorrienteVSTensionDiodosPython.png")
 
 \subsubsection{Polarización en inversa}
 \sangria{} En este inciso se pondrá los diodos en polarización inversa, usando de base el circuito anteriormente mencionado. \\
-\sangria{} Se sabe que los diodos tienen una funcionalidad de ponerse en "bloque" (no conduce la corriente) cuando el cátodo tiene mayor potencial que el ánodo. Se hizo la simulación con el objetivo de superar la tensión de ruptura del diodo y provocar una avalancha de corriente en polarización inversa.
+\sangria{} Se sabe que los diodos tienen una funcionalidad de ponerse en "bloque" (no conduce la corriente) cuando el cátodo tiene mayor potencial que el ánodo. Se hizo la simulación con el objetivo de superar la tensión de ruptura del diodo y provocar una avalancha de corriente en polarización inversa. 
 
 \sangria{} Conocer la tensión de ruptura del diodo implica revisar las hojas de datos del diodo 1N4007 y 1N60:
 \begin{center}
@@ -77,7 +95,9 @@ plt.savefig("graficoCorrienteVSTensionDiodosPython.png")
     \end{tabular}
 \end{center}
 
-\sangria{} Para la simulación, se configuró el barrido para que cada diodo llegue a su tensión de ruptura en inversa agregando más tensión de lo que el fabricante menciona. Por lo que al diodo 1N4007 se le agregó un barrido a 1100V y al diodo 1N60, 50V:
+\begin{center} \textit{Datasheet's en la bibliografía} \end{center}
+
+\sangria{} Para la simulación, se configuró el barrido para que cada diodo llegue a su tensión de ruptura en inversa agregando más tensión de lo que el fabricante menciona. Por lo que al diodo 1N4007 se le agregó un barrido a 1100V y al diodo 1N60, 50V. Además, se configuró el LTspice para empezar desde -10V, con estos valores podemos ver que comienza el barrido con el diodo en polarización directa, se pasa a polarización inversa y luego alcanza la tensión de ruptura.
 
 \imagen[Diodo 1N60 polarizado en inversa, el 1N4007 es similar]{7cm}{./imagenes/circuitoLtspice1N60Inversa.png}
 
@@ -85,7 +105,242 @@ plt.savefig("graficoCorrienteVSTensionDiodosPython.png")
 
 \imagen[Gráfico I-V diodo 1N60 en inversa]{8cm}{./imagenes/graficoCorrienteVSTension1N60Inversa.png}
 
+\imagen[Gráfico I-V diodo 1N4007 en inversa]{8cm}{./imagenes/graficoCorrienteVSTension1N4007Inversa.png}
+
+\inicioCodigo{}
+\subsubsection{Curvas en Python}
+
+\begin{minted}{python}
+import pandas as pd 
+import matplotlib.pyplot as plt 
+
+df4007 = pd.read_csv("simulacionDiodo1N4007Inversa.txt", sep="\t")
+df4007.columns = ["Voltaje (V)", "Corriente (A)"]
+df60 = pd.read_csv("simulacionDiodo1N60Inversa.txt", sep="\t")
+df60.columns = ["Voltaje (V)", "Corriente (A)"]
+plt.figure(figsize=(10, 6))
+plt.plot(df4007["Voltaje (V)"], df4007["Corriente (A)"], label="1N4007", color="red")
+plt.plot(df60["Voltaje (V)"], df60["Corriente (A)"], label="1N60", color="blue")
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.title("Curva I-V del diodo 1N4007 y 1N60")
+plt.xlabel("Voltaje [V]")
+plt.ylabel("Corriente [A]")
+plt.legend()
+plt.tight_layout()
+plt.savefig("graficoCorrienteVSTensionDiodosInversaPython.png")
+\end{minted}
+
+\imagen[Output]{15cm}{./imagenes/graficoCorrienteVSTensionDiodosInversaPython.png}
+
+\finalCodigo{}
+
 \subsubsection{Conclusión de las simulaciones}
+\sangria{} Las simulaciones realizadas en LTspice permitieron analizar el comportamiento de los diodos 1N4007 y 1N60 tanto en polarización directa como en inversa. En polarización directa se pudo observar cómo el diodo de germanio (1N60) comienza a conducir a un voltaje más bajo que el de silicio (1N4007), mostrando una menor tensión umbral, coherente con lo esperado por la tecnología de fabricación.
+
+\sangria{} En polarización inversa, los resultados mostraron que ambos diodos permanecen en bloqueo hasta alcanzar su tensión de ruptura. El 1N60 mostró ruptura alrededor de los 40V, mientras que el 1N4007 la alcanzó cerca de los 1000V, lo cual coincide con los valores extraídos de los datasheets.
+
+\sangria{} Estas simulaciones, complementadas con modelos SPICE realistas y gráficos obtenidos mediante Python, brindan una representación clara y visual del funcionamiento de los diodos ante distintas condiciones de polarización.
 
 \subsection{Curva característica de los diodos}
 
+\sangria{} En esta sección se realizó de manera práctica lo visto en las simulaciones del punto anterior (excepto el relevamiento de la zona de ruptura inversa). \\
+\sangria{} Lo que se buscó fue reconocer el comportamiento no ideal de los diodos y encontrar un ''codo'': la parte del gráfico del diodo donde comienza a conducir corriente en polarización directa.
+
+\imagen[Circuito propuesto]{8cm}{./imagenes/circuitoPropuestoCurvasDiodo.png}
+\begin{center}
+    \tikzset{
+          hole/.style = {fill = #1, circle, minimum width = 1mm, inner sep = 0mm},
+          wire/.style = {draw = #1, line width = 0.2mm},
+          label/.style = {rotate = 0, black!50!white, font=\sffamily, anchor = center}
+        }
+        \begin{tikzpicture}[x=2mm,y=2mm]
+          \draw[fill=black!05!white] (-4,-1) rectangle (16,34);
+ 
+          \foreach \yi in {1,...,30}{
+            \node[hole=red]  at (-3,\yi){};
+            \node[hole=blue] at (-2,\yi){};
+            \node[hole=red]  at (14,\yi){};
+            \node[hole=blue] at (15,\yi){};
+
+            \foreach \xs in {0,6}{
+                \foreach \xi in {1,2,3,4,5}{
+                    \node[hole=black] at (\xi+\xs,\yi){};
+                }
+            }
+        }
+
+        \foreach \m/\xi in {A/1,B/2,C/3,D/4,E/5,F/7,G/8,H/9,I/10,J/11}{
+            \node[label=0] at (\xi, 0) {\tiny\m};
+            \node[label=0] at (\xi,31) {\tiny\m};
+        }
+
+        \foreach \n/\yi in {1,5,10,15,20,25,30}{
+            \node[label=0] at (-1,\yi) {\tiny\n};
+            \node[label=0] at (13,\yi) {\tiny\n};
+        }
+
+        \filldraw[fill=black!75, draw=black] (-1, 20.5) rectangle (1.5, 21.5);
+        \draw[line width=1pt, draw=gray!80] (-2, 21) -- (-1, 21);
+        \draw[line width=1pt, draw=gray!80] (1.5, 21) -- (3, 21);
+        \fill[fill=gray!95] (-0.5, 20.5) rectangle (0, 21.5);
+
+        \filldraw[fill=brown!60, draw=black] (4.5, 22.5) rectangle (5.5, 25);
+        \draw[line width=1pt, draw=gray!80] (5, 22.5) -- (5, 21);
+        \draw[line width=1pt, draw=gray!80] (5, 25) -- (5, 27);
+        \fill[fill=brown] (4.5, 22.75) rectangle (5.5, 23);
+        \fill[fill=black] (4.5, 23.25) rectangle (5.5, 23.5);
+        \fill[fill=red] (4.5, 23.75) rectangle (5.5, 24);
+        \fill[fill=gold] (4.5, 24.25) rectangle (5.5, 24.5);
+
+        \draw[line width=1.5pt, draw=black!90] (-6, 25) -- (-6, 40) -- (-4.20,40);
+        \draw[line width=1.5pt, draw=red!90] (4, 27) -- (4, 40) -- (-2.3, 40);
+        \filldraw[line width=1.5pt, fill=orange!25] (-1, 40) circle (0.60cm);
+        \filldraw[draw=black!90] (-4.25,40) circle (2pt);
+        \filldraw[draw=black!90] (2.25,40) circle (2pt);
+        \node at (1, 40) {\large\textbf{+}};
+        \node at (-3, 39.85) {\large\textbf{-}};
+        \node at (13, 49) {\Large\textbf{$V_{CC}$}};
+
+        \filldraw[line width=1.25pt, fill=Aquamarine, draw=black, thick]
+            (8, 41) -- (9, 41) -- (9.25, 41.25) -- (11.75, 41.25) -- (12, 41)
+            -- (18, 41) -- (18, 46) -- (12, 46) -- (11.75, 45.75) -- 
+            (9.25, 45.75) -- (9, 46) -- (8, 46) -- cycle;
+
+        \filldraw[line width=0.75pt, fill=black!50, draw=black!90] (10.5, 43.5) circle (8pt);
+        \filldraw[line width=0.75pt, fill=blue!30, draw=black!90] (14, 41.25) rectangle (17.5, 45.75);
+
+        \draw[line width=1.5pt, draw=red!80] (4, 40) -- (4, 42) -- (8.5, 42);
+        \draw[line width=1.5pt, draw=black!80] (-6, 40) -- (-6, 46) -- (4, 46) -- (4, 43) -- (8.5, 43);
+        
+        \filldraw[line width=0.75pt, fill=blue!60, draw=black!90] (-7.5, 20.5) rectangle (-10, 26.5);
+        \filldraw[line width=0.75pt, fill=blue!60, draw=black!90] (-13.6, 20.5) rectangle (-16.5, 26.5);
+
+        \filldraw[line width=1.5pt, draw=black!90, fill=black!85] ( -8, 26) rectangle (-16, 21);
+        \filldraw[line width=0.75pt, draw=black!90, fill=pink!20] (-13, 21.25) rectangle (-15.5, 25.75);
+
+        \draw[line width=1.5pt, draw=black!90] (-6, 25) -- (-9, 25);
+        \draw[line width=1.5pt, draw=black!90] (-9, 24) -- (-6, 24) -- (-6, 22) -- (-1.75, 22);
+
+        \node at (-12, 30) {\Large\textbf{$I_D$}};
+
+        \filldraw[line width=1.5pt, draw=black!90, fill=red!70] (-6.5, 13.5) rectangle (-17.5, 7.5); 
+        \filldraw[line width=1.5pt, draw=black!90, fill=black!70] (-7, 13) rectangle (-17, 8);
+        \draw[line width=1.5pt, draw=black!90] (-8, 12) -- (-1.25, 12) -- (-1.25, 21);
+        \draw[line width=1.5pt, draw=red!80] (-8, 11) -- (2, 11) -- (2, 21);
+
+        \filldraw[line width=0.75pt, draw=black!90, fill=blue!30] (-14, 12.5) rectangle (-16.5, 8.5);
+        \filldraw[draw=black!90, fill=black!75, line width=0.75pt] (-12, 10.5) circle (8pt);
+
+        \node at (-12, 16) {\Large\textbf{$V_D$}};
+
+        \draw[-latex, very thick, draw=orange, line width=0.75mm] (23, 35) -- (11, 35) -- (9, 23.75) -- (6, 23.75);
+        \node[anchor=east] at (22,37) {\Large $1K\Omega$ \small $1/4w$};
+
+    \end{tikzpicture}
+\end{center}
+
+\imagen[]{8cm}{./imagenes/circuitoCurvasCaracteriscaDiodo.jpg}
+
+El procedimiento de este ensayo fue el siguiente:
+\begin{enumerate}
+    \item   Una vez armado el circuito, se partió midiendo el voltaje y corriente del diodo limitado por la resistencia.
+    \item   Se arrancó con 0v de la fuente $V_{CC}$, se tomó nota de los valores del diodo y luego se siguió aumentando el voltaje de la fuente hasta los 5v, tomando muestras de por medio.
+    \item   Se hizo lo mismo tanto para el diodo 1N4007 (silicio) y el 1N60 (germanio).
+\end{enumerate}
+
+\sangria{} Este circuito nos permitió obtener valores de tensión - corriente del diodo para luego graficarlos y visualizar una curva del diodo ''más realista'' que las obtenidas por la simulación con LTspice.
+\midTitle{red}{\textbf{Valores - Diodo 1N4007}}
+\thispagestyle{fancy}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \rowcolor[HTML]{FFFFC7} 
+    $V_1 [V]$                              & 0   & 0,1 & 0,3 & 0,4 & 0,45 & 0,5 \\ \hline
+    \cellcolor[HTML]{FFFC9E}$V_D$ {[}mV{]} & 7,7 & 101 & 294 & 394 & 427  & 459 \\ \hline
+    \cellcolor[HTML]{FFCE93}$I_D$ {[}mA{]} & -3  & -4  & -4  & 1   & 10   & 35  \\ \hline
+    \end{tabular}
+    \par\vspace{10pt}\par
+    \small
+    \begin{tabular}{|c|c|lc|c|c|c|c|}
+    \hline
+    \rowcolor[HTML]{FFFFC7} 
+    $V_1 [V]$                              & 0,55 & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFC7}0,6} & 0,65 & 0,7 & 1   & 3    & 5    \\ \hline
+    \cellcolor[HTML]{FFFC9E}$V_D$ {[}mV{]} & 480  & 498                                              & 512  & 523 & 563 & 643  & 672  \\ \hline
+    \cellcolor[HTML]{FFCE93}$I_D$ {[}mA{]} & 52   & 75                                               & 110  & 130 & 345 & 1335 & 4435 \\ \hline
+    \end{tabular}
+\end{center}
+
+\midTitle{blue}{\textbf{Valores - Diodo 1N60}}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+    \rowcolor[HTML]{FFFFC7} 
+    $V_1 [V]$                              & 0  & 0,1 & 0,3 & 0,4 & 0,45 & 0,5 \\ \hline
+    \cellcolor[HTML]{FFFC9E}$V_D$ {[}mV{]} & 6  & 75  & 162 & 184 & 196  & 202 \\ \hline
+    \cellcolor[HTML]{FFCE93}$I_D$ {[}mA{]} & -4 & 22  & 135 & 207 & 252  & 275 \\ \hline
+    \end{tabular}
+    \par\vspace{10pt}\par
+    \small
+    \begin{tabular}{|c|c|lc|c|c|c|c|}
+    \hline
+    \rowcolor[HTML]{FFFFC7} 
+    $V_1 [V]$                              & 0,55 & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFC7}0,6} & 0,65 & 0,7 & 1   & 3    & 5    \\ \hline
+    \cellcolor[HTML]{FFFC9E}$V_D$ {[}mV{]} & 216  & 225                                              & 231  & 241 & 286 & 475  & 655  \\ \hline
+    \cellcolor[HTML]{FFCE93}$I_D$ {[}mA{]} & 333  & 371                                              & 410  & 458 & 724 & 2512 & 4355 \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Conclusiones de las curvas}
+\sangria{} A partir de las curvas características obtenidas de manera experimental, se confirmó el comportamiento teórico de ambos diodos. El 1N60 mostró conducción a partir de una menor tensión en directa (aproximadamente 0,2V – 0,3V), lo que se refleja en una pendiente más suave y una mayor corriente en las primeras etapas del gráfico. Por el contrario, el 1N4007, al ser de silicio, mostró una tensión umbral más alta, cercana a los 0,6V, con una región de no conducción más extensa.
+
+\sangria{} La relación entre la corriente y la tensión medida permitió identificar claramente el ''codo'' característico del diodo en polarización directa. Además, los valores obtenidos muestran buena correlación con los resultados de las simulaciones, validando tanto el montaje como el procedimiento experimental.
+
+\sangria{} En conjunto, los resultados demuestran de forma clara las diferencias prácticas entre diodos de silicio y germanio, y cómo esas diferencias impactan en su aplicación dentro de circuitos electrónicos reales.
+
+\inicioCodigo{}
+\subsubsection{Curvas en Python}
+
+\begin{minted}{python}
+import matplotlib.pyplot as plt
+
+voltajeFuente = [0, 0.1, 0.3, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 1, 3, 5]
+
+voltajeDiodo1N4007 = [7.7, 101, 294, 394, 427, 459, 480, 498, 512, 523, 563, 643, 672]
+corrienteDiodo1N4007 = [-3, -4, -4, 1, 10, 35, 52, 75, 110, 130, 345, 1335, 4435]
+
+voltajeDiodo1N60 = [6, 75, 162, 184, 196, 202, 216, 225, 231, 241, 286, 475, 655]
+corrienteDiodo1N60 = [-4, 22, 135, 207, 252, 275, 333, 371, 410, 458, 724, 2512, 4355]
+
+voltajeDiodo1N4007 = [v / 1000 for v in voltajeDiodo1N4007]
+voltajeDiodo1N60 = [v / 1000 for v in voltajeDiodo1N60]
+
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.plot(voltajeFuente, corrienteDiodo1N4007, marker='o', color='red', label='1N4007')
+plt.plot(voltajeFuente, corrienteDiodo1N60, marker='s', color='blue', label='1N60')
+plt.title('Corriente vs Voltaje Fuente')
+plt.xlabel('Voltaje de la Fuente [V]')
+plt.ylabel('Corriente $I_D$ [mA]')
+plt.legend()
+
+plt.subplot(1, 2, 2)
+plt.plot(voltajeFuente, voltajeDiodo1N4007, marker='o', color='red', label='1N4007')
+plt.plot(voltajeFuente, voltajeDiodo1N60, marker='s', color='blue', label='1N60')
+plt.title('Voltaje del Diodo vs Voltaje Fuente')
+plt.xlabel('Voltaje de la Fuente [V]')
+plt.ylabel('Voltaje en el Diodo $V_D$ [V]')
+plt.legend()
+
+plt.tight_layout()
+plt.savefig("graficosValoresRealesDiodos.png")
+
+\end{minted}
+
+\imagen[Output]{15cm}{./imagenes/graficosValoresRealesDiodos.png}
+
+\finalCodigo{}

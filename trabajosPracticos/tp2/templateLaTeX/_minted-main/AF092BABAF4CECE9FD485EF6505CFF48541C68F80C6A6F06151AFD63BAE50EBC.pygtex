@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{n}{voltajeFuente} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.3}\PYG{p}{,} \PYG{l+m+mf}{0.4}\PYG{p}{,} \PYG{l+m+mf}{0.45}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mf}{0.55}\PYG{p}{,} \PYG{l+m+mf}{0.6}\PYG{p}{,} \PYG{l+m+mf}{0.65}\PYG{p}{,} \PYG{l+m+mf}{0.7}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}
+
+\PYG{n}{voltajeDiodo1N4007} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{7.7}\PYG{p}{,} \PYG{l+m+mi}{101}\PYG{p}{,} \PYG{l+m+mi}{294}\PYG{p}{,} \PYG{l+m+mi}{394}\PYG{p}{,} \PYG{l+m+mi}{427}\PYG{p}{,} \PYG{l+m+mi}{459}\PYG{p}{,} \PYG{l+m+mi}{480}\PYG{p}{,} \PYG{l+m+mi}{498}\PYG{p}{,} \PYG{l+m+mi}{512}\PYG{p}{,} \PYG{l+m+mi}{523}\PYG{p}{,} \PYG{l+m+mi}{563}\PYG{p}{,} \PYG{l+m+mi}{643}\PYG{p}{,} \PYG{l+m+mi}{672}\PYG{p}{]}
+\PYG{n}{corrienteDiodo1N4007} \PYG{o}{=} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{35}\PYG{p}{,} \PYG{l+m+mi}{52}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{,} \PYG{l+m+mi}{110}\PYG{p}{,} \PYG{l+m+mi}{130}\PYG{p}{,} \PYG{l+m+mi}{345}\PYG{p}{,} \PYG{l+m+mi}{1335}\PYG{p}{,} \PYG{l+m+mi}{4435}\PYG{p}{]}
+
+\PYG{n}{voltajeDiodo1N60} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{l+m+mi}{75}\PYG{p}{,} \PYG{l+m+mi}{162}\PYG{p}{,} \PYG{l+m+mi}{184}\PYG{p}{,} \PYG{l+m+mi}{196}\PYG{p}{,} \PYG{l+m+mi}{202}\PYG{p}{,} \PYG{l+m+mi}{216}\PYG{p}{,} \PYG{l+m+mi}{225}\PYG{p}{,} \PYG{l+m+mi}{231}\PYG{p}{,} \PYG{l+m+mi}{241}\PYG{p}{,} \PYG{l+m+mi}{286}\PYG{p}{,} \PYG{l+m+mi}{475}\PYG{p}{,} \PYG{l+m+mi}{655}\PYG{p}{]}
+\PYG{n}{corrienteDiodo1N60} \PYG{o}{=} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{22}\PYG{p}{,} \PYG{l+m+mi}{135}\PYG{p}{,} \PYG{l+m+mi}{207}\PYG{p}{,} \PYG{l+m+mi}{252}\PYG{p}{,} \PYG{l+m+mi}{275}\PYG{p}{,} \PYG{l+m+mi}{333}\PYG{p}{,} \PYG{l+m+mi}{371}\PYG{p}{,} \PYG{l+m+mi}{410}\PYG{p}{,} \PYG{l+m+mi}{458}\PYG{p}{,} \PYG{l+m+mi}{724}\PYG{p}{,} \PYG{l+m+mi}{2512}\PYG{p}{,} \PYG{l+m+mi}{4355}\PYG{p}{]}
+
+\PYG{n}{voltajeDiodo1N4007} \PYG{o}{=} \PYG{p}{[}\PYG{n}{v} \PYG{o}{/} \PYG{l+m+mi}{1000} \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{voltajeDiodo1N4007}\PYG{p}{]}
+\PYG{n}{voltajeDiodo1N60} \PYG{o}{=} \PYG{p}{[}\PYG{n}{v} \PYG{o}{/} \PYG{l+m+mi}{1000} \PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{voltajeDiodo1N60}\PYG{p}{]}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{))}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplot}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{voltajeFuente}\PYG{p}{,} \PYG{n}{corrienteDiodo1N4007}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}1N4007\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{voltajeFuente}\PYG{p}{,} \PYG{n}{corrienteDiodo1N60}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}blue\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}1N60\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Corriente vs Voltaje Fuente\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Voltaje de la Fuente [V]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Corriente \PYGZdl{}I\PYGZus{}D\PYGZdl{} [mA]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplot}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{voltajeFuente}\PYG{p}{,} \PYG{n}{voltajeDiodo1N4007}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}o\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}red\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}1N4007\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{voltajeFuente}\PYG{p}{,} \PYG{n}{voltajeDiodo1N60}\PYG{p}{,} \PYG{n}{marker}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}blue\PYGZsq{}}\PYG{p}{,} \PYG{n}{label}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}1N60\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{title}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Voltaje del Diodo vs Voltaje Fuente\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Voltaje de la Fuente [V]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Voltaje en el Diodo \PYGZdl{}V\PYGZus{}D\PYGZdl{} [V]\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{()}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{tight\PYGZus{}layout}\PYG{p}{()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}graficosValoresRealesDiodos.png\PYGZdq{}}\PYG{p}{)}
+
+\end{Verbatim}

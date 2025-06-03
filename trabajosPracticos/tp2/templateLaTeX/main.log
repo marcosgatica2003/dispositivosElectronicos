@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.18)  3 JUN 2025 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.5.18)  3 JUN 2025 17:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1095,7 +1095,7 @@ LaTeX Warning: Label `fig:8cm' multiply defined.
 LaTeX Warning: Label `fig:8cm' multiply defined.
 
 
-LaTeX Warning: Label `fig:6cm' multiply defined.
+LaTeX Warning: Label `fig:4.5cm' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -1757,130 +1757,74 @@ put line 82.
  <./imagenes/Simulacion_Temperatura.png> <./imagenes/Circuitos_A_y_B_Simulados.
 png>]
 
+<./imagenes/recortadores_A.jpg, id=99, 4015.0pt x 2258.4375pt>
+File: ./imagenes/recortadores_A.jpg Graphic file (type jpg)
+<use ./imagenes/recortadores_A.jpg>
+Package pdftex.def Info: ./imagenes/recortadores_A.jpg  used on input line 131.
 
-LaTeX Warning: File `./imagenes/recortadores_A.png' not found on input line 131
-.
+(pdftex.def)             Requested size: 227.62204pt x 128.02237pt.
+<./imagenes/recortadores_A_salida.jpg, id=100, 4015.0pt x 2258.4375pt>
+File: ./imagenes/recortadores_A_salida.jpg Graphic file (type jpg)
+<use ./imagenes/recortadores_A_salida.jpg>
+Package pdftex.def Info: ./imagenes/recortadores_A_salida.jpg  used on input li
+ne 135.
+(pdftex.def)             Requested size: 227.62204pt x 128.02237pt.
+<./imagenes/recortadores_B.jpg, id=101, 4015.0pt x 2258.4375pt>
+File: ./imagenes/recortadores_B.jpg Graphic file (type jpg)
+<use ./imagenes/recortadores_B.jpg>
+Package pdftex.def Info: ./imagenes/recortadores_B.jpg  used on input line 136.
 
-
-! Package pdftex.def Error: File `./imagenes/recortadores_A.png' not found: usi
-ng draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.131 ...to A]{8cm}{./imagenes/recortadores_A.png}
-                                                  
-? 
-
-LaTeX Warning: File `./imagenes/recortadores_A_salida.png' not found on input l
-ine 135.
-
-
-! Package pdftex.def Error: File `./imagenes/recortadores_A_salida.png' not fou
-nd: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.135 ...cm}{./imagenes/recortadores_A_salida.png}
-                                                  
-? 
-
-LaTeX Warning: File `./imagenes/recortadores_B.png' not found on input line 136
-.
-
-
-! Package pdftex.def Error: File `./imagenes/recortadores_B.png' not found: usi
-ng draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.136 ...to B]{8cm}{./imagenes/recortadores_B.png}
-                                                  
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(pdftex.def)             Requested size: 227.62204pt x 128.02237pt.
+<./imagenes/recortadores_B_salida.jpg, id=102, 4015.0pt x 2258.4375pt>
+File: ./imagenes/recortadores_B_salida.jpg Graphic file (type jpg)
+<use ./imagenes/recortadores_B_salida.jpg>
+Package pdftex.def Info: ./imagenes/recortadores_B_salida.jpg  used on input li
+ne 140.
+(pdftex.def)             Requested size: 227.62204pt x 128.02237pt.
 
 
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 136.
+put line 145.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[12]
-
-LaTeX Warning: File `./imagenes/recortadores_B_salida.png' not found on input l
-ine 140.
-
-
-! Package pdftex.def Error: File `./imagenes/recortadores_B_salida.png' not fou
-nd: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.140 ...cm}{./imagenes/recortadores_B_salida.png}
-                                                  
-? 
-
-
-
+[12 <./imagenes/recortadores_A.jpg> <./imagenes/recortadores_A_salida.jpg> <./i
+magenes/recortadores_B.jpg> <./imagenes/recortadores_B_salida.jpg>]
 Underfull \hbox (badness 1072) in paragraph at lines 155--156
 []\OT1/ptm/m/n/10 Forwad RMS cu-rrent, es la co-rrien-te efi-caz
  []
 
 
 
-File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
-<use ./imagenes/logoDepartamentoElectronica.png>
-Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 192.
-(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[13]
-<./imagenes/multimetro.jpg, id=105, 3011.25pt x 4015.0pt>
+<./imagenes/multimetro.jpg, id=106, 3011.25pt x 4015.0pt>
 File: ./imagenes/multimetro.jpg Graphic file (type jpg)
 <use ./imagenes/multimetro.jpg>
-Package pdftex.def Info: ./imagenes/multimetro.jpg  used on input line 208.
+Package pdftex.def Info: ./imagenes/multimetro.jpg  used on input line 207.
 (pdftex.def)             Requested size: 227.62204pt x 303.44003pt.
 
-Underfull \hbox (badness 2726) in paragraph at lines 215--215
+Underfull \hbox (badness 2726) in paragraph at lines 214--214
 []|\OT1/ptm/b/n/10 Tensi[]on CC \OT1/ptm/m/n/10 60V - Res:
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 217--217
+Underfull \hbox (badness 4595) in paragraph at lines 216--216
 []|\OT1/ptm/b/n/10 Temperatura $\OT1/ztmcm/m/n/10 [[]\OML/ztmcm/m/it/10 C\OT1/z
 tmcm/m/n/10 ]$ \OT1/ptm/m/n/10 -20 a
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 219--219
+Underfull \hbox (badness 3803) in paragraph at lines 218--218
 []|\OT1/ptm/b/n/10 Resistencia $\OT1/ztmcm/m/n/10 60\OML/ztmcm/m/it/10 k\OT1/zt
 mcm/m/n/10 
 $ \OT1/ptm/m/n/10 - Res:
  []
 
-
-LaTeX Warning: File `./imagenes/tensionalterna.jpg' not found on input line 233
-.
-
-
-! Package pdftex.def Error: File `./imagenes/tensionalterna.jpg' not found: usi
-ng draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.233 \imagen{8cm}{./imagenes/tensionalterna.jpg}
-                                                 
-? 
+<./imagenes/fuente_tension_alterna.jpg, id=107, 3485.02pt x 4657.4pt>
+File: ./imagenes/fuente_tension_alterna.jpg Graphic file (type jpg)
+<use ./imagenes/fuente_tension_alterna.jpg>
+Package pdftex.def Info: ./imagenes/fuente_tension_alterna.jpg  used on input l
+ine 232.
+(pdftex.def)             Requested size: 227.62204pt x 304.16295pt.
 
 Underfull \vbox (badness 8189) has occurred while \output is active []
 
@@ -1889,91 +1833,70 @@ Underfull \vbox (badness 8189) has occurred while \output is active []
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 233.
+put line 232.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[14
-
- <./imagenes/multimetro.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+[13 <./imagenes/multimetro.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 242--242
 []|\OT1/ptm/b/n/10 Precisi[]on (par-tes por
  []
 
-<./imagenes/osciloscopioFoto.jpg, id=109, 908.39375pt x 421.575pt>
+<./imagenes/osciloscopioFoto.jpg, id=111, 908.39375pt x 421.575pt>
 File: ./imagenes/osciloscopioFoto.jpg Graphic file (type jpg)
 <use ./imagenes/osciloscopioFoto.jpg>
 Package pdftex.def Info: ./imagenes/osciloscopioFoto.jpg  used on input line 25
-7.
+6.
 (pdftex.def)             Requested size: 227.62204pt x 105.63148pt.
-<./imagenes/puntaOsciloscopio.jpg, id=110, 291.0875pt x 501.875pt>
+
+
+<./imagenes/puntaOsciloscopio.jpg, id=112, 291.0875pt x 501.875pt>
 File: ./imagenes/puntaOsciloscopio.jpg Graphic file (type jpg)
 <use ./imagenes/puntaOsciloscopio.jpg>
 Package pdftex.def Info: ./imagenes/puntaOsciloscopio.jpg  used on input line 2
-81.
+82.
 (pdftex.def)             Requested size: 227.62204pt x 392.45645pt.
+<./imagenes/osciloscopioDigital.jpg, id=113, 198.7425pt x 373.395pt>
+File: ./imagenes/osciloscopioDigital.jpg Graphic file (type jpg)
+<use ./imagenes/osciloscopioDigital.jpg>
+Package pdftex.def Info: ./imagenes/osciloscopioDigital.jpg  used on input line
+ 304.
+(pdftex.def)             Requested size: 128.0374pt x 240.5616pt.
 
-
-File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
-<use ./imagenes/logoDepartamentoElectronica.png>
-Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 281.
-(pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[15 <./imagenes/osciloscopioFoto.jpg>]
-
-LaTeX Warning: File `./imagenes/osciloscopioDigital.jpg' not found on input lin
-e 303.
-
-
-! Package pdftex.def Error: File `./imagenes/osciloscopioDigital.jpg' not found
-: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.303 ...{8cm}{./imagenes/osciloscopioDigital.jpg}
-                                                  
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7649) has occurred while \output is active []
 
 
 
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 303.
+put line 304.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[16 <./imagenes/puntaOsciloscopio.jpg>]
+[14 <./imagenes/fuente_tension_alterna.jpg> <./imagenes/osciloscopioFoto.jpg> <
+./imagenes/puntaOsciloscopio.jpg>]
+<./imagenes/multimetroAdicional.jpg, id=117, 261.97874pt x 459.7175pt>
+File: ./imagenes/multimetroAdicional.jpg Graphic file (type jpg)
+<use ./imagenes/multimetroAdicional.jpg>
+Package pdftex.def Info: ./imagenes/multimetroAdicional.jpg  used on input line
+ 316.
+(pdftex.def)             Requested size: 128.0374pt x 224.68132pt.
 
-LaTeX Warning: File `./imagenes/multimetroAdicional.jpg' not found on input lin
-e 329.
 
-
-! Package pdftex.def Error: File `./imagenes/multimetroAdicional.jpg' not found
-: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.329 ...{8cm}{./imagenes/multimetroAdicional.jpg}
-                                                  
-? 
 
 
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 346.
+put line 324.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[17]
+[15 <./imagenes/osciloscopioDigital.jpg> <./imagenes/multimetroAdicional.jpg>]
 
 File: ./imagenes/logoDepartamentoElectronica.png Graphic file (type png)
 <use ./imagenes/logoDepartamentoElectronica.png>
 Package pdftex.def Info: ./imagenes/logoDepartamentoElectronica.png  used on in
-put line 374.
+put line 352.
 (pdftex.def)             Requested size: 43.34933pt x 43.36243pt.
-[18]) 
+[16
+
+]) 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux (./caratula.aux)
 LaTeX Info: Redefining \. on input line 9.
@@ -1991,10 +1914,10 @@ runsystem(rm main.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 46655 strings out of 473584
- 1171475 string characters out of 5730879
- 2134715 words of memory out of 5000000
- 68902 multiletter control sequences out of 15000+600000
+ 46498 strings out of 473584
+ 1164606 string characters out of 5730879
+ 2134816 words of memory out of 5000000
+ 68745 multiletter control sequences out of 15000+600000
  627325 words of font info for 188 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,27n,107p,907b,890s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2008,10 +1931,10 @@ syr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (22 pages, 4445331 bytes).
+Output written on main.pdf (20 pages, 12271472 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 173 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

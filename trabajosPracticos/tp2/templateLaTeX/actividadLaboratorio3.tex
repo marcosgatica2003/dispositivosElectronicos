@@ -1,7 +1,7 @@
 \section{Actividad de laboratorio III}
 
 	\subsection{Actividad de simulación: coportamiento del diodo en función de la temperatura}
-	\sangria{} Circuito de simulación
+	\sangria{} Circuito a simular:
 
 	\begin{tikzpicture}
 	% Paths, nodes and wires:
@@ -17,17 +17,23 @@
 	\draw (3.259, 4) |- (3.109, 3);
 	\end{tikzpicture}
 
+	\sangria{} La simulación en LTspice dió el siguiente resultado, siendo la curva roja la de menor temeperatura y la verde la de mayor:
+	\imagen[Simulación temperaturas vs $V$]{8cm}{./imagenes/Simulacion_Temperatura.png}
+
 		\subsubsection{Conclusiones del cambio de temperatura}
-		\sangria{} Podemos observar como a un aumento de temeperatura $20 \degree C$, $100 \degree C$, $125 \degree C $, aumenta la corriente de conducción para un  mismo voltaje aplicado en polarización directa. Esto se debe a que al incrementarse la temperatura, disminuye la barrera de potencial interna en el diodo (tensión umbral), facilitando el paso de la corriente.La corriente en la región de conducción directa se ve intensificada lo que sugiere una menor resistencia en el diodo, el aumento de la temeperatura también afecta a la corriente de fuga en polarización inversa, ya que al aumentar las temeperatura aumenta la generación de portadores minoritarios.
-		\sangria{} Podemos concluir que la conductividad del diodo aumenta, pero sus parámetros electricos se vuelven menos precisos, afectando su funcionamiento en aplicaciones reales.
+		\sangria{} Podemos observar como a un aumento de temeperatura $20 \degree C$, $100 \degree C$, $125 \degree C $, aumenta la corriente de conducción para un  mismo voltaje aplicado en polarización directa. Esto se debe a que al incrementarse la temperatura, disminuye la barrera de potencial interna en el diodo (tensión umbral), facilitando el paso de la corriente.La corriente en la región de conducción directa se ve intensificada lo que sugiere una menor resistencia en el diodo, el aumento de la temeperatura también afecta a la corriente de fuga en polarización inversa, ya que al aumentar las temeperatura aumenta la generación de portadores minoritarios. Podemos concluir que la conductividad del diodo aumenta, pero sus parámetros electricos se vuelven menos precisos, afectando su funcionamiento en aplicaciones reales.
+
+\newpage
 
 	\subsection{Actividad de simulación:circuitos recortadores con diodos zener}
+
 		\subsubsection{Pequeña introducción a los diodos como recortadores}
 		\sangria Para obtener el máximo valor de salida en el circuito se cumple que en cada semiciclo la tensión de recorte es igual a la tensión del diodo en directa $\approx 0,7V$ más la tensión de ruptura del diodo zener en inversa $V_{z}$, esta relación se va a cumplir tanto para el
 
 		\begin{equation}
 			V_{recorte}= V_{z} + 0,7V
 		\end{equation}
+
     \sangria{} \textbf{Circuito A}
 
 \begin{tikzpicture}
@@ -64,12 +70,16 @@
 	\draw (2, 5.25) -| (2, 5);
 	\end{tikzpicture}
 
-	\newpage
+
+
+	\sangria{}Los resultados para las simulaciones son los siguientes, en rojo el circuito A y en Azul el B:
+
+	\imagen[Simulación circuito A yB]{8cm}{./imagenes/Circuitos_A_y_B_Simulados.png}
 
 	\subsection{Actividad de laboratorio:circuitos recortadores con diodos zener}
 	\sangria{} Para calcular la resistencia mínima del circuito, calculamos la tensión eficaz de la fuente, para luego calcular ley de kirchoff de tensión en cada malla, los pasos son los siguientes.
 
-	\par\vspace{-2pt}\par
+\newpage
 
 	\begin{align*}
 	&\textbf{Circuito A}\\
@@ -82,6 +92,7 @@
 	&V_{R}=V_{RMS}+V_{z1}+V_{z2}\\
 	&V_{R}=16,9V+5,1V+20V\\
 	&V_{R}=42,070V\\
+	\\
 	&\text{Ahora calculamos el valor de $R$ y su potencia $P_{R}$}\\
 	&R=\frac{V_{R}}{I_{z1}}\\
 	&R=\frac{42,070V}{49mA}\\
@@ -93,7 +104,6 @@
 	&\textbf{Circuito B}\\
 	&I_{z1} = 37mA\\
 	&I_{z2} = 21mA\\
-	\\
 	&\text{Valor RMS solo valido para una sonoidal}\\
 	&V_{RMS}=\frac{v_{pp}}{2} \cdot \sqrt{2}\\
 	\\
@@ -102,8 +112,7 @@
 	&V_{R}=V_{RMS}+V_{z1}-V_{z2}\\
 	&V_{R}=16,9V+6,8V-12V\\
 	&V_{R}=11,7V\\
-	\end{align*}
-	\begin{align*}
+	\\
 	&\text{Ahora calculamos el valor de $R$ y su potencia $P_{R}$}\\
 	&R=\frac{V_{R}}{I_{z1}}\\
 	&R=\frac{11,7V}{37mA}\\
@@ -116,13 +125,19 @@
 
 	\sangria{} Con los valores obtenidos, lo más lógico es llevar ambas resistencias a su valor nominal mas cercano, siendo en ambos casos de $1\Omega$ y $2W$
 
-	\subsubsection{Imágenes Actividad III}
-	\imagen[Circuito A]{8cm}{./imagenes/recortadores_A.png}
+\newpage
+
+		\subsubsection{Imágenes Actividad III}
+		\imagen[Circuito A]{8cm}{./imagenes/recortadores_A.png}
+
+%\newpage
+
 	\imagen[Salida recortada A]{8cm}{./imagenes/recortadores_A_salida.png}
 	\imagen[Circuito B]{8cm}{./imagenes/recortadores_B.png}
-	\imagen[Salida recortada B]{8cm}{./imagenes/recortadores_B_salida.png}
 
-	\newpage
+%\newpage
+
+	\imagen[Salida recortada B]{8cm}{./imagenes/recortadores_B_salida.png}
 
 		\subsubsection{Conclusiones de los diodos zener como recortadores}
 		\sangria{} Los diodos zener como recortadores tienen un correcto funcionamiento tanto en la simulación como en la práctica, en estos dos circuitos la salida del osciloscopio y el simulador coinciden con los límites de tensión de los diodos.
@@ -148,6 +163,9 @@
 		\item[$I_{R}$:] Reverse current. Corriente que circula en el dispositivo cuando está polarizado en inversa.
 		\item[$V_{F}$:] Forward voltage. Voltaje directo en la unión cuando conduce corriente.
 		\item[$I_{RM}$:] Peak reverse current. Corriente inversa máxima que puede soportar el dispositivo.
+
+%\newpage
+
 		\item[$I_{F}$:] Forward current. Corriente directa que circula por el dispositivo.
 		\end{description}
 
@@ -172,8 +190,164 @@
 
 
 \inicioCodigo{}
+
 \par\vspace{10pt}\par
-\section{Rúbrica}
+	\section{Bibliografía Y datos}
+
+\begin{itemize}
+
+    \item \textbf{Multímetro}
+    \begin{itemize}
+        \item \textbf{Fabricante:} Pro'sKit
+        \item \textbf{Modelo:} MT-1706 CAT 1000V
+        \item \textbf{Serie:} MT-17XX
+    \end{itemize}
+
+\end{itemize}
+
+\imagen{8cm}{./imagenes/multimetro.jpg}
+
+\begin{center}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Tensión CC} 60V - Res: 10mV & $\pm 0,5\%$ + $3$ dig. \\
+        \hline
+        \textbf{Temperatura $[^oC]$} -20 a 1000$^oC$ - Res: $1^oC$ & $\pm1,0\%$ lectura + $3$ \\
+        \hline
+        \textbf{Resistencia} $60k\Omega$ - Res: $10\Omega$ & $\pm 0,8\%$ lectura + $3$ dig. \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Fuente de tensión alterna}
+    \begin{itemize}
+        \item \textbf{Fabricante:} GW INTSTEK
+        \item \textbf{Modelo:} SFG-2120
+        \item \textbf{Serie:} SFG-2100 Series
+    \end{itemize}
+\end{itemize}
+
+\imagen{8cm}{./imagenes/tensionalterna.jpg}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Rango para el seno} & $1Hz$ a $~20MHz$ \\
+        \hline
+        \textbf{Precisión (partes por millón)} & $\pm 20ppm$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Osciloscopio}
+    \begin{itemize}
+        \item \textbf{Fabricante:} Protek
+        \item \textbf{Modelo:} P-2520
+        \item \textbf{Serie:} P-2500 Series Oscilloscope
+    \end{itemize}
+\end{itemize}
+
+\imagen{8cm}{./imagenes/osciloscopioFoto.jpg}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Error amplitud} & $\pm 3\%$ \\
+        \hline
+        \textbf{Error en tiempo base} & $\pm 3\%$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Punta de osciloscopio}
+    \begin{itemize}
+        \item \textbf{Fabricante:} FNIRSI Technology Co.
+        \item \textbf{Modelo:} P-6100 - 100MHz
+        \item \textbf{Serie:} P-61XX
+    \end{itemize}
+\end{itemize}
+
+\imagen{8cm}{./imagenes/puntaOsciloscopio.jpg}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Desvío en frecuencias} & $\pm 10\%$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Osciloscopio digital}
+    \begin{itemize}
+        \item \textbf{Fabricante:} [Completar]
+        \item \textbf{Modelo:} [Completar]
+        \item \textbf{Serie:} [Completar]
+    \end{itemize}
+\end{itemize}
+
+\imagen{8cm}{./imagenes/osciloscopioDigital.jpg}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Resolución vertical} & [Completar] \\
+        \hline
+        \textbf{Velocidad de muestreo} & [Completar] \\
+        \hline
+        \textbf{Ancho de banda} & [Completar] \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Multímetro adicional}
+    \begin{itemize}
+        \item \textbf{Fabricante:} [Completar]
+        \item \textbf{Modelo:} [Completar]
+        \item \textbf{Serie:} [Completar]
+    \end{itemize}
+\end{itemize}
+
+\imagen{8cm}{./imagenes/multimetroAdicional.jpg}
+
+\begin{center}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{| m{4cm}| m{3cm} |}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Información de mediciones}} \\
+        \hline
+        \textbf{Tensión CC} & [Completar] \\
+        \hline
+        \textbf{Corriente CA} & [Completar] \\
+        \hline
+        \textbf{Resistencia} & [Completar] \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\par\vspace{10pt}\par
+	\section{Rúbrica}
+
 \begin{table}[h!]
 \centering
 \renewcommand{\arraystretch}{1.5}

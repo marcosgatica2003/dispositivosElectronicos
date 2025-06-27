@@ -72,10 +72,15 @@
     \ignorespaces{}
 }
 
-\newcommand{\midTitle}[2]{%
-    \begin{center}
-        \textcolor{#1}{\underline{#2}} 
-    \end{center}
+\newcommand{\midTitle}[3]{% 
+    \text{} \\[2pt]
+    \noindent\vspace{-5pt}
+    {\color{#1} \textit{\textbf{#2}\hspace{2pt}#3}} \\
+    \noindent
+    \tikz[baseline]{
+    \draw[very thick, color=#1] (0,0) -- (\linewidth,0);
+    }%
+    \vspace{3pt}
 }
 
 \captionsetup{
@@ -100,6 +105,22 @@
         \fi 
         \label{fig:#2}
     \end{center}
+}
+\newcommand{\valentinoQuitaLasColumnas}{
+    \newpage
+    \fancyfoot[C]{}
+    \onecolumn
+}
+
+\newcommand{\valentinoPoneLasColumnas}{
+    \newpage
+    \fancyfoot[C]{
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[gray!30, line width=0.4pt]
+                (0cm, 1cm) -- (0cm, 25cm);
+        \end{tikzpicture}
+    }
+    \twocolumn
 }
 
 \newcommand{\sangria}[0]{\par\noindent\hspace*{15pt}}

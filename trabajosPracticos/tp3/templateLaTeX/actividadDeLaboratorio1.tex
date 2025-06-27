@@ -1,0 +1,31 @@
+\section{A.L. 1: Transistor en zona de corte}
+
+Usando un transistor NPN en configuración emisor común:
+\begin{center}
+\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\draw (0.25, 6) to[american resistor, l={$R_B$}, label distance=0.02cm] (2.25, 6);
+	\draw node[npn] (N1) at (3.34, 6) {} node[anchor=west] at (N1.text){$V_{CE} \approx V_{CC}$};
+	\draw (4, 7.25) to[american resistor, l={$R_C$}, label distance=0.02cm] (6.25, 7.25);
+	\draw node[ground] at (3.34, 4.218) {};
+	\draw (6.75, 6.25) to[battery, l={$V_{CC}$}, label distance=0.02cm] (6.75, 5);
+	\draw (2.25, 6) -- (2.5, 6);
+	\draw (3.34, 4.218) -- (3.34, 5.23);
+	\draw (6.75, 5) |- (3.34, 4.218);
+	\draw (3.34, 6.77) |- (4, 7.25);
+	\draw (6.25, 7.25) -| (6.75, 6.25);
+\end{tikzpicture} \end{center}
+el circuito no posee una fuente de energía en la base, por lo tanto el transistor no polariza en directa la unión base-emisor ($I_B = 0$) y no se promoverá una circulación de corriente en la salida ($I_C$). En este circuito hay una pequeña fuga de corriente en el colector ($I_{CE0}$) debido a portadores producidos térmicamente.
+
+\subsubsection{Simulación con LtSpice}
+\sangria{} Lo que se busca con el programa de simulación es mirar el valor de la corriente de fuga $I_{CE00}$. Para llevar a cabo la actividad se seleccionó:
+\begin{itemize}
+    \item Transistor NPN BC548B
+    \item $R_B$ = 10k $\Omega$ {\footnotesize 1/4W}
+    \item $R_C$ = 1k $\Omega$ {\footnotesize 1/4W}
+    \item $V_{CC}$ = 10 V
+\end{itemize}
+
+\imagen[Valor del $\beta$]{6cm}{./imagenes/medicionBeta.jpg}
+
+

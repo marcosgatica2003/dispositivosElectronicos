@@ -1,0 +1,1 @@
+.model 1N5349B D(IS=1.54e-17 Rs=.1  N=1 Tt=10n Cjo=10p XTI=1 Bv=12 Ibv=100m NBV=35 Vpk=12 mfg=OnSemi type=Zener diss=5)

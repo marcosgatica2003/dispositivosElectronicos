@@ -1,11 +1,12 @@
 \section{A.L. 4: Características de transferencia de corriente}
-\sangria{} En esta actividad se busca observar si la relación entre la corriente de colector ($I_C$) y la de base ($I_B$) se mantiene constante en diferentes regiones de trabajo del transistor. Notese que la relación que se menciona es la ganancia de corriente. \\ \sangria{} Para comprobar la relación, se usará un transistor configurado en emisor común:
+\sangria{} En esta actividad se busca observar si la relación entre la corriente de colector ($I_C$) y la de base ($I_B$) se mantiene constante en diferentes regiones de trabajo del transistor. Notese que la relación que se menciona es la ganancia de corriente. \\
+\sangria{} Para comprobar la relación, se usará un transistor configurado en emisor común:
 \begin{center}
 \begin{tikzpicture}
 	% Paths, nodes and wires:
 	\draw (3, 3.25) to[american voltage source, l={$V_1 $}, label distance=0.02cm] (3, 1.5);
 	\draw (3.75, 3.5) to[american resistor, l={$R_1$}, label distance=0.02cm] (5.75, 3.5);
-	\draw node[npn] (N1) at (6.84, 3.5) {} node[anchor=west] at (N1.text){$BC547C$};
+	\draw node[npn] (N1) at (6.84, 3.5) {} node[anchor=west] at (N1.text){$BC548C$};
 	\draw node[ground] at (3, 1.25) {};
 	\draw (3, 0.75) -| (3, 1.5);
 	\draw (3, 3.25) -| (3, 3.5) -- (3.75, 3.5);
@@ -94,7 +95,7 @@ Siendo:
         \draw[line width=1.5pt, draw=blue] (-7.95, 16.75) -- (-7.95, 16) -- (-2, 16) ;
 
         \draw[-latex, very thick, draw=orange, line width=0.75mm] (23, 35) -- (11, 35) -- (9, 22) -- (6.5, 22);
-        \node[anchor=east] at (22,37) {\Large $BC547C$};
+        \node[anchor=east] at (22,37) {\Large $BC548C$};
         \draw[-latex, very thick, draw=blue, line width=0.75mm] (26, 26.5) -- (5, 26.5);
         \node[anchor=east] at (27,28) {\Large $560\Omega$\small $1/4W$};
         \draw[-latex, very thick, draw=violet, line width=0.75mm] (26, 19) -- (2, 19) -- (0, 20.5);
@@ -109,10 +110,11 @@ Siendo:
 >{\columncolor[HTML]{FFCE93}}c |c|c|}
 \hline
 \textbf{$I_B$ {[}$\mu A${]}} & \cellcolor[HTML]{FFFC9E}\textbf{$I_C(@V_{CE(inicial)} = 2V)$} & \cellcolor[HTML]{FFFC9E}\textbf{$I_C(@V_{CE(inicial)} = 5V)$} \\ \hline
-\textbf{5}                   &                                                               &                                                               \\ \hline
-\textbf{7}                   &                                                               &                                                               \\ \hline
-\textbf{10}                  &                                                               &                                                               \\ \hline
-\textbf{20}                  &                                                               &                                                               \\ \hline
+\textbf{5}                   &  $2,25mA$                                                    &$2,317mA$                                                      \\ \hline
+\textbf{7}                   &  $2,90mA$                                                    &$3.01mA$                                                       \\ \hline
+\textbf{10}                  &  $4,44mA$                                                    &$4,598mA$                                                       \\ \hline
+\textbf{20}                  &  $8,52mA$                                                    &$8,813mA$                                                       \\ \hline
+
 \end{tabular}
 \end{center}
 \begin{center}
@@ -120,14 +122,23 @@ Siendo:
 >{\columncolor[HTML]{FFCE93}}c |c|}
 \hline
 \textbf{$I_B$ {[}$\mu A${]}} & \cellcolor[HTML]{FFFC9E}\textbf{$I_C(@V_{CE(inicial)} = 8V)$} \\ \hline
-\textbf{5}                   &                                                               \\ \hline
-\textbf{7}                   &                                                               \\ \hline
-\textbf{10}                  &                                                               \\ \hline
-\textbf{20}                  &                                                               \\ \hline
+\textbf{5}                   & $2,39mA$                                                              \\ \hline
+\textbf{7}                   & $3,258mA$                                                             \\ \hline
+\textbf{10}                  & $4,75mA$                                                              \\ \hline
+\textbf{20}                  & $9,096mA$                                                             \\ \hline
 \end{tabular}
 \end{center}
+
+
 \subsubsection{Conclusiones}
 \midTitle{Green}{Aciertos$\checkmark$}{}
+\sangria Llevar las simulaciones hechas fue un gran acierto, ya que sabíamos con que resultados nos podiamos esperar, otro acierto fue la cercanía del valor de $\beta$ medido por el multímetro y el calculado en base a las curvas.
 \midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
+\sangria Una gran dificultad fue el tiempo, tuvimos que ir en otra oportunidad para hacer las mediciones, además de que faltaba un poco de claridad en la consigna, una dificultad menor fue medir la $I_{B}$, pero con el multímetro Proskit no tuvimos que hacer ningún cálculo indirecto.
 \midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
+\sangria Lo solucionamos leyendo el material proporcionado y leyendo varias veces la consigna, al problema del tiempo nos faltó rapidez y por eso tuvimos que ir otro día
+
+\valentinoQuitaLasColumnas{}
+\subsection{Simulación Act 4}
+\valentinoPoneLasColumnas{}
 

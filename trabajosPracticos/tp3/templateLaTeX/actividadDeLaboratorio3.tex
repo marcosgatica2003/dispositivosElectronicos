@@ -1,12 +1,16 @@
+\saltoPag{}
 \section{A.L.3: Curvas características}
+
 \sangria{} El objetivo de esta actividad es obtener las diferentes curvas características del transistor NPN utilizando dos fuentes variables que permitan obtener las tensiones y corrientes del capacitor. \\
+
 \sangria{} Se llevó a cabo este circuito:
+
 \begin{center}
 \begin{tikzpicture}
 	% Paths, nodes and wires:
 	\draw (3, 3.25) to[american voltage source, l={$V_1 $}, label distance=0.02cm] (3, 1.5);
 	\draw (3.75, 3.5) to[american resistor, l={$R_1$}, label distance=0.02cm] (5.75, 3.5);
-	\draw node[npn] (N1) at (6.84, 3.5) {} node[anchor=west] at (N1.text){$BC547C$};
+	\draw node[npn] (N1) at (6.84, 3.5) {} node[anchor=west] at (N1.text){$BC548C$};
 	\draw node[ground] at (3, 1.25) {};
 	\draw (3, 0.75) -| (3, 1.5);
 	\draw (3, 3.25) -| (3, 3.5) -- (3.75, 3.5);
@@ -31,6 +35,7 @@ Siendo:
 ''Al igual que la actividad de laboratorio anterior, se midieron los componentes usados y hemos usado los valores que obtuvimos para llevarlos a la simulación, para visualizar mejor este escenario.''
 
 \subsubsection{Implementación en protoboard}
+
 \begin{center}
     \tikzset{
           hole/.style = {fill = #1, circle, minimum width = 1mm, inner sep = 0mm},
@@ -100,46 +105,81 @@ Siendo:
         \draw[line width=1.5pt, draw=blue] (-7.95, 16.75) -- (-7.95, 16) -- (-2, 16) ;
 
         \draw[-latex, very thick, draw=orange, line width=0.75mm] (23, 35) -- (11, 35) -- (9, 22) -- (6.5, 22);
-        \node[anchor=east] at (22,37) {\Large $BC547C$};
+        \node[anchor=east] at (22,37) {\Large $BC548C$};
         \draw[-latex, very thick, draw=blue, line width=0.75mm] (26, 26.5) -- (5, 26.5);
         \node[anchor=east] at (27,28) {\Large $560\Omega$\small $1/4W$};
         \draw[-latex, very thick, draw=violet, line width=0.75mm] (26, 19) -- (2, 19) -- (0, 20.5);
         \node[anchor=east] at (27,20.5) {\Large $100k\Omega$\small $1/4W$};
-
     \end{tikzpicture}
 \end{center}
 
-\subsubsection{Mediciones}
-\begin{center}
-\begin{tabular}{|
->{\columncolor[HTML]{FFFFC7}}c |cc|cc|ll|}
-\hline
-\begin{tabular}[c]{@{}c@{}}$V_{CC}$ {[}V{]}\end{tabular} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCE93}$I_B = 0$}                                & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCE93}$I_B = 10\mu A$}                          & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCE93}$I_B = 15 \mu A$}                                              \\ \hline
-0                                                          & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$I_C$} & \cellcolor[HTML]{FFCCC9}$V_{CE}$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$I_C$} & \cellcolor[HTML]{FFCCC9}$V_{CE}$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$I_C$} & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$V_{CE}$} \\ \hline
-0,25                                                       & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-0,5                                                        & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-1                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-2                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-5                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-10                                                         & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{l|}{}                              &                                                       \\ \hline
-\end{tabular}
-\end{center}
 
-\begin{center}\begin{tabular}{|
->{\columncolor[HTML]{FFFFC7}}c |cc|cc|}
+\subsubsection{Mediciones}
+
+\begin{table}[]
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{329A9D}}l |ll|ll|ll|}
 \hline
-\begin{tabular}[c]{@{}c@{}}$V_{CC}$ {[}V{]}\end{tabular} & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCE93}$I_B = 20 \mu A$}                         & \multicolumn{2}{c|}{\cellcolor[HTML]{FFCE93}$I_B = 25\mu A$}                          \\ \hline
-0                                                          & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$I_C$} & \cellcolor[HTML]{FFCCC9}$V_{CE}$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}$I_C$} & \cellcolor[HTML]{FFCCC9}$V_{CE}$ \\ \hline
-0,25                                                       & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-0,5                                                        & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-1                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-2                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-5                                                          & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-10                                                         & \multicolumn{1}{c|}{}                              &                                  & \multicolumn{1}{c|}{}                              &                                  \\ \hline
-\end{tabular} \end{center}
+\begin{tabular}[c]{@{}l@{}}$V_{cc}$\\ {[}V{]}\end{tabular} &
+  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=0A$\\ $V_{bb}=0$\end{tabular}} &
+  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=10\mu A$\\ $V_{bb}=1.6V$\end{tabular}} &
+  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=15\mu A$\\ $V_{bb}=2.2$\end{tabular}} \\ \hline
+ &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
+  \cellcolor[HTML]{FECCC9}$V_{CE}$ &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
+  \cellcolor[HTML]{FECCC9}$V_{CE}$ &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
+  \cellcolor[HTML]{FECCC9}$V_{CE}$ \\ \hline
+0    & \multicolumn{1}{l|}{0}   & 0   & \multicolumn{1}{l|}{$116,4\mu A$}  & $-63,5mV$  & \multicolumn{1}{l|}{$130,98\mu A$} & $-72,01mV$ \\ \hline
+0,25 & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$492,09\mu A$} & $-26,06mV$ & \multicolumn{1}{l|}{$518,03\mu A$} & $-40,09mV$ \\ \hline
+0,5  & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$903,9\mu A$}  & $-5,74mV$  & \multicolumn{1}{l|}{$932,81\mu A$} & $-22,37mV$ \\ \hline
+1    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$1,74mA$}     & $23,68mV$  & \multicolumn{1}{l|}{$1,78mA$}     & $1,56mV$   \\ \hline
+2    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$3,4mA$}      & $91,97mV$  & \multicolumn{1}{l|}{$3,50mA$}     & $38,4mV$   \\ \hline
+5    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$4,0mA$}      & $2,757V$   & \multicolumn{1}{l|}{$6,38mA$}     & $1,4V$     \\ \hline
+10   & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$4,21mA$}     & $7,637$    & \multicolumn{1}{l|}{$6,72mA$}     & $6,23V$    \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+\begin{table}[]
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{|
+>{\columncolor[HTML]{329A9D}}l |ll|ll|}
+\hline
+\begin{tabular}[c]{@{}l@{}}$V_{cc}$\\ {[}V{]}\end{tabular} &
+  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}\cellcolor[HTML]{FFCC67}$IB=20\mu A$\\ $V_{bb}=2.6$\end{tabular}} &
+  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}\cellcolor[HTML]{FFCC67}$IB=25\mu A$\\ $V_{bb}=3.2$\end{tabular}} \\ \hline
+ &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
+  \cellcolor[HTML]{FECCC9}$V_{CE}$ &
+  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$V_{bb}=2.2$} &
+  \cellcolor[HTML]{FECCC9}$V_{CE}$ \\ \hline
+0    & \multicolumn{1}{l|}{$139,04\mu A$} & $-77,02mV$ & \multicolumn{1}{l|}{$146,11\mu A$} & $-81,89mV$ \\ \hline
+0,25 & \multicolumn{1}{l|}{$529,38\mu A$} & $-46,44mV$ & \multicolumn{1}{l|}{$542,30\mu A$} & $-53,68mV$ \\ \hline
+0,5  & \multicolumn{1}{l|}{$945,86\mu A$} & $-29,68mV$ & \multicolumn{1}{l|}{$960,56\mu A$} & $-37,91mV$ \\ \hline
+1    & \multicolumn{1}{l|}{$1,79mA$}      & $-7,34mV$  & \multicolumn{1}{l|}{$1,81mA$}      & $-17,03mV$ \\ \hline
+2    & \multicolumn{1}{l|}{$3,52mA$}      & $24,85mV$  & \multicolumn{1}{l|}{$3,55mA$}      & $11,71mV$  \\ \hline
+5    & \multicolumn{1}{l|}{$7,91mA$}      & $569,67mV$ & \multicolumn{1}{l|}{$8,75mA$}      & $96,32mV$  \\ \hline
+10   & \multicolumn{1}{l|}{$8,33mA$}      & $5,33V$    & \multicolumn{1}{l|}{$10,65mA$}     & $4,03V$    \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 \subsubsection{Conclusiones}
-\midTitle{Green}{Aciertos$\checkmark$}{}
-\midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
-\midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
 
+\midTitle{Green}{Aciertos$\checkmark$}{}
+\sangria Llevar hechas las simulaciones ayudó bastante para entender las curvas,ya que esta tabla se nos hizo más dificil de entender, por otro lado los instrumentos de medición adecuado fueron de gran ayuda.
+
+
+
+\midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
+\sangria Las dificultades fueron el tiempo, ya que esta actividad nos llevó una gran cantidad de tiempo realizarla, casi toda la hora, y el entendimiento posterior de las curvas.
+\midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
+\sangria Lo solucionamos leyendo el matrial de estudio y leyendo varias veces la consigna, al problema del tiempo entendemos que la actividad era larga pero que también tenemos que trabajar más rápido.
+
+\valentinoQuitaLasColumnas{}
+\subsubsection{Simulaciones Act 3}
+\valentinoPoneLasColumnas{}

@@ -5,12 +5,13 @@
 ''Los datasheet's correspondientes a los transistores $BC548$, $BC557$, $2N2222$, $BU208$, $MPS6514$ y $TIP36$ están en el apartado de \textit{Bibliografía, datasheets e instrumentos}.''
 
 \midTitle{violet}{Características eléctricas a $25^oC$}{}
+
 \begin{center}
 \begin{tabular}{|
 >{\columncolor[HTML]{FFCCC9}}l |l|l|l|l|}
 \hline
 \cellcolor[HTML]{FFFFC7} & \cellcolor[HTML]{FFFFC7}\textbf{BC548} & \cellcolor[HTML]{FFFFC7}\textbf{BC557} & \cellcolor[HTML]{FFFFC7}\textbf{2N2222} & \cellcolor[HTML]{FFFFC7}\textbf{BU208} \\ \hline
-\textbf{$V_{(BR)CEO}$}   &                                        &                                        &                                         &                                        \\ \hline
+\textbf{$V_{(BR)CEO}$}   & $30V$                                    &                                        &                                         &                                        \\ \hline
 \textbf{$I_{CEO}$}       &                                        &                                        &                                         &                                        \\ \hline
 \textbf{$I_{CES}$}       &                                        &                                        &                                         &                                        \\ \hline
 \textbf{$I_{C}$}         &                                        &                                        &                                         &                                        \\ \hline
@@ -22,6 +23,7 @@
 \textbf{$P_d$}           &                                        &                                        &                                         &                                        \\ \hline
 \end{tabular}
 \end{center}
+
 \begin{center}
 \begin{tabular}{|
 >{\columncolor[HTML]{FFCCC9}}l |l|l|}
@@ -39,6 +41,7 @@
 \textbf{$P_d$}           &                                          &                                        \\ \hline
 \end{tabular}
 \end{center}
+
 \midTitle{violet}{Características térmicas}{}
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|}
@@ -58,12 +61,16 @@
 \cellcolor[HTML]{FFCCC9}\textbf{$\theta _{ja}$} &                  &                \\ \hline
 \end{tabular}
 \end{center}
+
+\saltoPag
+
 \midTitle{violet}{Características conmutación a $25^oC$}{}
+
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|}
 \hline
 \rowcolor[HTML]{FFFFC7} 
-                                            & \textbf{BC548} & \textbf{BC557} & \textbf{2N2222} & \textbf{BU208} \\ \hline
+                                           & \textbf{BC548} & \textbf{BC557} & \textbf{2N2222} & \textbf{BU208} \\ \hline
 \cellcolor[HTML]{FFCCC9}\textbf{$t _{on}$} &                &                &                 &                \\ \hline
 \end{tabular}
 \end{center}
@@ -75,18 +82,35 @@
 \cellcolor[HTML]{FFCCC9}\textbf{$t_{on}$} &                  &                \\ \hline
 \end{tabular}
 \end{center}
+
 \midTitle{Orange}{Significados}{}
-\textbf{$V_{(BR)CEO}$} $\rightarrow$ \\
-\textbf{$I_{CEO}$} $\rightarrow$ \\
-\textbf{$I_{CES}$} $\rightarrow$ \\
-\textbf{$I_{C}$} $\rightarrow$ \\
-\textbf{$I_{EBO}$} $\rightarrow$ \\
-\textbf{$h_{FE}$} $\rightarrow$ \\
-\textbf{$h_{hf}$} $\rightarrow$ \\
-\textbf{$V_{BE}$} $\rightarrow$ \\
-\textbf{$V_{CE(SAT)}$} $\rightarrow$ \\
-\textbf{$P_d$} $\rightarrow$ \\
-\textbf{$\theta_{ja}$} $\rightarrow$ \\
-\textbf{$\theta_{jc}$} $\rightarrow$ \\
-\textbf{$t_{on}$} $\rightarrow$ 
+
+\textbf{$V_{(BR)CEO}$} $\rightarrow$ Tensión de ruptura colector-emisor con la base abierta. Es el voltaje máximo que puede aplicarse entre colector y emisor sin que el transistor conduzca de forma descontrolada cuando la base está desconectada. \\
+
+\textbf{$I_{CEO}$} $\rightarrow$ Corriente de fuga colector-emisor con base abierta. Es la pequeña corriente que fluye del colector al emisor cuando el transistor está en corte. \\
+
+\textbf{$I_{CES}$} $\rightarrow$ Corriente de fuga colector-emisor con base unida a emisor. Indica la corriente que fluye del colector al emisor con la base y el emisor cortocircuitados. \\
+
+\textbf{$I_{C}$} $\rightarrow$ Corriente de colector. Es la corriente principal que circula desde el colector al emisor cuando el transistor está en conducción. \\
+
+\textbf{$I_{EBO}$} $\rightarrow$ Corriente de fuga emisor-base con colector abierto. Representa la corriente inversa mínima entre emisor y base cuando el colector está desconectado. \\
+
+\textbf{$h_{FE}$} $\rightarrow$ Ganancia de corriente continua del transistor (también conocida como $\beta$). Relación entre la corriente de colector y la de base en modo activo. \\
+
+\textbf{$h_{hf}$} $\rightarrow$ Ganancia de corriente en alta frecuencia. Es el parámetro de ganancia de corriente en respuesta a señales de frecuencia más alta. \\
+
+\textbf{$V_{BE}$} $\rightarrow$ Tensión base-emisor. Es el voltaje necesario entre la base y el emisor para que el transistor comience a conducir (típicamente 0.6–0.7V en transistores de silicio). \\
+
+\textbf{$V_{CE(SAT)}$} $\rightarrow$ Tensión colector-emisor en saturación. Es el voltaje entre colector y emisor cuando el transistor está totalmente encendido (saturado). Suele ser bajo (por ejemplo, 0.2V). \\
+
+\textbf{$P_d$} $\rightarrow$ Potencia máxima de disipación. Indica la máxima potencia que el transistor puede disipar como calor sin dañarse. \\
+
+\saltoPag
+
+\textbf{$\theta_{ja}$} $\rightarrow$ Resistencia térmica unión-ambiente. Mide cuán eficientemente el transistor transfiere calor desde la unión interna al aire circundante. \\
+
+\textbf{$\theta_{jc}$} $\rightarrow$ Resistencia térmica unión-carcasa. Mide cuán eficientemente el calor pasa de la unión del transistor a su encapsulado. \\
+
+\textbf{$t_{on}$} $\rightarrow$ Tiempo de encendido. Es el tiempo que tarda el transistor en pasar del estado de corte al de saturación. \\
+
 

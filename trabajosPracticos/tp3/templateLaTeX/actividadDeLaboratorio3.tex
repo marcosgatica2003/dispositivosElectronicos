@@ -185,4 +185,40 @@ Siendo:
     \item $V_1$: $9,96V$
 \end{itemize}
 
+\begin{minted}{python}
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Valores de V_CE (comunes en todas las curvas)
+vce = np.array([0, 0.25, 0.5, 1, 2, 5, 10])
+
+# Corrientes de colector I_C para cada I_B
+ic_0uA = np.array([0, 0, 0, 0, 0, 0, 0])
+ic_10uA = np.array([116.4, 492.09, 903.9, 1.74e3, 3.4e3, 4e3, 4.21e3]) / 1000  # mA
+ic_15uA = np.array([130.98, 518.03, 932.81, 1.78e3, 3.5e3, 6.38e3, 6.72e3]) / 1000
+ic_20uA = np.array([139.04, 529.38, 945.86, 1.79e3, 3.52e3, 7.91e3, 8.33e3]) / 1000
+ic_25uA = np.array([146.11, 542.3, 960.56, 1.81e3, 3.55e3, 8.75e3, 10.65e3]) / 1000
+
+# Graficar
+plt.figure(figsize=(10, 6))
+plt.plot(vce, ic_0uA, 'o-', label=r'$I_B=0\,\mu A$', color='blue')
+plt.plot(vce, ic_10uA, 'o-', label=r'$I_B=10\,\mu A$', color='orange')
+plt.plot(vce, ic_15uA, 'o-', label=r'$I_B=15\,\mu A$', color='red')
+plt.plot(vce, ic_20uA, 'o-', label=r'$I_B=20\,\mu A$', color='green')
+plt.plot(vce, ic_25uA, 'o-', label=r'$I_B=25\,\mu A$', color='purple')
+
+# Personalización
+plt.xlabel(r'$V_{CE}$ [V]', fontsize=12)
+plt.ylabel(r'$I_C$ [mA]', fontsize=12)
+plt.title('Curvas características del transistor BC547B', fontsize=14)
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.savefig("curvas_transistor.png", dpi=300)
+plt.show()
+
+\end{minted}
+
+\imagen[Simulación de las curvas características con python]{16cm}{./imagenes/curvas_carac.png}
 \valentinoPoneLasColumnas{}

@@ -15,11 +15,12 @@ Usando un transistor NPN en configuración emisor común:
 	\draw (3.34, 6.77) |- (4, 7.25);
 	\draw (6.25, 7.25) -| (6.75, 6.25);
 \end{tikzpicture} \end{center}
-el circuito no posee una fuente de energía en la base, por lo tanto el transistor no polariza en directa la unión base-emisor ($I_B = 0$) y no se promoverá una circulación de corriente en la salida ($I_C$). En este circuito hay una pequeña fuga de corriente en el colector ($I_{CE0}$) debido a portadores producidos térmicamente.
+el circuito no posee una fuente de energía en la base, por lo tanto el transistor no polariza en directa la unión base-emisor ($I_B = 0$) y no se promoverá una circulación de corriente en la salida ($I_C$). En este circuito hay una pequeña fuga de corriente en el colector ($I_{CE0}$) debido a portadores producidos térmicamente. Implementar este circuito requeriría que se tenga que medir corrientes de fuga extremadamente pequeñas, por lo que las mediciones se hacen complicadas (considerando que no se disponen de instrumentos con mayor rango).
 
 \subsubsection{Simulación con LtSpice}
 \sangria{} Lo que se busca con el programa de simulación es mirar el valor de la corriente de fuga $I_{CE00}$. Para llevar a cabo la actividad se seleccionó:
-\begin{itemize}
+\newpage
+\begin{itemize}[nosep]
     \item Transistor NPN BC548B
     \item $R_B$ = 10k $\Omega$ {\footnotesize 1/4W}
     \item $R_C$ = 1k $\Omega$ {\footnotesize 1/4W}

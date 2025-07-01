@@ -1,10 +1,9 @@
-\saltoPag{}
+\thispagestyle{fancy}
 \section{A.L.3: Curvas características}
 
-\sangria{} El objetivo de esta actividad es obtener las diferentes curvas características del transistor NPN utilizando dos fuentes variables que permitan obtener las tensiones y corrientes del capacitor. \\
+\sangria{} El objetivo de esta actividad es obtener las diferentes curvas características del transistor NPN utilizando dos fuentes variables que permitan obtener las tensiones y corrientes del capacitor.
 
 \sangria{} Se llevó a cabo este circuito:
-
 \begin{center}
 \begin{tikzpicture}
 	% Paths, nodes and wires:
@@ -20,20 +19,19 @@
 	\draw (9.25, 4.25) to[american voltage source, l={$V_2$}, label distance=0.02cm] (9.25, 2.5);
 	\draw (6.75, 6.25) -| (6.75, 6.5) -| (9.25, 4.25);
 	\draw (9.25, 2.5) |- (6.84, 1.5);
-\end{tikzpicture}
-\end{center}
+\end{tikzpicture}\end{center}
 Siendo:
-\begin{itemize}
+\begin{itemize}[nosep]
     \item $R_1$ = $R_B$ = $100k\Omega${\small $1/4w$}
     \item $R_2$ = $R_C$ = $560\Omega${\small $1/4w$}
-    \item Tanto $V_1$ como $V_2$ son fuentes variables de $~0V$ a $~10V$.
+    \item Tanto $V_1$ como $V_2$ son fuentes variables de $\sim 0V$ a $\sim 10V$.
 \end{itemize}
 \subsubsection{Simulación con LtSpice}
 \sangria{} Se implementó el circuito mencionado en el simulador LtSpice para poder observar, haciendo un barrido de tensión del colector $V_{CC}$ y barrido de la tensión de base $V_{BB}$. Con esto, el programa permite graficar la corriente del colector $I_C$ en función de la tensión colector emisor ($V_{CE}$) para las diferentes corrientes de base.
 
 \midTitle{blue}{Notas del documentador:}{configuración LtSpice}
 ''Al igual que la actividad de laboratorio anterior, se midieron los componentes usados y hemos usado los valores que obtuvimos para llevarlos a la simulación, para visualizar mejor este escenario.''
-
+\newpage
 \subsubsection{Implementación en protoboard}
 
 \begin{center}
@@ -116,38 +114,33 @@ Siendo:
 
 \subsubsection{Mediciones}
 
-\begin{table}[]
-\resizebox{\columnwidth}{!}{%
+\begin{center}
 \begin{tabular}{|
->{\columncolor[HTML]{329A9D}}l |ll|ll|ll|}
+>{\columncolor[HTML]{68CBD0}}c |cc|cc|}
 \hline
-\begin{tabular}[c]{@{}l@{}}$V_{cc}$\\ {[}V{]}\end{tabular} &
-  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=0A$\\ $V_{bb}=0$\end{tabular}} &
-  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=10\mu A$\\ $V_{bb}=1.6V$\end{tabular}} &
-  \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}$I_{B}=15\mu A$\\ $V_{bb}=2.2$\end{tabular}} \\ \hline
- &
-  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
-  \cellcolor[HTML]{FECCC9}$V_{CE}$ &
-  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
-  \cellcolor[HTML]{FECCC9}$V_{CE}$ &
-  \multicolumn{1}{l|}{\cellcolor[HTML]{FECCC9}$I_{C}$} &
-  \cellcolor[HTML]{FECCC9}$V_{CE}$ \\ \hline
-0    & \multicolumn{1}{l|}{0}   & 0   & \multicolumn{1}{l|}{$116,4\mu A$}  & $-63,5mV$  & \multicolumn{1}{l|}{$130,98\mu A$} & $-72,01mV$ \\ \hline
-0,25 & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$492,09\mu A$} & $-26,06mV$ & \multicolumn{1}{l|}{$518,03\mu A$} & $-40,09mV$ \\ \hline
-0,5  & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$903,9\mu A$}  & $-5,74mV$  & \multicolumn{1}{l|}{$932,81\mu A$} & $-22,37mV$ \\ \hline
-1    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$1,74mA$}     & $23,68mV$  & \multicolumn{1}{l|}{$1,78mA$}     & $1,56mV$   \\ \hline
-2    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$3,4mA$}      & $91,97mV$  & \multicolumn{1}{l|}{$3,50mA$}     & $38,4mV$   \\ \hline
-5    & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$4,0mA$}      & $2,757V$   & \multicolumn{1}{l|}{$6,38mA$}     & $1,4V$     \\ \hline
-10   & \multicolumn{1}{l|}{$0$} & $0$ & \multicolumn{1}{l|}{$4,21mA$}     & $7,637$    & \multicolumn{1}{l|}{$6,72mA$}     & $6,23V$    \\ \hline
-\end{tabular}%
-}
-\end{table}
+\textbf{\begin{tabular}[c]{@{}c@{}}$V_{CC}$\\ {[}V{]}\end{tabular}} &
+  \multicolumn{2}{c|}{\cellcolor[HTML]{FFCC67}\textbf{\begin{tabular}[c]{@{}c@{}}$I_B = 10\mu A$\\ $V_{bb} = 1,6V$\end{tabular}}} &
+  \multicolumn{2}{c|}{\cellcolor[HTML]{FFCC67}\textbf{\begin{tabular}[c]{@{}c@{}}$I_B = 15\mu A$\\ $V_{bb} = 2,2V$\end{tabular}}} \\ \hline
+\textbf{} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\textbf{$I_C$}} &
+  \cellcolor[HTML]{FFCCC9}\textbf{$V_{CE}$} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{FFCCC9}\textbf{$I_C$}} &
+  \cellcolor[HTML]{FFCCC9}\textbf{$V_{CE}$} \\ \hline
+\textbf{0}    & \multicolumn{1}{c|}{$116,4\mu A$}  & $-63,5mV$  & \multicolumn{1}{c|}{$130,98\mu A$} & $-72,01mV$ \\ \hline
+\textbf{0,25} & \multicolumn{1}{c|}{$492,09\mu A$} & $-26,06mV$ & \multicolumn{1}{c|}{$518,03\mu A$} & $-40,09mV$ \\ \hline
+\textbf{0,5}  & \multicolumn{1}{c|}{$903,9\mu A$}  & $-5,74mV$  & \multicolumn{1}{c|}{$932,81\mu A$} & $-22,37mV$ \\ \hline
+\textbf{1}    & \multicolumn{1}{c|}{$1,74mA$}      & $23,68mV$  & \multicolumn{1}{c|}{$1,78mA$}      & $1,56mV$   \\ \hline
+\textbf{2}    & \multicolumn{1}{c|}{$3,4mA$}       & $91,97mV$  & \multicolumn{1}{c|}{$3,50mA$}      & $38,4mV$   \\ \hline
+\textbf{5}    & \multicolumn{1}{c|}{$4,0mA$}       & $2,757V$   & \multicolumn{1}{c|}{$6,38mA$}      & $1,4V$     \\ \hline
+\textbf{10}   & \multicolumn{1}{c|}{$4,21mA$}      & $7,637V$   & \multicolumn{1}{c|}{$6,72mA$}      & $6,23V$    \\ \hline
+\end{tabular}
+\end{center}
 
 
-\begin{table}[]
+\begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|
->{\columncolor[HTML]{329A9D}}l |ll|ll|}
+>{\columncolor[HTML]{68CBD0}}l |ll|ll|}
 \hline
 \begin{tabular}[c]{@{}l@{}}$V_{cc}$\\ {[}V{]}\end{tabular} &
   \multicolumn{2}{l|}{\cellcolor[HTML]{FFCC67}\begin{tabular}[c]{@{}l@{}}\cellcolor[HTML]{FFCC67}$IB=20\mu A$\\ $V_{bb}=2.6$\end{tabular}} &
@@ -166,20 +159,30 @@ Siendo:
 10   & \multicolumn{1}{l|}{$8,33mA$}      & $5,33V$    & \multicolumn{1}{l|}{$10,65mA$}     & $4,03V$    \\ \hline
 \end{tabular}%
 }
-\end{table}
+\end{center}
 
+\midTitle{blue}{Notas del documentador:}{valores $I_B = 0A$ y $V_{BB} = 0V$}
+''Al momento de hacer las simulaciones, notamos que los valores de $I_C$ y $V_{CE}$ son absurdamente pequeños y consideramos despreciarlos.''
+\newpage
 \subsubsection{Conclusiones}
 
 \midTitle{Green}{Aciertos$\checkmark$}{}
-\sangria Llevar hechas las simulaciones ayudó bastante para entender las curvas,ya que esta tabla se nos hizo más dificil de entender, por otro lado los instrumentos de medición adecuado fueron de gran ayuda.
-
-
+\sangria Las simulaciones ayudaron bastante a las curvas,ya que esta tabla fue más complizada para entender, por otro lado los instrumentos de medición adecuados fueron de gran ayuda para muestrear valores.
 
 \midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
-\sangria Las dificultades fueron el tiempo, ya que esta actividad nos llevó una gran cantidad de tiempo realizarla, casi toda la hora, y el entendimiento posterior de las curvas.
+\sangria Las dificultades fueron el tiempo de desarrollo de la implementación y la implementación de las curvas obtenidas en la etapa de simulación con LtSpice. Ambas relaciones no concordaban y se comenzó a dudar de la veracidad de alguna de las dos etapas. \\
 \midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
-\sangria Lo solucionamos leyendo el matrial de estudio y leyendo varias veces la consigna, al problema del tiempo entendemos que la actividad era larga pero que también tenemos que trabajar más rápido.
-
+\sangria{} ''Junto al operador de la actividad estuvimos repasando las conexiones y los valores que obtendría viendo las junturas de entrada y salida. También corroboramos que los instrumentos estuvieran bien configurados (nótese que no es lo mismo la configuración de clavijas para corriente que tensión). Hemos dejado el inconveniente con el tiempo como punto a resolver dentro del grupo, proponiendo una estructura de pasos a seguir.''
+\thispagestyle{fancy}
 \valentinoQuitaLasColumnas{}
 \subsubsection{Simulaciones Act 3}
+\imagen[Simulación con LtSpice]{16cm}{./imagenes/curvasCaracteristicasSimulacion.png}
+\midTitle{red}{Configuración}{}
+\begin{itemize}
+    \item Temperatura: $20^oC$
+    \item $\beta$: 498
+    \item $R_1$: $9,96k\Omega$, $R_2$: $556,40\Omega$ 
+    \item $V_1$: $9,96V$
+\end{itemize}
+
 \valentinoPoneLasColumnas{}

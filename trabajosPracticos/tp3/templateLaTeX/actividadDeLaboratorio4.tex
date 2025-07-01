@@ -19,7 +19,7 @@
 \end{tikzpicture}
 \end{center}
 Siendo:
-\begin{itemize}
+\begin{itemize}[nosep]
     \item $R_1$ = $R_B$ = $100k\Omega$ {\small $1/4w$}
     \item $R_2$ = $R_C$ = $560\Omega$ {\small $1/4w$}
     \item $V_1$ y $V_2$ variables de $\sim 0V$ a $\sim 10V$
@@ -132,13 +132,78 @@ Siendo:
 
 \subsubsection{Conclusiones}
 \midTitle{Green}{Aciertos$\checkmark$}{}
-\sangria Llevar las simulaciones hechas fue un gran acierto, ya que sabíamos con que resultados nos podiamos esperar, otro acierto fue la cercanía del valor de $\beta$ medido por el multímetro y el calculado en base a las curvas.
+\sangria Llevar las simulaciones hechas fue un gran acierto, ya que sabíamos con que resultados nos podiamos esperar, otro acierto fue la cercanía del valor de $\beta$ medido por el multímetro y el calculado en base a las curvas. \\
 \midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
-\sangria Una gran dificultad fue el tiempo, tuvimos que ir en otra oportunidad para hacer las mediciones, además de que faltaba un poco de claridad en la consigna, una dificultad menor fue medir la $I_{B}$, pero con el multímetro Proskit no tuvimos que hacer ningún cálculo indirecto.
+\sangria Una gran dificultad fue el tiempo, tuvimos que ir en otra oportunidad para hacer las mediciones, además de que faltaba un poco de claridad en la consigna, una dificultad menor fue medir la $I_{B}$, pero con el multímetro Proskit no tuvimos que hacer ningún cálculo indirecto. \\
 \midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
 \sangria Lo solucionamos leyendo el material proporcionado y leyendo varias veces la consigna, al problema del tiempo nos faltó rapidez y por eso tuvimos que ir otro día
 
 \valentinoQuitaLasColumnas{}
-\subsection{Simulación Act 4}
+\subsubsection{Gráficos}
+
+\imagen[Simulación en LtSpice]{12cm}{./imagenes/beta.png}
+\midTitle{red}{Configuración}{}
+\begin{itemize}[nosep]
+    \item Temperatura: $20^oC$
+    \item $\beta$: 498
+    \item $R_1$: $9,96k\Omega$, $R_2$: $556,40\Omega$ 
+    \item $V_1$: $9,96V$
+\end{itemize}
+
+\midTitle{Blue}{$I_C = f(I_B)$ para $V_{CE(inicial)} = 2V,5V$ y $8V$}{}
+
+\imagen[$I_C = f(I_B)$ en Python]{14cm}{./imagenes/betaCurvaPython.png}
+\newpage
+\begin{minted}{python}
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import linregress
+
+ib = np.array([5, 7, 10, 20])
+ic2V = np.array([2.25, 2.90, 4.44, 8.52])
+ic5V = np.array([2.317, 3.01, 4.598, 8.813])
+ic8V = np.array([2.39, 3.258, 4.75, 9.096])
+
+plt.figure(figsize=(10, 6))
+
+plt.plot(ib, ic2V, 'ro-', label='VCE = 2V', linewidth=2, markersize=8)
+plt.plot(ib, ic5V, 'go-', label='VCE = 5V', linewidth=2, markersize=8)
+plt.plot(ib, ic8V, 'bo-', label='VCE = 8V', linewidth=2, markersize=8)
+
+slope2V, intercept2V, r2V, p2V, stderr2V = linregress(ib, ic2V)
+slope5V, intercept5V, r5V, p5V, stderr5V = linregress(ib, ic5V)
+slope8V, intercept8V, r8V, p8V, stderr8V = linregress(ib, ic8V)
+
+ibFit = np.linspace(min(ib), max(ib), 100)
+icFit2V = slope2V * ibFit + intercept2V
+icFit5V = slope5V * ibFit + intercept5V
+icFit8V = slope8V * ibFit + intercept8V
+
+plt.plot(ibFit, icFit2V, 'r--', alpha=0.7)
+plt.plot(ibFit, icFit5V, 'g--', alpha=0.7)
+plt.plot(ibFit, icFit8V, 'b--', alpha=0.7)
+
+beta2V = slope2V * 1000
+beta5V = slope5V * 1000
+beta8V = slope8V * 1000
+
+plt.xlabel('IB [uA]', fontsize=12)
+plt.ylabel('IC [mA]', fontsize=12)
+plt.title('I_C vs I_B', fontsize=14)
+plt.grid(True, alpha=0.3)
+plt.legend()
+
+plt.text(0.02, 0.98, f'B (VCE=2V) = {beta2V:.1f}', transform=plt.gca().transAxes, 
+         verticalalignment='top', bbox=dict(boxstyle='round', facecolor='red', alpha=0.3))
+plt.text(0.02, 0.90, f'B (VCE=5V) = {beta5V:.1f}', transform=plt.gca().transAxes, 
+         verticalalignment='top', bbox=dict(boxstyle='round', facecolor='green', alpha=0.3))
+plt.text(0.02, 0.82, f'B (VCE=8V) = {beta8V:.1f}', transform=plt.gca().transAxes, 
+         verticalalignment='top', bbox=dict(boxstyle='round', facecolor='blue', alpha=0.3))
+
+plt.tight_layout()
+plt.savefig('betaCurvaPython.png', dpi=300, bbox_inches='tight')
+plt.close()
+\end{minted}
+
 \valentinoPoneLasColumnas{}
 

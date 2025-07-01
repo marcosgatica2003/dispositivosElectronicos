@@ -24,7 +24,7 @@
 \end{center}
 
 Siendo:
-\begin{itemize}
+\begin{itemize}[nosep]
     \item $R_1$ = $R_B$ = $10k \Omega$ {\small $1/4w$}
     \item $R_2$ = $R_C$ = $560 \Omega$ {\small $1/4w$}
     \item $V_1$ variable desde $~0V$ a $~10V$ $V_{CC}$ limitada a $500mA$.
@@ -36,10 +36,8 @@ El objetivo es obtener una gráfica $I_B = f(V_{BE})$
 
 \sangria{} Se implementó el circuito mencionado en el simulador LtSpice para poder identificar valores de corriente de base para ciertos valores de tensión base-emisor.
 
-\saltoPag{}
-
 \midTitle{blue}{Notas del documentador:}{configuración LtSpice}
-''Hemos modificado el transistor BC548C del programa para implementar valores de temperatura ambiente ($20^o C$) y $\beta = 498$ para acercar más a la realidad los valores que obtendríamos al implementar el circuito y comenzar a medir. Se hizo lo mismo para las resistencias y valores específicos que configuramos las fuentes $V_1$ y $V_2$. ''
+''Hemos modificado el transistor BC548C del programa para implementar valores de temperatura ambiente ($20^o C$) y $\beta = 498$ para acercar más a la realidad los valores que obtendríamos al implementar el circuito y comenzar a medir. Se hizo lo mismo para las resistencias y valores específicos que configuramos las fuentes $V_1$ y $V_2$. Hicimos un barrido de 0v a 12v para que luego tomemos muestras.''
 
 \imagen[Valores reales de tensión de la primera medición($500mV$)]{7cm}{./imagenes/valoresRealesFuentes.jpg}
 
@@ -124,42 +122,54 @@ El objetivo es obtener una gráfica $I_B = f(V_{BE})$
 \end{center}
 
 
-\imagen[Distribución de pines del BC548C]{6cm}{./imagenes/patasBC547C.jpeg}
+\imagen[Distribución de pines del BC548C]{4cm}{./imagenes/patasBC547C.jpeg}
 
 \subsubsection{Mediciones}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
-% \usepackage[table,xcdraw]{xcolor}
-% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
-\begin{table}[]
+\begin{center}
+\begin{figure}[h!]
+  \centering
+  \begin{subfigure}[a]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./imagenes/manoloMidiendoParaElOrto.jpg}
+    \caption{Tensión}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{./imagenes/manoloMidiendoSerieParaElOrto.jpg}
+    \caption{Corriente}
+  \end{subfigure}
+  \caption{Mediciones}
+  \label{fig:coffee}
+\end{figure}
+
+\end{center}
+\vspace{-1.75cm}
+\begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
-\cellcolor[HTML]{CBCEFB}\rowcolor[HTML]{FFFFC7} \cellcolor[HTML]{CBCEFB}\textbf{$V_{BB}$} &
+\cellcolor[HTML]{CBCEFB}\textbf{$V_{BB}$} &
   \textbf{500mV} &
   \textbf{1V} &
   \textbf{2V} &
   \textbf{3V} &
   \textbf{4V} &
   \textbf{10V} \\ \hline
-\cellcolor[HTML]{CBCEFB}\cellcolor[HTML]{CBCEFB}\textbf{$I_B$} &
+\cellcolor[HTML]{CBCEFB}\textbf{$I_B$} &
   0$mA$ &
   0.028$mA$ &
   0.126$mA$ &
   0.226$mA$ &
   0.326$mA$ &
   0.924$mA$ \\ \hline
-\cellcolor[HTML]{CBCEFB}\cellcolor[HTML]{CBCEFB}\textbf{$V_{BE}$} &
+\cellcolor[HTML]{CBCEFB}\textbf{$V_{BE}$} &
   0.713$V$ &
   0.717$V$ &
   0,725$V$ &
   0.731$V$ &
   0.736$V$ &
   0.760$V$ \\ \hline
-\end{tabular}%
-}
-\end{table}
+\end{tabular}}
+\end{center}
 
 \subsubsection{Conclusiones}
 
@@ -167,11 +177,40 @@ El objetivo es obtener una gráfica $I_B = f(V_{BE})$
 \sangria Un acierto fue llevar hechas las simulaciones, para ya anticipar los resultados de las mediciones y entender el gráfico de $I_{B}=f(V_{BE})$, también tener los instrumentos necesarios para medir sin tener que hacer los cálculos de las mediciones indirectas.
 
 \midTitle{Red}{Dificultades \textbf{\textit{x}}}{}
-\sangria{}Teniamos mal polarizado nuestro transistor, entonces la corriente $I_{B}$, se mantenia fija para todo cambio en $V_{BB}$.
+\sangria{} ''Teniamos mal polarizado nuestro transistor, entonces la corriente $I_{B}$, se mantenia fija para todo cambio en $V_{BB}$. Además, estábamos usando erróneamente los instrumentos de medición.''
 
 \midTitle{blue}{Notas del documentador:}{Cómo lo solucionamos}
-\sangria Lo solucionamos ese mismo día polarizando de manera correcta el transistor, pero perdimos mucho tiempo de clase útil.
+\sangria{} ''Lo solucionamos ese mismo día polarizando de manera correcta el transistor, pero perdimos mucho tiempo de clase útil.''
 
 \valentinoQuitaLasColumnas{}
-\subsubsection{Simulación Act 2}
+\subsubsection{Gráficos}
+\imagen[Simulación en LtSpice]{12cm}{./imagenes/simulacionPolarizacionJunturaBaseEmisor.png}
+\vspace{-1cm}
+\midTitle{red}{Configuración}{}
+\begin{itemize}[nosep]
+    \item Temperatura: $20^oC$
+    \item $\beta$: 498
+    \item $R_1$: $9,96k\Omega$, $R_2$: $556,40\Omega$ 
+    \item $V_1$: $9,96V$
+\end{itemize}
+
+\midTitle{Blue}{$I_B = f(V_{BE})$}{}
+\imagen[$I_B = f(V_{BE})$ en Python]{11cm}{./imagenes/curvaIBPythonPolarizacionJuntura.png}
+\newpage
+\begin{minted}{python}
+import matplotlib.pyplot as plt
+
+vbe = [0.713, 0.717, 0.725, 0.731, 0.736, 0.760]
+ib = [0.000, 0.028, 0.126, 0.226, 0.326, 0.924]
+
+plt.figure(figsize=(8, 5))
+plt.plot(vbe, ib, marker='o', linestyle='-', color='purple')
+plt.xlabel('V_BE [V]')
+plt.ylabel('I_B [mA]')
+plt.title('Curva I_B = f(V_BE)')
+plt.grid(True)
+plt.savefig('curvaIBPythonPolarizacionJuntura.png', dpi=300)
+plt.close()
+\end{minted}
+
 \valentinoPoneLasColumnas{}

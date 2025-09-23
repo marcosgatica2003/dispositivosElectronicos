@@ -1,0 +1,39 @@
+\section{A.L. 1:Corriente de saturación $I_{DSS}$}
+
+	\sangria{}En esta actividad buscamos conocer experimentalmente el valor de $I_{DSS}$, el cual lo podemos obtener poniedo la terminal gate a tierra para que la tensión $V_{GS}$ sea 0 y la corriente que circule por el canal n sea la máxima.
+\begin{center}
+	\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\node[njfet, tr circle](N1) at (4, 4.25){} node[anchor=west] at (N1.text){$J1 - MPF102$};
+	\draw (4, 5) -- (7, 5) -| (7, 4);
+	\draw (7, 4) to[american voltage source, l={$V$}] (7, 2.25);
+	\node[ground] at (5, 2){};
+	\draw (4, 3.48) -| (5, 2);
+	\draw (7, 2.25) |- (5, 2);
+	\draw (3.02, 3.98) |- (5, 2);
+\end{tikzpicture}
+\end{center}
+	\subsection{Simulación}
+	\imagen[Simulación Actividad 1]{6cm}{./imagenes/Simulacion_1.png}
+	\imagen[Simulación Grafica Actividad 1]{6cm}{./imagenes/Simulacion_1_grafica.png}
+
+	\sangria{}En la simulación podemos ver que $V_p \approx 12.3V$, en la simulación incluimos una resistencia $R_D$ para no quemar el transistor, el cálculo
+
+\subsection{Actividad de laboratorio}
+\sangria{} Se implementó el siguiente circuito en una protoboard con el fin de medir la $I_{DSS}$:
+
+\begin{center}\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\node[njfet] at (4.73, 4.27){};
+	\draw (4.75, 7.5) to[ammeter, l={$I_{DS}$}] (4.75, 5.5);
+	\draw (7, 7.5) to[voltmeter, l={$V_{DS}$}] (7, 5.5);
+	\draw (9, 7.5) to[battery1, l={$10V$}] (9, 5.75);
+	\node[ground] at (4.75, 2.5){};
+	\draw (4.75, 5.5) -| (4.75, 5);
+	\draw (4.73, 3.5) -| (4.75, 2.5);
+	\draw (4.75, 2.5) -| (9, 5.75);
+	\draw (7, 5.5) -- (7, 2.5);
+	\draw (3.75, 4) -- (2.75, 4) -| (2.75, 2.5) -- (4.75, 2.5);
+	\draw (4.75, 7.5) -| (4.75, 8) -- (9, 8) -| (9, 7.5);
+	\draw (7, 7.5) -| (7, 8);
+\end{tikzpicture}\end{center}

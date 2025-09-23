@@ -1,1 +1,49 @@
-\section{A.L.3: Características de salida del JFET}
+\section{A.L.3: Características de salida del JFET}\subsection{Simulación}\sangria{} Se implementó el siguiente circuito en el simulador LTSpice: \begin{center}\begin{tikzpicture}
+	\draw (3.25, 2.25) to[american voltage source, l={$V1$}] (3.25, 4.25);
+	\node[njfet](N1) at (6, 4.98){} node[anchor=west] at (N1.text){$JFET$};
+	\draw (8.25, 6) to[american voltage source, l={$V2$}] (8.25, 4);
+	\node[ground] at (3.25, 1.75){};
+	\draw (3.25, 2.25) -| (3.25, 1.75);
+	\draw (3.25, 4.25) -| (3.25, 4.75) -| (5.02, 4.71);
+	\draw (6, 5.75) -| (6, 6.5) -- (8.25, 6.5) -| (8.25, 6);
+	\draw (8.25, 4) |- (3.25, 1.75) -| (6, 4.21);
+\end{tikzpicture} \end{center} Se hizo variar la fuente V2 de $0$ a $15V$ con un paso de $0,1V$; la fuente V1 se la hizo variar de $0$ a $7V$ con el mismo paso.\imagen[Familia de curvas]{10cm}{./imagenes/simulacionCaracteristicaSalidaJFET.png}\sangria{} El eje vertical es el valor de $I_{DS}$ mientras el eje horizontal son los valores de $V1-VGS$, cada curva representa los valores de $V_2$. Para un mismo valor de $V_{GS}$, un aumento de $V_2$ representa más corriente de drenaje.\newpage\subsection{Actividad de laboratorio}\sangria{} Se implementó el siguiente circuito:\begin{center}\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\node[njfet] at (6.5, 6.27){};
+	\draw (6.5, 9.5) to[ammeter, l={$I_{DS}$}] (6.5, 7.5);
+	\draw (8.75, 6.25) to[voltmeter, l={$V_{DS}$}] (8.75, 8.25);
+	\draw (4.75, 3.25) to[voltmeter, l={$V_G$}] (4.75, 5.25);
+	\draw (10.5, 7.5) to[american voltage source, l={$V_{DD}$}] (10.5, 5);
+	\draw (3, 3) to[american voltage source, l={$V_{GG}$}] (3, 5.5);
+	\draw (3, 5.5) |- (3.5, 6);
+	\draw (3.5, 6) -| (5.52, 6);
+	\draw (4.75, 5.25) -| (4.75, 6);
+	\draw (6.5, 7.04) -| (6.5, 7.5);
+	\draw (6.5, 9.5) -| (6.5, 10) -| (8.75, 8.25);
+	\draw (10.5, 7.5) |- (8.75, 10);
+	\node[ground] at (6.5, 3){};
+	\draw (6.5, 3) -- (6.5, 5.5);
+	\draw (3, 3) -- (6.5, 3);
+	\draw (4.75, 3.25) -| (4.75, 3);
+	\draw (6.5, 3) -| (10.5, 5);
+	\draw (8.75, 6.25) -- (8.75, 3);
+    \end{tikzpicture}\end{center}\sangria{} El objetivo fue de dejar un valor fijo de $V_{GS}$, variar la tensión $V_{DS}$ y medir los valores de corriente $I_{DS}$, e ir repiendo el método pero con otro valor de $V_{GS}$. El resultado fue explayado en la siguiente tabla: \begin{center}\begin{tabular}{|
+>{\columncolor[HTML]{DAE8FC}}l |l|l|l|l|}
+\hline
+\cellcolor[HTML]{FFFC9E}$V_{GS}[V]$ & \cellcolor[HTML]{FFFC9E}0                                   & \cellcolor[HTML]{FFFC9E}-0,2                                & \cellcolor[HTML]{FFFC9E}-0,4                                & \cellcolor[HTML]{FFFC9E}-0,5                                \\ \hline
+$V_{DS}[V]$                         & \cellcolor[HTML]{FFCE93}{\color[HTML]{333333} $I_{DS}[mA]$} & \cellcolor[HTML]{FFCE93}{\color[HTML]{333333} $I_{DS}[mA]$} & \cellcolor[HTML]{FFCE93}{\color[HTML]{333333} $I_{DS}[mA]$} & \cellcolor[HTML]{FFCE93}{\color[HTML]{333333} $I_{DS}[mA]$} \\ \hline
+{\color[HTML]{000000} 0}            & 0                                                           & 0                                                           & 0                                                           & 0                                                           \\ \hline
+{\color[HTML]{000000} 0,5}          & 0,5                                                         & 0,52                                                        & 0,07                                                        & 0,01                                                        \\ \hline
+{\color[HTML]{000000} 1}            & 1,09                                                        & 0,95                                                        & 0,11                                                        & 0,02                                                        \\ \hline
+{\color[HTML]{000000} 2}            & 2,13                                                        & 1,40                                                        & 0,17                                                        & 0,05                                                        \\ \hline
+{\color[HTML]{000000} 3}            & 3,15                                                        & 1,67                                                        & 0,23                                                        & 0,07                                                        \\ \hline
+{\color[HTML]{000000} 4}            & 3,95                                                        & 1,9                                                         & 0,29                                                        & 0,09                                                        \\ \hline
+{\color[HTML]{000000} 5}            & 4,50                                                        & 2,10                                                        & 0,36                                                        & 0,12                                                        \\ \hline
+{\color[HTML]{000000} 6}            & 4,9                                                         & 2,26                                                        & 0,4                                                         & 0,15                                                        \\ \hline
+{\color[HTML]{000000} 7}            & 5,20                                                        & 2,44                                                        & 0,50                                                        & 0,18                                                        \\ \hline
+{\color[HTML]{000000} 8}            & 5,44                                                        & 2,6                                                         & 0,55                                                        & 0,22                                                        \\ \hline
+{\color[HTML]{000000} 9}            & 5,60                                                        & 2,73                                                        & 0,62                                                        & 0,26                                                        \\ \hline
+{\color[HTML]{000000} 10}           & 5,93                                                        & 3,08                                                        & 0,7                                                         & 0,3                                                         \\ \hline
+\end{tabular}\end{center}\imagen[$I_{DS} = f(V_{DS})$ para distintos $V_{GS}$]{10cm}{./imagenes/actividadLabCaracteristicaSalidaJFET.png}
+
+

@@ -9,9 +9,9 @@ vDsFiltered = vDs[:len(iDs)]
 plt.figure(figsize=(10, 8))
 plt.plot(vDsFiltered, iDs, 'bo-', linewidth=2, markersize=6, label='I_DS vs V_DS')
 
-plt.xlabel('V_DS [V]')
-plt.ylabel('I_DS [mA]')
-plt.title('I_DS = f(V_DS)')
+plt.xlabel('V_DS [V]', fontsize=14)
+plt.ylabel('I_DS [mA]', fontsize=14)
+plt.title('I_DS = f(V_DS)', fontsize=14)
 plt.grid(True, alpha=0.3)
 plt.legend()
 

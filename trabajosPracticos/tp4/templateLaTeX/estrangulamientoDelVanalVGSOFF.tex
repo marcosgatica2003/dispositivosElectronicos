@@ -1,2 +1,28 @@
 \section{A.L. 2: Estrangulamiento del canal $V_{GS(off)}$}
 \subsection{Actividad de simulación}\sangria{} Se implementó el siguiente circuito en el simulador LTSpice: 
+\imagen[Circuito en LTSpice]{7cm}{./imagenes/Simulacionestrang.png}
+\sangria{} El resistor de $750\Omega$ es para limitar la corriente que circula por el canal y proteger el dispositivo. Se caclula teniendo en cuenta la máxima corriente de drenaje $I_{Dss}$ del datasheet, que es de 20mA.
+\sangria{} En esta simulación se varía la fuente $V_1$, la cual es la tensión de puerta a fuente $V_{GS}$, en pasos de 0.1V, desde 0V hasta 7V. La fuente $V_2$ es la tensión de drenaje a fuente $V_{DS}$ y se mantiene constante en 10V.
+\imagen[$I_DS=f(V_GS)$ en LTSpice]{10cm}{./imagenes/CurvaSimEstrang.png}
+
+\sangria{} El primer problema al desarrollar este ejercico fue que la información del datasheet no concorda con la simulación. En el datasheet se indica que la tensión de estrangulamiento del canal $V_{GS(off)}$ es de -8V, pero en la simulación se observó que el estrangulamiento se daba a los -3.2V. Nuestra concusión es que el modelo spice utilizado no es el correcto o no está bien parametrizado.  
+\subsection{Actividad de laboratorio}\sangria{} Se implementó el mismo circuito en el laboratorio, utilizando una fuente variable para variar la tensión de puerta a fuente $V_{GS}$ de 0V a $V_{GS(off)}$ y una fuente fija de 10V para la tensión de drenaje a fuente $V_{DS}$. 
+\imagen[Montaje]{5cm}{./imagenes/montajeestrangulamiento.jpg}
+
+\sangria{} Con los datos medidos se realizó la siguiente tabla:
+\begin{center}\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+\textbf{$V_{DS}{[}mV{]}$} & \cellcolor[HTML]{FFFC9E}\textbf{$I_{DS}[mA]$} \\ \hline
+100                           & 4,48                                             \\ \hline
+220                       & 2,59                                          \\ \hline
+350                           & 1,55                                          \\ \hline
+400                       & 0.60                                          \\ \hline
+500                        & 0.30                                          \\ \hline
+600                           & 0.07                                          \\ \hline
+700                           & 0                                           \\ \hline
+\end{tabular}\end{center}
+\sangria{} Se utilizó una $V_{DS}$ de 0mV a 700mV ya que esta era el rango de operación antes del estrangulamiento.
+\imagen[Curva de estrangulamiento]{15cm}{./imagenes/Curvaestang.png}
+\sangria{} Los resusltados obtenidos en el laboratorio no coinciden ni con la simulación ni con el datasheet. El estrangulamiento se da a los 700mV, mucho menor a lo esperado. Una posible causa de este comportamiento es que el dispositivo utilizado en el laboratorio no este en optimas condiciones. Consideramos que el comportamiento real está indicado en el datasheet, por lo que la simulación no fue de ayuda a la hora de operar.
+\sangria{} Creemos que el dispositivo estaba dañado ya que costo conseguirlo, tanto a nuestro grupo como al de otros compañeros, y nos informaron que eran transistores viejos (de hecho un compañero nos comentó que le informaron que no se fabricaban nuevos) por lo que tal vez al estar tanto tiempo guardados y tal vez en malas condiciones de almacenamiento hayan perdido sus propiedades.

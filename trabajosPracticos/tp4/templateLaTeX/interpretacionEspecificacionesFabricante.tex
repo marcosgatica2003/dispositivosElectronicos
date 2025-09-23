@@ -1,1 +1,35 @@
 \section{A.L. 4: Interpretación de las especificaciones del fabricante}
+\section{\small Act. 5: Interpretación de las especificaciones del fabricante}
+\sangria{} En esta sección se completará el análisis sobre transistores JFET revisando algunos parámetros dados por el fabricante. El objetivo es continuar familiarizándose con los parámetros expresados en los datasheet.
+
+\midTitle{blue}{Notas del documentador:}{hoja de datos}
+''El datasheet correspondiente al transistor $MPF102$ está en el apartado de \textit{Bibliografía, datasheets e instrumentos}.''
+
+\midTitle{violet}{Características eléctricas a $25^oC$}{}
+
+\begin{center}
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}l |l|l|}
+\hline
+\cellcolor[HTML]{FFFFC7}\textbf{Parámetro} &
+\cellcolor[HTML]{FFFFC7}\textbf{Valor típico / rango} &
+\cellcolor[HTML]{FFFFC7}\textbf{Significado} \\ \hline
+
+\textbf{$V_{DS(max)}$} & $25V$ & Máxima tensión drenaje-surtidor admisible \\ \hline
+
+\textbf{$V_{DG(max)}$} & $25V$ & Máxima tensión drenaje-compuerta \\ \hline
+
+\textbf{$V_{GS(max)}$} & $-25V$ & Máxima tensión compuerta-surtidor (polarización inversa de la puerta) \\ \hline
+
+\textbf{$I_G$} & $10mA$ & Corriente máxima permitida en la compuerta \\ \hline
+
+\textbf{$P_D$} & $350mW$ & Potencia máxima de disipación a $25^\circ C$ \\ \hline
+
+\textbf{$V_{(BR)GSS}$} & $-25V$ & Tensión de ruptura compuerta-surtidor \\ \hline
+
+\textbf{$I_{DSS}$} & $2 \, a \, 20mA$ & Corriente de drenaje con $V_{GS}=0V$ (canal completamente abierto) \\ \hline
+
+\textbf{$V_{GS(off)}$} & $-0.5 \, a \, -8V$ & Tensión de compuerta-surtidor en la cual el canal se cierra (ID$\approx 0$) \\ \hline
+
+\end{tabular}
+\end{center}

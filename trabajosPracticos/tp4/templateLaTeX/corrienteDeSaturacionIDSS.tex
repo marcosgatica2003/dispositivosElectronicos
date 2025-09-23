@@ -14,8 +14,9 @@
 \end{tikzpicture}
 \end{center}
 	\subsection{Simulación}
-	\imagen[Simulación Actividad 1]{6cm}{./imagenes/Simulacion_1.png}
-	\imagen[Simulación Grafica Actividad 1]{6cm}{./imagenes/Simulacion_1_grafica.png}
+\sangria{} Se implementó el circuito anterior y se hizo variar la fuente $V_1$ desde los $0V$ a los $15V$ con pasos de $0,1V$, en términos del simulador, un barrido \textit{DC sweep .dc V1 0 15 0.1}.
+	\imagen[Simulación Actividad 1]{10cm}{./imagenes/Simulacion_1.png}
+	\imagen[Simulación Grafica Actividad 1]{10cm}{./imagenes/Simulacion_1_grafica.png}
 
 	\sangria{}En la simulación podemos ver que $V_p \approx 12.3V$, en la simulación incluimos una resistencia $R_D$ para no quemar el transistor, el cálculo
 
@@ -36,4 +37,24 @@
 	\draw (3.75, 4) -- (2.75, 4) -| (2.75, 2.5) -- (4.75, 2.5);
 	\draw (4.75, 7.5) -| (4.75, 8) -- (9, 8) -| (9, 7.5);
 	\draw (7, 7.5) -| (7, 8);
-\end{tikzpicture}\end{center}
+\end{tikzpicture}\end{center}\sangria{} El procedimiento fue hacer variar la fuente $V_{DS}$ desde los $0V$ hasta un valor tal que permita alcanzar la corriente de saturación (en nuestro caso: ).\begin{center}\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+\textbf{$V_{DS}{[}V{]}$} & \cellcolor[HTML]{FFFC9E}\textbf{$I_{DS}[mA]$} \\ \hline
+0                           & 0                                             \\ \hline
+1,061                       & 1,68                                          \\ \hline
+2                           & ---                                           \\ \hline
+3,042                       & 4,88                                          \\ \hline
+4,01                        & 5,92                                          \\ \hline
+5                           & 6,54                                          \\ \hline
+6                           & ---                                           \\ \hline
+7                           & 7,63                                          \\ \hline
+8,02                        & 8,05                                          \\ \hline
+9                           & ---                                           \\ \hline
+10,02                       & 8,86                                          \\ \hline
+11                          & 9,18                                          \\ \hline
+12                          & 9,57                                          \\ \hline
+13                          & ---                                           \\ \hline
+14,02                       & 10,24                                         \\ \hline
+15                          & ---                                           \\ \hline
+\end{tabular}\end{center}\imagen[Gráfica Ids = f(Vds)]{10cm}{./imagenes/idsEnFuncionVdspunto1.png}

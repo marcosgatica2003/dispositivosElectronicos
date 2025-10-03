@@ -1,0 +1,6 @@
+SCR: TIC106D - BT151 - TYN612 (alguno de estos)
+Potenciometro 5k Ohm
+Resistores 3,3kOhm (1) - 4,7k Ohm (2)
+
+DIAC DB3
+TRIAC: TIC226 - BT137 (alguno de estos)

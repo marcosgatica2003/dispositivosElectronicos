@@ -1,0 +1,538 @@
+{
+    "version": "0.1",
+    "components": [
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 47.244,
+                    "y": -292.913
+                },
+                {
+                    "x": 47.244,
+                    "y": -188.976
+                }
+            ],
+            "label": {
+                "value": "20V",
+                "distance": "0.12cm"
+            },
+            "id": "american voltage source"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 135.307,
+                    "y": -315.553
+                },
+                {
+                    "x": 135.307,
+                    "y": -239.962
+                }
+            ],
+            "label": {
+                "value": "R_1 = 3,3k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 135.307,
+                    "y": -154.922
+                },
+                {
+                    "x": 135.307,
+                    "y": -239.962
+                }
+            ],
+            "label": {
+                "value": "\\text{POT  } 5k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "variable american resistor"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 47.244,
+                    "y": -188.976
+                },
+                {
+                    "x": 47.244,
+                    "y": -103.937
+                },
+                {
+                    "x": 151.181,
+                    "y": -103.937
+                },
+                {
+                    "x": 160.63,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-",
+                "-|",
+                "-|"
+            ]
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 47.244,
+                "y": -103.937
+            },
+            "id": "ground"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 151.181,
+                    "y": -188.976
+                },
+                {
+                    "x": 245.669,
+                    "y": -188.976
+                }
+            ],
+            "label": {
+                "value": "R_3 = 4,7 k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 255.118,
+                    "y": -170.079
+                },
+                {
+                    "x": 255.118,
+                    "y": -103.937
+                }
+            ],
+            "label": {
+                "value": "V_G",
+                "distance": "0.12cm"
+            },
+            "id": "voltmeter"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 160.63,
+                    "y": -103.937
+                },
+                {
+                    "x": 321.26,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 255.118,
+                    "y": -188.976
+                },
+                {
+                    "x": 368.504,
+                    "y": -188.976
+                }
+            ],
+            "label": {
+                "value": "I_G",
+                "distance": "0.12cm"
+            },
+            "id": "ammeter"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 482.646,
+                    "y": -272.126
+                },
+                {
+                    "x": 482.646,
+                    "y": -158.74
+                }
+            ],
+            "id": "stroke thyristor",
+            "scale": {
+                "x": 1,
+                "y": -1
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 482.646,
+                    "y": -272.126
+                },
+                {
+                    "x": 482.646,
+                    "y": -357.165
+                }
+            ],
+            "label": {
+                "value": "R_4 = 4,7k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 548.031,
+                    "y": -264.567
+                },
+                {
+                    "x": 548.031,
+                    "y": -151.181
+                }
+            ],
+            "label": {
+                "value": "V_{AK}",
+                "distance": "0.12cm"
+            },
+            "id": "voltmeter"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 482.646,
+                    "y": -158.74
+                },
+                {
+                    "x": 481.89,
+                    "y": -103.937
+                }
+            ],
+            "label": {
+                "value": "I_{AK}",
+                "distance": "0.12cm"
+            },
+            "id": "ammeter"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 321.26,
+                    "y": -103.937
+                },
+                {
+                    "x": 538.583,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 651.969,
+                    "y": -255.118
+                },
+                {
+                    "x": 651.969,
+                    "y": -151.181
+                }
+            ],
+            "label": {
+                "value": "V_{cc} = 0\\rightarrow 25V",
+                "distance": "0.12cm"
+            },
+            "id": "american voltage source"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 135.307,
+                    "y": -117.127
+                },
+                {
+                    "x": 132.283,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 135.307,
+                    "y": -315.553
+                },
+                {
+                    "x": 47.244,
+                    "y": -292.913
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 135.307,
+                    "y": -154.922
+                },
+                {
+                    "x": 135.307,
+                    "y": -117.127
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 245.669,
+                    "y": -188.976
+                },
+                {
+                    "x": 255.118,
+                    "y": -188.976
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 255.118,
+                    "y": -188.976
+                },
+                {
+                    "x": 255.118,
+                    "y": -170.079
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 452.372,
+                    "y": -188.976
+                },
+                {
+                    "x": 453.543,
+                    "y": -188.976
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 604.724,
+                    "y": -311.811
+                },
+                {
+                    "x": 604.724,
+                    "y": -198.425
+                }
+            ],
+            "label": {
+                "value": "V_{cc}",
+                "distance": "0.12cm"
+            },
+            "id": "voltmeter"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 538.583,
+                    "y": -103.937
+                },
+                {
+                    "x": 548.031,
+                    "y": -151.181
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 482.646,
+                    "y": -272.126
+                },
+                {
+                    "x": 548.031,
+                    "y": -264.567
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 481.89,
+                    "y": -359.055
+                },
+                {
+                    "x": 604.724,
+                    "y": -311.811
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 651.969,
+                    "y": -255.118
+                },
+                {
+                    "x": 604.724,
+                    "y": -359.055
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 604.724,
+                    "y": -198.425
+                },
+                {
+                    "x": 548.031,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 651.969,
+                    "y": -151.181
+                },
+                {
+                    "x": 604.724,
+                    "y": -103.937
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 368.504,
+                    "y": -188.976
+                },
+                {
+                    "x": 453.543,
+                    "y": -188.976
+                }
+            ],
+            "id": "cute closed switch"
+        }
+    ]
+}

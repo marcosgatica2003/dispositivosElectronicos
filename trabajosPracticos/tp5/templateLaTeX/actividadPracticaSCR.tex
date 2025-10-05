@@ -1,0 +1,137 @@
+\section{ACTIVIDAD PRÁCTICA SOBRE SCR} 
+\subsection{Condición de disparo $I_G$ y corriente de mantenimiento $I_H$}
+\sangria{} El objetivo de esta actividad es determinar la polarización y le funcionamiento del SCR, tanto en una etapa de simulación como en la correspondiente implementación.\\
+\midTitle{teal}{Circuito para polarización}{}
+\begin{center}\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\draw (1.25, 7.75) to[american voltage source, l={$20V$}] (1.25, 5);
+	\draw (3.58, 8.349) to[american resistor, l={$R_1 = 3,3k\Omega$}] (3.58, 6.349);
+	\draw (3.58, 4.099) to[variable american resistor, l={$\text{POT  } 5k\Omega$}] (3.58, 6.349);
+	\draw (1.25, 5) -- (1.25, 2.75) -- (4, 2.75) -- (4.25, 2.75);
+	\node[ground] at (1.25, 2.75){};
+	\draw (4, 5) to[american resistor, l={$R_3 = 4,7 k\Omega$}] (6.5, 5);
+	\draw (6.75, 4.5) to[voltmeter, l={$V_G$}] (6.75, 2.75);
+	\draw (4.25, 2.75) -- (8.5, 2.75);
+	\draw (6.75, 5) to[ammeter, l={$I_G$}] (9.75, 5);
+	\draw (9.719, 5) to[cute closing switch] (11.969, 5);
+	\draw (12.77, 7.2) to[stroke thyristor, mirror] (12.77, 4.2);
+	\draw (12.77, 7.2) to[american resistor, l={$R_4 = 4,7k\Omega$}] (12.77, 9.45);
+	\draw (14.5, 7) to[voltmeter, l={$V_{AK}$}] (14.5, 4);
+	\draw (12.77, 4.2) to[ammeter, l={$I_{AK}$}] (12.75, 2.75);
+	\draw (8.5, 2.75) -- (14.25, 2.75);
+	\draw (17.25, 6.75) to[american voltage source, l={$V_{cc}$}] (17.25, 4);
+	\draw (3.58, 3.099) |- (3.5, 2.75);
+	\draw (3.58, 8.349) -| (1.25, 7.75);
+	\draw (3.58, 4.099) -- (3.58, 3.099);
+	\draw (6.5, 5) -- (6.75, 5);
+	\draw (6.75, 5) -| (6.75, 4.5);
+	\draw (11.969, 5) -- (12, 5);
+	\draw (16, 8.25) to[voltmeter, l={$V_{cc}$}] (16, 5.25);
+	\draw (14.25, 2.75) -| (14.5, 4);
+	\draw (12.77, 7.2) -| (14.5, 7);
+	\draw (12.75, 9.5) -| (16, 8.25);
+	\draw (17.25, 6.75) |- (16, 9.5);
+	\draw (16, 5.25) |- (14.5, 2.75);
+	\draw (17.25, 4) |- (16, 2.75);
+\end{tikzpicture}\end{center}
+\subsubsection{Actividad de laboratorio}
+\midTitle{red}{Armado de circuito}{}
+\midTitle{red}{Flujo de trabajo}{}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\tikzstyle{block} = [rectangle, rounded corners, align=center,minimum width=1cm, minimum height=1cm,
+text centered, draw=black, fill=gray!10]
+\tikzstyle{arrow} = [thick, -{Stealth[length=3mm]}]
+
+\begin{center}\begin{tikzpicture}[node distance=1.4cm]
+
+\node (2) [block] {Colocar $V_{CC}=0$ V};
+\node (3) [block, right=of 2] {Cerrar el interruptor $S_w$};
+\node (4) [block, below=of 3] {Variar el potenciómetro para relevar las tensiones $V_G$};
+\node (5) [block, right=of 4] {Graficar los valores obtenidos \\y comparar la curva $I_G = f(V_G)$};
+\node (6) [block, below=of 5] {Colocar $V_G = 0$ V y cerrar el switch};
+\node (7) [block, left=of 6] {Colocar $V_{CC} = 100$ V};
+\node (8) [block, below=of 7] {Subir lentamente $V_G$ hasta observar un cambio importante\\ en $I_{AK}$ (disparo del SCR). Anotar $V_G$ e $I_G$.};
+\node (9) [block, below=of 8] {Manteniendo el potenciómetro en esa posición, \\abrir $S_w$ y analizar el comportamiento de $I_{AK}$.};
+\node (10) [block, below=of 9] {Con $S_w$ abierto, bajar $V_{CC}$ en pasos de 10 V \\(y de 1 V en los últimos 10 V), registrando $I_{AK}$.};
+\node (11) [block, right=of 10] {Subir nuevamente $V_{CC}$ hasta \\ 100 V y observar el \\comportamiento de $I_{AK}$.};
+\node (12) [block, below=of 11] {Cerrar $S_w$ corroborando \\que $V_G$ e $I_G$ \\sean los mismos valores\\ relevados antes.};
+\node (13) [block, left=of 12] {Analizar qué sucedió con $I_{AK}$ cuando se cerró el interruptor.};
+\node (14) [block, below=of 13] {Abrir nuevamente $S_w$ y observar $I_{AK}$.};
+\node (15) [block, below=of 14] {Desconectar las tensiones de alimentación sin mover el potenciómetro, e invertir Ánodo y Cátodo del SCR.};
+\node (16) [block, below=of 15] {Reconectar las alimentaciones y cerrar $S_w$. Analizar el comportamiento de $I_{AK}$.};
+
+\foreach \i [evaluate=\i as \j using int(\i+1)] in {2,...,15}
+    \draw [arrow] (\i) -- (\j);
+
+\end{tikzpicture}\end{center}
+
+\midTitle{blue}{Preguntas}{}
+\begin{itemize}[nosep]
+    \item \textbf{Analizar y mencionar la alternativa que se presentó para disparar un SCR.
+¿Cómo la puede explicar?. Existe otra manera de disparar el SCR sin
+corriente en la compuerta ¿Cual es ese método?}
+    \item \textbf{Analizar y sacar conclusiones de las conexiones y mediciones realizadas}
+\end{itemize}
+
+\subsubsection{Actividad de simulación}
+
+\midTitle{teal}{Circuito para la simulación}{}
+\begin{center}
+\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\draw (4.25, 5.5) to[american voltage source, l={$V_1$}] (4.25, 4);
+	\draw (5, 5.5) to[american resistor, l={$R_2 = 4,7k\Omega$}] (7.5, 5.5);
+	\draw (8.27, 7.325) to[empty thyristor, mirror] (8.27, 5.075);
+	\draw (8.27, 7.325) to[american resistor, l={$R_1 = 4,7k\Omega$}] (8.25, 9.25);
+	\draw (10.25, 5.5) to[american voltage source, l={$V_2$}] (10.25, 4);
+	\node[ground] at (4.25, 4){};
+	\node[ground] at (8.25, 4){};
+	\node[ground] at (10.25, 4){};
+	\draw (8.25, 4) -| (8.27, 5.075);
+	\draw (4.25, 5.5) -- (5, 5.5);
+	\draw (10.25, 5.5) |- (8.25, 9.25);
+\end{tikzpicture}\end{center}
+
+\subsection{Obtención de curvas característica del SCR}
+\sangria{} El objetivo de esta actividad es lograr un relevamineto de los puntos de trabajo para graficar las curvas características.
+
+\midTitle{teal}{Circuito para curvas características}{}
+\begin{center}\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\draw (1.25, 7.75) to[american voltage source, l={$20V$}] (1.25, 5);
+	\draw (3.58, 8.349) to[american resistor, l={$R_1 = 3,3k\Omega$}] (3.58, 6.349);
+	\draw (3.58, 4.099) to[variable american resistor, l={$\text{POT  } 5k\Omega$}] (3.58, 6.349);
+	\draw (1.25, 5) -- (1.25, 2.75) -- (4, 2.75) -- (4.25, 2.75);
+	\node[ground] at (1.25, 2.75){};
+	\draw (4, 5) to[american resistor, l={$R_3 = 4,7 k\Omega$}] (6.5, 5);
+	\draw (6.75, 4.5) to[voltmeter, l={$V_G$}] (6.75, 2.75);
+	\draw (4.25, 2.75) -- (8.5, 2.75);
+	\draw (6.75, 5) to[ammeter, l={$I_G$}] (9.75, 5);
+	\draw (12.77, 7.2) to[stroke thyristor, mirror] (12.77, 4.2);
+	\draw (12.77, 7.2) to[american resistor, l={$R_4 = 4,7k\Omega$}] (12.77, 9.45);
+	\draw (14.5, 7) to[voltmeter, l={$V_{AK}$}] (14.5, 4);
+	\draw (12.77, 4.2) to[ammeter, l={$I_{AK}$}] (12.75, 2.75);
+	\draw (8.5, 2.75) -- (14.25, 2.75);
+	\draw (17.25, 6.75) to[american voltage source, l={$V_{cc} = 0\rightarrow 25V$}] (17.25, 4);
+	\draw (3.58, 3.099) |- (3.5, 2.75);
+	\draw (3.58, 8.349) -| (1.25, 7.75);
+	\draw (3.58, 4.099) -- (3.58, 3.099);
+	\draw (6.5, 5) -- (6.75, 5);
+	\draw (6.75, 5) -| (6.75, 4.5);
+	\draw (11.969, 5) -- (12, 5);
+	\draw (16, 8.25) to[voltmeter, l={$V_{cc}$}] (16, 5.25);
+	\draw (14.25, 2.75) -| (14.5, 4);
+	\draw (12.77, 7.2) -| (14.5, 7);
+	\draw (12.75, 9.5) -| (16, 8.25);
+	\draw (17.25, 6.75) |- (16, 9.5);
+	\draw (16, 5.25) |- (14.5, 2.75);
+	\draw (17.25, 4) |- (16, 2.75);
+	\draw (9.75, 5) to[cute closed switch] (12, 5);
+\end{tikzpicture}\end{center}
+
+\subsubsection{Actividad de laboratorio}
+
+\subsection{Funcionamiento del SCR con corrientes alternas}
+\sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
+\subsubsection{Actividad de simulación}

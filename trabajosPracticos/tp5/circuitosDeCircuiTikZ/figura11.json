@@ -1,0 +1,176 @@
+{
+    "version": "0.1",
+    "components": [
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 160.63,
+                    "y": -207.874
+                },
+                {
+                    "x": 160.63,
+                    "y": -151.181
+                }
+            ],
+            "label": {
+                "value": "V_1",
+                "distance": "0.12cm"
+            },
+            "id": "american voltage source"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 188.976,
+                    "y": -207.874
+                },
+                {
+                    "x": 283.465,
+                    "y": -207.874
+                }
+            ],
+            "label": {
+                "value": "R_2 = 4,7k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 312.567,
+                    "y": -276.85
+                },
+                {
+                    "x": 312.567,
+                    "y": -191.811
+                }
+            ],
+            "id": "empty thyristor",
+            "scale": {
+                "x": 1,
+                "y": -1
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 312.567,
+                    "y": -276.85
+                },
+                {
+                    "x": 311.811,
+                    "y": -349.606
+                }
+            ],
+            "label": {
+                "value": "R_1 = 4,7k\\Omega",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 387.402,
+                    "y": -207.874
+                },
+                {
+                    "x": 387.402,
+                    "y": -151.181
+                }
+            ],
+            "label": {
+                "value": "V_2",
+                "distance": "0.12cm"
+            },
+            "id": "american voltage source"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 160.63,
+                "y": -151.181
+            },
+            "id": "ground"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 311.811,
+                "y": -151.181
+            },
+            "id": "ground"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 387.402,
+                "y": -151.181
+            },
+            "id": "ground"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 311.811,
+                    "y": -151.181
+                },
+                {
+                    "x": 312.567,
+                    "y": -191.811
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 160.63,
+                    "y": -207.874
+                },
+                {
+                    "x": 188.976,
+                    "y": -207.874
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 387.402,
+                    "y": -207.874
+                },
+                {
+                    "x": 311.811,
+                    "y": -349.606
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        }
+    ]
+}

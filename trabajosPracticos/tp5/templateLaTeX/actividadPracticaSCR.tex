@@ -36,6 +36,52 @@
 \end{tikzpicture}\end{center}
 \subsubsection{Actividad de laboratorio}
 \midTitle{red}{Armado de circuito}{}
+\begin{center}
+    \tikzset{
+          hole/.style = {fill = #1, circle, minimum width = 1mm, inner sep = 0mm},
+          wire/.style = {draw = #1, line width = 0.2mm},
+          label/.style = {rotate = 0, black!50!white, font=\sffamily, anchor = center}
+        }
+        \begin{tikzpicture}[x=2mm,y=2mm]
+          \draw[fill=black!05!white] (-32,-4) rectangle (1,16);
+ 
+          \foreach \yi in {1,...,30}{
+            \node[hole=red]  at (-\yi,-3){};
+            \node[hole=blue] at (-\yi,-2){};
+            \node[hole=red]  at (-\yi,14){};
+            \node[hole=blue] at (-\yi,15){};
+            \foreach \xs in {0,6}{
+                \foreach \xi in {1,2,3,4,5}{
+                    \node[hole=black] at (-\yi,\xi+\xs){};
+                }
+            }
+        }
+        \foreach \m/\xi in {A/1,B/2,C/3,D/4,E/5,F/7,G/8,H/9,I/10,J/11}{
+            \node[label=0] at (0,\xi) {\tiny\m};
+            \node[label=0] at (-31,\xi) {\tiny\m};
+        }
+        \foreach \n/\yi in {1,5,10,15,20,25,30}{
+            \node[label=0] at (-\yi,-1) {\tiny\n};
+            \node[label=0] at (-\yi,13) {\tiny\n};
+        }
+        \filldraw[line width=1.5pt, fill=orange!25] (-40, 20) circle (0.60cm);
+        \draw[line width=1.5pt, blue!90] (-40, 23) -- (-40, 25) -- (-30, 25) -- (-30, 15);
+        \draw[line width=1.5pt, red!90] (-40, 17) -- (-40, 14) -- (-30, 14);
+        \node at (-40, 18) {\large\textbf{+}};
+        \node at (-40, 22) {\large\textbf{-}};
+        \node at (-34, 20) {\Large\textbf{$20V$}};
+        \filldraw[line width=0.5pt, fill=brown!60] (-29.5, 11) rectangle (-28.5, 13.25);
+        \filldraw[line width=0.25pt, draw=black, fill=orange!80] (-29.5, 11.25) rectangle (-28.5, 11.5);
+        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-29.5, 11.75) rectangle (-28.5, 12);
+        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-29.5, 12.25) rectangle (-28.5, 12.5);
+        \filldraw[line width=0.25pt, draw=black, fill=gold!80] (-29.5, 12.75) rectangle (-28.5, 13);
+        \draw[line width=1pt, draw=black!60] (-29, 13.25) -- (-29, 14);
+        \draw[line width=1pt, draw=black!60] (-29, 11) -- (-29, 10);
+
+        \filldraw[line width=1pt, fill=brown!80, draw=black] ()
+
+   \end{tikzpicture}
+\end{center}
 \midTitle{red}{Flujo de trabajo}{}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 
@@ -64,7 +110,9 @@ text centered, draw=black, fill=gray!10]
 \foreach \i [evaluate=\i as \j using int(\i+1)] in {2,...,15}
     \draw [arrow] (\i) -- (\j);
 
-\end{tikzpicture}\end{center}
+\end{tikzpicture}
+\imagen[Pines del SCR BT151]{8cm}{}
+\end{center}
 
 \midTitle{blue}{Preguntas}{}
 \begin{itemize}[nosep]
@@ -75,7 +123,6 @@ corriente en la compuerta ¿Cual es ese método?}
 \end{itemize}
 
 \subsubsection{Actividad de simulación}
-
 \midTitle{teal}{Circuito para la simulación}{}
 \begin{center}
 \begin{tikzpicture}
@@ -94,7 +141,7 @@ corriente en la compuerta ¿Cual es ese método?}
 \end{tikzpicture}\end{center}
 
 \subsection{Obtención de curvas característica del SCR}
-\sangria{} El objetivo de esta actividad es lograr un relevamineto de los puntos de trabajo para graficar las curvas características.
+\sangria{} El objetivo de esta actividad es lograr un relevamiento de los puntos de trabajo para graficar las curvas características.
 
 \midTitle{teal}{Circuito para curvas características}{}
 \begin{center}\begin{tikzpicture}

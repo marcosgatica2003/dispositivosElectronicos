@@ -78,7 +78,7 @@
         \draw[line width=1pt, draw=black!60] (-29, 13.25) -- (-29, 14);
         \draw[line width=1pt, draw=black!60] (-29, 11) -- (-29, 10);
 
-        \filldraw[line width=1pt, fill=brown!80, draw=black] ()
+        % \filldraw[line width=1pt, fill=brown!80, draw=black] ()
 
    \end{tikzpicture}
 \end{center}
@@ -111,7 +111,7 @@ text centered, draw=black, fill=gray!10]
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}
-\imagen[Pines del SCR BT151]{8cm}{}
+\imagen[Pines del SCR BT151]{8cm}{./imagenes/pinesBT151.png}
 \end{center}
 
 \midTitle{blue}{Preguntas}{}
@@ -179,6 +179,40 @@ corriente en la compuerta ¿Cual es ese método?}
 
 \subsubsection{Actividad de laboratorio}
 
+\begin{center}\begin{tikzpicture}[node distance=1.4cm]
+
+\node (2) [block] {Se implementó el circuito anterior en protoboard.};
+\node (3) [block, below=of 2] {Fijando un valor de $I_G$, se fue variando el valor de $V_{CC}$ hasta que el SCR disparó.};
+\node (4) [block, below=of 3] {Se relevó el valor de $V_{CC}, I_{AK} \text{ y } V_{AK}$ en el cual se producen los disparos del SCR para completar la siguiente tabla:};
+
+\foreach \i [evaluate=\i as \j using int(\i+1)] in {2,...,3}
+    \draw [arrow] (\i) -- (\j);
+
+\end{tikzpicture}\end{center}
+
+{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
+\begin{center}\begin{tikzpicture}[node distance=1.4cm]
+
+    \node (2) [block] {Fijando el valor de $I_G$, se fue variando el valor de $V_{CC}$ para relevar $I_{AK}$ y $V_{AK}$ para cada caso.};
+
+\foreach \i [evaluate=\i as \j using int(\i+1)] in {2,...,2}
+    \draw [arrow] (\i) -- (\j);
+
+\end{tikzpicture}\end{center}
+{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
+
+\midTitle{blue}{Preguntas}{}
+
+\begin{itemize}[nosep]
+
+    \item\textbf{Conclusiones de los valores obtenidos en la primera tabla observando cómo varía el valor de $V_{CC}$ al cual se produce el disparo del SCR con cada nuevo valor de $I_G$ que se ensaya}
+    \item\textbf{Graficar en el mismo par de ejes cartesianos los datos relevados en la última tabla que corresponden a la familia de curvas $I_{AK} = f(V_{AK})$ para cada diferente valor de $I_G$. Si es necesario, retome el circuito y revele a su necesidad valores intermedios que le permitan realizar una mejor curva.}
+    \item\textbf{Elavorar conclusiones del gráfico realizado.}
+
+\end{itemize}
+
 \subsection{Funcionamiento del SCR con corrientes alternas}
 \sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
+
 \subsubsection{Actividad de simulación}
+

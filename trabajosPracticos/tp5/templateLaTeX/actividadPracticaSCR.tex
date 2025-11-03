@@ -78,7 +78,6 @@
         \draw[line width=1pt, draw=black!60] (-29, 13.25) -- (-29, 14);
         \draw[line width=1pt, draw=black!60] (-29, 11) -- (-29, 10);
 
-        % \filldraw[line width=1pt, fill=brown!80, draw=black] ()
 
    \end{tikzpicture}
 \end{center}
@@ -114,10 +113,22 @@ text centered, draw=black, fill=gray!10]
 \imagen[Pines del SCR BT151]{8cm}{./imagenes/pinesBT151.png}
 \end{center}
 
+\begin{center}
+\begin{center}
+\begin{tabular}{|ccccccccccc|}
+\hline
+\rowcolor[HTML]{FFFC9E} 
+\cellcolor[HTML]{FFCE93}\textbf{$V_G [V]$} & {\color[HTML]{000000} 0.2} & {\color[HTML]{000000} 0.3} & {\color[HTML]{000000} 0.4} & {\color[HTML]{000000} 0.5} & {\color[HTML]{000000} 0.6} & {\color[HTML]{000000} 0.7} & {\color[HTML]{000000} 0.8} & {\color[HTML]{000000} 0.9} & {\color[HTML]{000000} 1.0} & {\color[HTML]{000000} 1.1} \\ \hline
+\cellcolor[HTML]{FFCE93}\textbf{$I_G [A]$} & $634\mu$                   & $936\mu$                   & $1266\mu$                  & $1588\mu$                  & $233m$                     &                            &                            &                            &                            &                            \\ \hline
+\end{tabular}
+\end{center}
+
+\end{center}
+
 \midTitle{blue}{Preguntas}{}
 \begin{itemize}[nosep]
     \item \textbf{Analizar y mencionar la alternativa que se presentó para disparar un SCR.
-¿Cómo la puede explicar?. Existe otra manera de disparar el SCR sin
+¿Cómo la puede explicar? Existe otra manera de disparar el SCR sin
 corriente en la compuerta ¿Cual es ese método?}
     \item \textbf{Analizar y sacar conclusiones de las conexiones y mediciones realizadas}
 \end{itemize}
@@ -178,7 +189,6 @@ corriente en la compuerta ¿Cual es ese método?}
 \end{tikzpicture}\end{center}
 
 \subsubsection{Actividad de laboratorio}
-
 \begin{center}\begin{tikzpicture}[node distance=1.4cm]
 
 \node (2) [block] {Se implementó el circuito anterior en protoboard.};
@@ -189,8 +199,6 @@ corriente en la compuerta ¿Cual es ese método?}
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}\end{center}
-
-{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
 \begin{center}\begin{tikzpicture}[node distance=1.4cm]
 
     \node (2) [block] {Fijando el valor de $I_G$, se fue variando el valor de $V_{CC}$ para relevar $I_{AK}$ y $V_{AK}$ para cada caso.};
@@ -213,6 +221,5 @@ corriente en la compuerta ¿Cual es ese método?}
 
 \subsection{Funcionamiento del SCR con corrientes alternas}
 \sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
-
 \subsubsection{Actividad de simulación}
 

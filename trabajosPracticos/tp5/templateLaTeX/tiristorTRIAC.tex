@@ -113,6 +113,9 @@ l | l | l |}
 
 \section{Dimmer y controlador de potencia}
 
+\imagen[Esquematico del dimmer]{15cm}{./imagenes/esquematico_dimmer.png}
+\imagen[Circuito dimmer del ]{15cm}{./imagenes/circuito_dimmer.jpg}
+
 \sangria{En esta actividad final se analiza la aplicación más común de los tiristores: el control de potencia en corriente alterna (CA) mediante un circuito "dimmer". El objetivo es observar el funcionamiento del TRIAC en un circuito real alimentado por la red eléctrica. El circuito, detallado en la Figura 15, utiliza un TRIAC (TIC 226) como interruptor principal en serie con la carga. El control de este interruptor se logra mediante una red de disparo compuesta por un DIAC, un capacitor, y una resistencia variable (potenciómetro) de 250K. El principio de funcionamiento es el \textbf{control de ángulo de fase}. En cada semiciclo de la onda de CA de entrada, el capacitor se carga a través del potenciómetro. La velocidad de esta carga es determinada por la constante de tiempo RC, la cual se ajusta variando la resistencia del potenciómetro. Cuando la tensión acumulada en el capacitor alcanza la tensión de ruptura ($V_{BO}$) del DIAC (indicada como 30V en el diagrama), el DIAC se dispara. Al dispararse, actúa como un interruptor cerrado y descarga abruptamente el capacitor sobre la compuerta (Gate) del TRIAC.}
 \sangria{El pulso de corriente ($I_G$) dispara al TRIAC, poniéndolo en estado de conducción. Una vez encendido, el TRIAC permite que la corriente fluya hacia la carga durante el \textbf{resto} de ese semiciclo. Cuando la onda de CA cruza por cero, la corriente que atraviesa el TRIAC cae por debajo de su corriente de mantenimiento ($I_H$), provocando su \textbf{apagado natural} (conmutación natural). El proceso se repite idénticamente en el siguiente semiciclo, pero con polaridad opuesta, gracias a la naturaleza bidireccional del DIAC y el TRIAC.}
 

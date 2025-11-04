@@ -405,12 +405,16 @@ $V_{CC}$ {[}V{]} & $V_{AK}$ {[}V{]} & $I_{AK}$ {[}A{]} \\ \hline
 \begin{itemize}[nosep]
 
     \item\textbf{Conclusiones de los valores obtenidos en la primera tabla observando cómo varía el valor de $V_{CC}$ al cual se produce el disparo del SCR con cada nuevo valor de $I_G$ que se ensaya}
+\end{itemize}
+
+\sangria{} Con los datos obtenidos se puede observar que a mayor corriente de compuerta $I_G$, menor es la tensión $V_{AK}$ necesaria para que el SCR dispare. Esto se debe a que una mayor corriente en la compuerta facilita la conducción en la unión PN, haciendo que el dispositivo dispare antes.
+\begin{itemize}[nosep]
     \item\textbf{Graficar en el mismo par de ejes cartesianos los datos relevados en la última tabla que corresponden a la familia de curvas $I_{AK} = f(V_{AK})$ para cada diferente valor de $I_G$. Si es necesario, retome el circuito y revele a su necesidad valores intermedios que le permitan realizar una mejor curva.}
 
         \imagen[$I_{AK} = f(V_{AK})$ para cada $I_G$]{15cm}{./imagenes/actividadSCR/Figure_1.png}
-    \item\textbf{Elavorar conclusiones del gráfico realizado.}
-
+    \item\textbf{Elaborar conclusiones del gráfico realizado.}
 \end{itemize}
+\sangria{} En el gráfico se puede observar que el SCR esta en región de bloque en directa hasta $V_{AK}=0,6V$ para todos los valores de $I_G$. A partir de ese punto, la corriente $I_{AK}$ se dispara indicando que el SCR comenzó a conducir. Se puede ver que a mayor corriente de compuerta $I_G$, hay una mayor pendiente y aumenta la corriente $I_{AK}$ para un mismo valor de $V_{AK}$. Esto demuestra que a más corriente de compuerta, mayor es la corriente entre anodo y cátodo.  
 
 \subsection{Funcionamiento del SCR con corrientes alternas}
 \sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
@@ -498,5 +502,7 @@ Se recomienda usar el comando \texttt{.STEP} con varios valores, por ejemplo: 10
 \begin{itemize}[nosep]
     \item \textbf{Identificar el ángulo mínimo y máximo que puede controlar. Exprese en grados ($\text{}^o$)}
 \end{itemize}
-
+\sangria{} El ángulo mínimo de disparo se da para $R_2 = 0 \Omega$, en este caso el capacitor se carga instantáneamente y el SCR dispara casi al comienzo del semiciclo $\simeq 0^o$. El ángulo máximo se da para $R_2 =4K9 \Omega$, en este caso el capacitor se carga muy lentamente y el SCR dispara casi al final del semiciclo $\simeq 180^o$.
+\midTitle{blue}{Notas del documentador:}{SCR}
+\sangria{} Debido a la disponibilidad de las fuentes de $600V$ en el laboratorio tuvimos que hacer el trabajo junto a otros grupos.
 

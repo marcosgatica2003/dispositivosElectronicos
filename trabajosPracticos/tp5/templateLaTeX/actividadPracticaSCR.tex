@@ -70,18 +70,51 @@
         \node at (-40, 18) {\large\textbf{+}};
         \node at (-40, 22) {\large\textbf{-}};
         \node at (-34, 20) {\Large\textbf{$20V$}};
-        \filldraw[line width=0.5pt, fill=brown!60] (-29.5, 11) rectangle (-28.5, 13.25);
-        \filldraw[line width=0.25pt, draw=black, fill=orange!80] (-29.5, 11.25) rectangle (-28.5, 11.5);
-        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-29.5, 11.75) rectangle (-28.5, 12);
-        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-29.5, 12.25) rectangle (-28.5, 12.5);
-        \filldraw[line width=0.25pt, draw=black, fill=gold!80] (-29.5, 12.75) rectangle (-28.5, 13);
-        \draw[line width=1pt, draw=black!60] (-29, 13.25) -- (-29, 14);
-        \draw[line width=1pt, draw=black!60] (-29, 11) -- (-29, 10);
+        \filldraw[line width=0.5pt, fill=brown!60] (-28.5, 11) rectangle (-27.5, 13.25);
+        \filldraw[line width=0.25pt, draw=black, fill=orange!80] (-28.5, 11.25) rectangle (-27.5, 11.5);
+        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-28.5, 11.75) rectangle (-27.5, 12);
+        \filldraw[line width=0.25pt, draw=black, fill=red!80] (-28.5, 12.25) rectangle (-27.5, 12.5);
+        \filldraw[line width=0.25pt, draw=black, fill=gold!80] (-28.5, 12.75) rectangle (-27.5, 13);
+        \draw[line width=1pt, draw=black!60] (-28, 13.25) -- (-28, 14);
+        \draw[line width=1pt, draw=black!60] (-28, 11) -- (-28, 10);
+        \filldraw[line width=0.5pt, draw=black, fill=brown!60, rounded corners=3pt] (-29, 9.5) rectangle (-23, 7);
+        \filldraw[line width=0.5pt, draw=black, fill=brown!70] (-29, 7.35) rectangle (-23, 6.5);
+        \draw[line width=1pt, draw=blue!90] (-24, 11) -- (-24, 15);
+        \filldraw[line width=0.5pt, draw=black, fill=gray!90] (-28, 6.5) rectangle (-24, 6);
+        \filldraw[line width=0.5pt, draw=black, fill=gray!70] (-26.5, 6) rectangle (-25.5, 3.5);
+        \draw[line width=1.25pt, draw=black!70] (-26, 6) -- (-26, 3.5);
+       
 
-        % \filldraw[line width=1pt, fill=brown!80, draw=black] ()
-
-   \end{tikzpicture}
+       \draw[line width=1pt, draw=black!60] (-26, 10) -- (-23, 10);
+       \filldraw[line width=0.5pt, draw=black, fill=brown!60] (-23, 10.5) rectangle (-20.75, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=yellow] (-22.75, 10.5) rectangle (-22.5, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=violet] (-22.25, 10.5) rectangle (-22, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=red] (-21.75, 10.5) rectangle (-21.5, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=gold] (-21.25, 10.5) rectangle (-21, 9.5);
+    \draw[line width=1pt, draw=black!60] (-20.75, 10) -- (-20, 10);
+    \filldraw[line width=0.5pt, draw=black, fill=black!80] (-17.5, 8) rectangle (-14.5, 9.25);
+    \filldraw[line width=0.5, draw=black, fill=gray!70] (-17.5, 8) rectangle (-14.5, 7.5);
+    \draw[line width=1pt, draw=red] (-17, 7) -- (-20, 7);
+    \draw[line width=1pt, draw=blue!90] (-15, 11) -- (-15, 15);
+    \draw[line width=1pt, draw=black!60] (-16, 10) -- (-14, 10);
+       \filldraw[line width=0.5pt, draw=black, fill=brown!60] (-14, 10.5) rectangle (-11.75, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=yellow] (-13.75, 10.5) rectangle (-13.5, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=violet] (-13.25, 10.5) rectangle (-13, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=red] (-12.75, 10.5) rectangle (-12.5, 9.5);
+       \filldraw[line width=0.25pt, draw=black, fill=gold] (-12.25, 10.5) rectangle (-12, 9.5);
+       \draw[line width=1pt, draw=black!60] (-11.75, 10) -- (-10, 10);
+       \draw[line width=1.5pt, draw=red] (-10, 11) -- (-10, 18) -- (5, 18);
+       \draw[line width=1.5pt, draw=blue] (7, 18) -- (12, 18) -- (12, 13) -- (0, 13) -- (0, 15) -- (-1, 15);
+        \filldraw[line width=1.5pt, fill=orange!25] (5, 18) circle (0.60cm);
+        \node at (3, 18) {\large\textbf{+}};
+        \node[rotate=90] at (7, 18) {\large\textbf{-}};
+        \node at (4.75, 23) {\Large\textbf{$V_{CC}$}}; 
+\end{tikzpicture}
 \end{center}
+\imagen[Fotografía del circuito]{10cm}{./imagenes/actividadSCR/protoboardCircuito.jpg}
+\imagen[Pines del SCR BT151]{8cm}{./imagenes/pinesBT151.png}
+
+
 \midTitle{red}{Flujo de trabajo}{}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 
@@ -111,16 +144,95 @@ text centered, draw=black, fill=gray!10]
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}
-\imagen[Pines del SCR BT151]{8cm}{./imagenes/pinesBT151.png}
 \end{center}
 
 \midTitle{blue}{Preguntas}{}
 \begin{itemize}[nosep]
-    \item \textbf{Analizar y mencionar la alternativa que se presentó para disparar un SCR.
-¿Cómo la puede explicar?. Existe otra manera de disparar el SCR sin
-corriente en la compuerta ¿Cual es ese método?}
-    \item \textbf{Analizar y sacar conclusiones de las conexiones y mediciones realizadas}
+    \item \textbf{Analizar y mencionar la alternativa que se presentó para disparar un SCR ¿Cómo la puede explicar? Existe otra manera de disparar el SCR sin corriente en la compuerta ¿Cual es ese método?}
 \end{itemize}
+\sangria{} El método de disparo que se usó al principio fue hacer variar la corriente $I_G$ para que el SCR se ''encienda'', usando como variador el potenciometro (menos resistencia $\rightarrow$ más corriente en $Gate$).
+\imagen[Curvas IG-VG teoría]{15cm}{./imagenes/actividadSCR/curvasDelSCRGuanuco.png}
+\sangria{} Con una $V_G$ constante, haciendo variar el potenciometro, se modifica el valor de la corriente en $Gate$ por lo que el SCR se activa según la gráfica $a)$. Esto se puede comprobar midiendo $I_{AK}$, que pasa de unos $\mu A$ y bruscamente unos $mA$. \\
+\sangria{} Con el potenciometro fijo, se puede activar el SCR subiendo la tensión de $Gate$, tal como expone el gráfico $b)$. Es decir, se puede tener un valor fijo del potenciometro y con variar la tención se logra alcanzar el valor de $V_{BR}$ donde el tiristor pasa de polarización bloqueo en directa, a polarización conduccion en directa.
+\begin{itemize}
+\item \textbf{Analizar y sacar conclusiones de las conexiones y mediciones realizadas}
+\end{itemize}
+\sangria{} Viendo las gráficas, podemos concluir que más allá de un arreglo de tensiones y/o corrientes, activar el SCR significa que debemos inyectar una potencia tal en el $Gate$ para que esto suceda. Dicho valor es un punto en la pendiente.
+
+% No conclusion?
+
+% ###########################################################################################################################
+% ###########################################################################################################################
+% ##########################################+###########################################++++++###############################
+% ####################################+++#++###########################################++++++++##############################
+% ###################################+++++++++++++###+++++##########################++++++++++++#############################
+% ###################################++++++++++++++++++++++++++++######+#############++++++++++++############################
+% ###################################++++++++++++++++++++++++++++++++++++#++#########++++++++++++############################
+% ##################################++++++++++++++++++++++++++++++++++++++++++##+++++++++++++++++############################
+% ##################################+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++############################
+% ##################################+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++############################
+% #################################+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#############################
+% #################################+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#############################
+% ################################+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++##############################
+% ################################++++++++++####+++++++++++++++++++++++++++++++++++++++++++++++##############################
+% ################################++++##########+++#++++++++++++++++++++++++++++++++++++++++++###############################
+% #############################################++++###+++++++++++++++++++++++++++++++++++++++################################
+% ###########################################++++++++#####++++++++++++++++++++++++++++++++++#################################
+% #####################################++++++++++++++++#################+++++++++++++++++++##################################
+% ####################################+++++++++++++++++++#################++++++++++++++++###################################
+% #####################################++++++++++++++++++++++##############+++++++++++++#####################################
+% #######################################+++#####++++++++++++++++++#########+++++++++++######################################
+% #################################################++#+++#######++++++######++++++++#########################################
+% #########################################+++#####++###############+++++###++++++###########################################
+% #########################################-++###+#++#################++++##++++++#+++#######################################
+% #########################################++######++######+++#############+++++#############################################
+% ##########################################++#####++#####+++##############++++##+###########################################
+% #######################################++#######+++#####+++#######+##++++++################################################
+% #######################################++++##+++++######+++######++#+++++++#+##############################################
+% ########################################+++++++++#########++#######++++++++################################################
+% ########################################++++++++##################+++++++##################################################
+% ########################################+#++++++####++#########+++++++++###################################################
+% #########################################++++++++++++##++++++++++++++++####################################################
+% ########################################+++++++++++++++++########+++++###+#########+#######################################
+% #######################################++++++++++++++++##########++++#++###########+#######################################
+% #######################################++++++++++++++++########++++++######################################################
+% ######################################++++++++-+++++++########++++++#######################################################
+% ####################################++++++++-++++++++########++++++########################################################
+% #####################################+++++++++++++++++++####++++++#########################################################
+% ######################################+++++++++++++++++++###+++++##########################################################
+% #########################################+#####+++++++++++#+++++###########################################################
+% #########################################+######++++++#+++#++++############################################################
+% #########################################+#########+++++#+#+++#############################################################
+% ###########################################################################################################################
+% ###########################################################################################################################
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+$V_{CC}$ {[}V{]} & $V_{AK}$ {[}V{]} & $I_{AK}$ {[}A{]} \\ \hline
+100              & 730m             & 21,1m            \\
+90               & 729m             & 18,7m            \\
+80               & 726m             & 16,6m            \\
+70               & 724m             & 14,5m            \\
+60               & 721m             & 12,4m            \\
+50               & 721m             & 10,3m            \\
+40               & 728m             & 8,2m             \\
+35               & 742m             & 7,2m             \\
+30               & 805m             & 6m               \\
+28.4             & 28.4             & 0                \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cccccccccc}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+\cellcolor[HTML]{FFCE93}$V_G$ {[}V{]} & 0.2      & 0.3      & 0.4       & 0.5       & 0.6    & 0.7    & 0.8    & 0.9 & 1 & 1.1 \\ \hline
+\cellcolor[HTML]{FFCE93}$I_G$ {[}A{]} & $634\mu$ & $936\mu$ & $1266\mu$ & $1588\mu$ & $233m$ & $281m$ & $313m$ & -   & - & -   \\ \hline
+\end{tabular}
+\end{center}
+\imagen[Curva $I_G = f(V_G)$]{10cm}{./imagenes/actividadSCR/curvasDelSCRNosotros.png}
 
 \subsubsection{Actividad de simulación}
 \midTitle{teal}{Circuito para la simulación}{}
@@ -140,6 +252,38 @@ corriente en la compuerta ¿Cual es ese método?}
 	\draw (10.25, 5.5) |- (8.25, 9.25);
 \end{tikzpicture}\end{center}
 
+\midTitle{red}{Flujo de trabajo}{}
+
+{
+
+\tikzstyle{block} = [rectangle, rounded corners,
+                     draw=black, fill=gray!10,
+                     text width=8cm, minimum height=1cm,
+                     align=center, font=\small]
+
+\tikzstyle{arrow} = [thick, -{Latex[length=3mm,width=2mm]}]
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm]
+
+\node[block] (a) {Montar el circuito anterior.};
+\node[block, below of=a] (b) {Establecer $V_2 = 0\,\text{V}$.};
+\node[block, below of=b] (c) {En LTSpice, aplicar un barrido DC en la fuente $V_1$ desde $0.2$ a $1.5$\,V en pasos de $0.1$\,V.};
+\node[block, below of=c] (d) {Medir y graficar la corriente $I_G$ en la compuerta en función de $V_G$, y comparar la curva $I_G = f(V_G)$ con la del componente previamente estudiado.};
+\node[block, below of=d] (e) {Analizar el disparo del SCR por tensión aplicada entre el ánodo y el cátodo ($I_G = 0$). Realizar un barrido DC en $V_2$ desde $0$ a $800$\,V en pasos de $10$\,V.};
+\node[block, below of=e] (f) {Medir y graficar la corriente de ánodo $I_A$ en función de $V_{AK}$, y comparar la curva $I_A = f(V_{AK})$. Observar la tensión a la cual ocurre el disparo.};
+\node[block, below of=f] (g) {Para realizar el disparo controlado por tensión en compuerta $V_G$, mantener $V_2$ en $100$\,V e incrementar $V_1$ mediante un barrido DC hasta encontrar el punto donde $I_A$ cambia bruscamente (disparo).};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\draw[arrow] (d) -- (e);
+\draw[arrow] (e) -- (f);
+\draw[arrow] (f) -- (g);
+\end{tikzpicture} 
+
+\end{center}}
+\imagen[Curva $I_G = f(V_G)$ LtSpice]{10cm}{./imagenes/actividadSCR/curvasIgFuncionVgSimulacion.png}
+\imagen[Curva $I_A = f(V_{AK})$ LtSpice]{16cm}{./imagenes/actividadSCR/I_A-en-funcion-V_AK.png}
 \subsection{Obtención de curvas característica del SCR}
 \sangria{} El objetivo de esta actividad es lograr un relevamiento de los puntos de trabajo para graficar las curvas características.
 
@@ -178,7 +322,6 @@ corriente en la compuerta ¿Cual es ese método?}
 \end{tikzpicture}\end{center}
 
 \subsubsection{Actividad de laboratorio}
-
 \begin{center}\begin{tikzpicture}[node distance=1.4cm]
 
 \node (2) [block] {Se implementó el circuito anterior en protoboard.};
@@ -190,7 +333,20 @@ corriente en la compuerta ¿Cual es ese método?}
 
 \end{tikzpicture}\end{center}
 
-{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
+\begin{center}
+\begin{tabular}{|
+>{\columncolor[HTML]{ECF4FF}}c |c|c|c|}
+\hline
+\cellcolor[HTML]{FFFFC7}\textbf{$I_G$ $[\mu A]$} & \cellcolor[HTML]{FFFFC7}\textbf{$V_{CC}$ $[V]$} & \cellcolor[HTML]{FFFFC7}\textbf{$I_{AK}$ $[mA]$} & \cellcolor[HTML]{FFFFC7}\textbf{$V_{AK}$ $[V]$} \\ \hline
+\textbf{10}                                      &                                                 &                                                  &                                                 \\
+\textbf{20}                                      &                                                 &                                                  &                                                 \\
+\textbf{30}                                      &                                                 &                                                  &                                                 \\
+\textbf{40}                                      &                                                 &                                                  &                                                 \\
+\textbf{50}                                      &                                                 &                                                  &                                                 \\ \hline
+\end{tabular}
+\end{center}
+
+
 \begin{center}\begin{tikzpicture}[node distance=1.4cm]
 
     \node (2) [block] {Fijando el valor de $I_G$, se fue variando el valor de $V_{CC}$ para relevar $I_{AK}$ y $V_{AK}$ para cada caso.};
@@ -199,8 +355,23 @@ corriente en la compuerta ¿Cual es ese método?}
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}\end{center}
-{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
-
+\begin{center}
+\begin{tabular}{|cc|cc|cc|cc|cc|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFFFC7}$I_G = 50\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 40\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 30\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 20\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 10\mu A$}                                             \\ \hline
+\rowcolor[HTML]{FFCE93} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ \\ \hline
+\multicolumn{1}{|c|}{0}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{1}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{2}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{3}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{4}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{5}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{...}                                    &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{15}                                     &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\ \hline
+\end{tabular}
+\end{center}
 \midTitle{blue}{Preguntas}{}
 
 \begin{itemize}[nosep]
@@ -213,6 +384,89 @@ corriente en la compuerta ¿Cual es ese método?}
 
 \subsection{Funcionamiento del SCR con corrientes alternas}
 \sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
-
 \subsubsection{Actividad de simulación}
+\midTitle{teal}{Circuito para la simulación}{}
+\begin{center}
+\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\node[oscillator](N1) at (0.73, 7.5){};
+	\draw (2, 10.5) to[american resistor, l={$R_1$}] (2, 7.5);
+	\draw (2, 7.5) to[american resistor, l={$R_2$}] (2, 4.5);
+	\node[ground] at (2, 3.5){};
+	\draw (0.25, 6) -| (0.25, 3.5) -- (2, 3.5);
+	\draw (0.25, 8) -| (0.25, 10.5);
+	\draw (0.25, 11.25) -- (2, 11.25);
+	\draw (2, 7.5) to[american resistor, l={$R_4 [1k\Omega]$}] (4.5, 7.5);
+	\draw (4.5, 7.5) to[empty diode] (6.25, 7.5);
+	\draw (7.003, 9.17) to[empty thyristor, mirror] (7.023, 7.245);
+	\draw (7.003, 9.17) to[american resistor, l={$R_3 [1k\Omega]$}] (7, 10.5);
+	\draw (0.25, 10.5) -| (0.25, 11.25);
+	\draw (2, 10.5) -| (2, 11.25);
+	\draw (7, 10.5) |- (2, 11.25);
+	\draw (2, 3.5) to[capacitor, l={$C 4.7\mu$}] (2, 4.75);
+	\draw (0.25, 6) -| (0.25, 7);
+	\draw (2, 3.5) -| (7.023, 7.245);
+\end{tikzpicture}\end{center}
+
+\midTitle{red}{Flujo de trabajo}{}
+{ 
+\tikzstyle{block} = [rectangle, rounded corners,
+                     draw=black, fill=gray!10,
+                     text width=8cm, minimum height=1cm,
+                     align=center, font=\small]
+
+\tikzstyle{arrow} = [thick, -{Latex[length=3mm,width=2mm]}]
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm]
+
+\node[block] (a) {Armar el circuito en un entorno de simulación.};
+\node[block, below of=a] (b) {Lanzar la simulación y graficar $V_{in}$, $V_{R3}$ e $I_G$.};
+\node[block, below of=b] (c) {Variar el parámetro $p$ que simula un potenciómetro de 5\,k$\Omega$.\\
+Se recomienda usar el comando \texttt{.STEP} con varios valores, por ejemplo: 100, 1k, 3k y 4.9k.};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+
+\end{tikzpicture}
+\end{center}
+
+}
+
+\midTitle{blue}{Preguntas}{}
+\begin{itemize}[nosep]
+    \item \textbf{Debe explicar brevemente el funcionamiento del circuito. Principalmente justificar el uso del capacitor en el circuito de la compuerta.}
+\end{itemize}
+
+\sangria{} El circuito es de un disparo de SCR con control de fase, permite regular la potencia entregada a una carga resistiva. El tiristor conduce solo durante parte del semiciclo de la señal senoidal $V_1$, al variar la fase de disparo se controla cuánta parte de la onda llega a la carga (potencia promedio se entrega). \\ \sangria{} El capacitor en la compuerta junto al divisor $R_1$ y $R_2$, con el diodo, permite retrasar el momento en el que el SCR recibe el pulso de disparo en cada semiciclo:
+\begin{enumerate}[nosep]
+    \item Al comienzo del semiciclo, el capacitor se carga por medio de $R_1, R_2 \text{ y } D_1$.
+    \item Cuando la tensión en el capacitor alcanza la tensión de disparo del diodo y del gate del SCR, el capacitor descarga a tirra. El $Gate$ del SCR ''vió'' un pulso, por lo que se enciende.
+    \item La carga queda conectada al suministro hasta que la corriente de línea cae a cero (sería el fin del semiciclo).\\
+\end{enumerate}
+\sangria{} El potenciometro modifica la constante de tiempo $\tau = R_{eq} \cdot C_1$. Así controla cuánto tarda el capacitor en cargarse y por lo tanto, en qué punto del semiciclo dispara el SCR:
+
+\begin{itemize}[nosep]
+    \item Menor resistencia $\rightarrow$ el capacitor carga más rápido $\rightarrow$ El SCR se dispara antes y hay más potencia en la carga.
+    \item Mayor resistencia $\rightarrow$ el capacitor se carga más lento $\rightarrow$ El SCR dispara más tarde y hay menos potencia en la carga.\\[5pt]
+\end{itemize}
+
+
+
+\begin{itemize}[nosep]
+    \item \textbf{Tome una de las simulaciones y analice las corrientes $I_G$ en el momento de disparo y la corriente $I_{AK}$ en el momento de apagado ¿Coincide con el valor esperado?}
+\end{itemize}
+
+\imagen[Corriente en el $Gate$ del SCR]{15cm}{./imagenes/actividadSCR/I_G_disparo_scr.png}
+\sangria{} Nótese cómo en milisegundos, la corriente en el $Gate$ sube hasta cierto valor hasta que el capacitor termina de cargarse y se descarga a tierra. Por lo que el $Gate$ ve un pulso de corriente lo suficiente para activdar el SCR.
+
+\imagen[Sinuidal de la fuente]{15cm}{./imagenes/actividadSCR/formaSinuidalUltimoSCR.png}
+
+\imagen[Corriente ánodo cátodo para distintos valores de $R_2$]{15cm}{./imagenes/actividadSCR/corrienteIAKUltimoSCR.png}
+
+\sangria{} Nótese que, para $R_2 = 0$, la onda sinuidal de la fuente entra casi completa a la carga y a medida que aumenta, entran solo ciertos semiciclos de la fuente (porque el capacitor se carga instantáneamente).
+
+\begin{itemize}[nosep]
+    \item \textbf{Identificar el ángulo mínimo y máximo que puede controlar. Exprese en grados ($\text{}^o$)}
+\end{itemize}
+
 

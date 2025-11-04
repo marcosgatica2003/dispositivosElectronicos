@@ -1,1 +1,62 @@
-\section{TIRISTORES DIAC Y TRIAC}
+\section{TIRISTORES DIAC}
+\sangria{Los DIACS y TRIACS tienen la capacidad de trabajar en ambos sentidos de polarizacion, en la primera actividad se identificó la tensión de conmutación del DIAC}
+\sangria{En esta actividad, se procedió a relevar la curva característica de un DIAC DB3. Para ello, se montó el circuito de la figura 13 de la guía y se incrementó progresivamente la tensión de alimentación $V_{CC}$ (referida como $V_1$ en la tabla de mediciones).}
+\sangria{Los resultados de la medición, visibles en la tabla de la página 10, demuestran el comportamiento distintivo del dispositivo.Inicialmente, en la \textbf{zona de bloqueo}, se observa que al aumentar $V_{CC}$ desde 0V hasta 30V, la tensión en el DIAC ($V_{AK}$) es idéntica a la de la fuente, mientras que la corriente $I_A$ se mantiene en 0 mA. Esto indica que el DIAC se comporta como un circuito abierto de muy alta resistencia.}
+\sangria{Al alcanzar los $V_{CC} = 32V$, se produce el \textbf{disparo} o \textit{breakdown} del componente. En este instante, la corriente $I_A$ salta bruscamente a 1.74 mA, y la tensión $V_{AK}$ a través del dispositivo cae a 23.8V. Este punto de inflexión define la \textbf{tensión de ruptura ($V_{BO}$)} del DIAC, que en nuestro ensayo se sitúa alrededor de los 30-32V.}
+\sangria{Una vez disparado, el DIAC entra en la \textbf{zona de conducción}. Aumentos posteriores en $V_{CC}$ (desde 34.3V a 50V) provocan un incremento en la corriente $I_A$ (de 2.24 mA a 5.92 mA). Notablemente, la tensión $V_{AK}$ se mantiene relativamente constante en un valor bajo, estabilizándose alrededor de 22-23V. Este comportamiento valida el modelo del DIAC como un interruptor bidireccional que se activa por tensión, fundamental para su aplicación en el disparo de TRIACs.}
+
+\imagen[Implementación DIAC]{15cm}{./imagenes/diac.jpg}
+\newpage
+\begin{center}
+\captionof{table}{Valores del DIAC relevados en el laboratorio.}
+\begin{tabular}{|
+>{\columncolor[HTML]{FFCCC9}}l |l|l|}
+\hline
+% Encabezado de la tabla
+\cellcolor[HTML]{FFFFC7}\textbf{Vcc (V)} &
+\cellcolor[HTML]{FFFFC7}\textbf{VAK (V)} &
+\cellcolor[HTML]{FFFFC7}\textbf{IA (mA)} \\ \hline
+
+% Datos de la imagen
+\textbf{0} & 0 & 0 \\ \hline
+\textbf{5} & 5 & 0 \\ \hline
+\textbf{10} & 10 & 0 \\ \hline
+\textbf{15} & 15 & 0 \\ \hline
+\textbf{20} & 20 & 0 \\ \hline
+\textbf{22} & 22 & 0 \\ \hline
+\textbf{25} & 25 & 0 \\ \hline
+\textbf{28} & 28 & 0 \\ \hline
+\textbf{30} & 30 & 0 \\ \hline
+\textbf{32} & 23.8 & 1.74 \\ \hline
+\textbf{34.3} & 23.4 & 2.24 \\ \hline
+\textbf{40.4} & 22.6 & 3.72 \\ \hline
+\textbf{45} & 22.2 & 4.9 \\ \hline
+\textbf{50} & 21.9 & 5.92 \\ \hline
+\end{tabular}
+\end{center}
+
+\sangria{La curva que relaciona a $I_A$ con $V_{AK}$ es la siguiente:}
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Curva Característica $I_A$ vs $V_{AK}$},
+            xlabel={$V_{AK}$ (\si{\volt})},
+            ylabel={$I_{A}$ (\si{\milli\ampere})},
+            grid=major,
+            legend pos=north west,
+            width=0.8\textwidth, % Ajustar al ancho de la página
+        ]
+        \addplot [blue, mark=*,]
+        coordinates {
+            (0, 0) (5, 0) (10, 0) (15, 0) (20, 0) (22, 0) (25, 0) (28, 0) (30, 0)
+            (23.8, 1.74) (23.4, 2.24) (22.6, 3.72) (22.2, 4.9) (21.9, 5.92)
+        };
+        \addlegendentry{Datos Medidos}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Curva característica $I_A$ vs $V_{AK}$ del dispositivo.}
+\end{figure}
+
+\midTitle{blue}{Notas del documentador:}{DIAC}
+\sangria{En esta actividad tuvimos los mismos problemas que antes: problemas con la disponibilidad con las fuentes y problemas de medición con la proto y los multímetros}

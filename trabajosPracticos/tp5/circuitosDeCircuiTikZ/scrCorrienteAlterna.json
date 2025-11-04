@@ -1,0 +1,306 @@
+{
+    "version": "0.1",
+    "components": [
+        {
+            "type": "node",
+            "label": {
+                "value": "V_1",
+                "anchor": "default",
+                "position": "default",
+                "distance": "0.12cm"
+            },
+            "position": {
+                "x": 27.59,
+                "y": -283.465
+            },
+            "id": "oscillator"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -396.85
+                },
+                {
+                    "x": 75.591,
+                    "y": -283.465
+                }
+            ],
+            "label": {
+                "value": "R_1",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -283.465
+                },
+                {
+                    "x": 75.591,
+                    "y": -170.079
+                }
+            ],
+            "label": {
+                "value": "R_2",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "node",
+            "position": {
+                "x": 75.591,
+                "y": -132.284
+            },
+            "id": "ground"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 9.449,
+                    "y": -226.772
+                },
+                {
+                    "x": 9.449,
+                    "y": -132.284
+                },
+                {
+                    "x": 75.591,
+                    "y": -132.284
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|",
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 9.449,
+                    "y": -302.362
+                },
+                {
+                    "x": 9.449,
+                    "y": -396.85
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 9.449,
+                    "y": -425.197
+                },
+                {
+                    "x": 75.591,
+                    "y": -425.197
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -283.465
+                },
+                {
+                    "x": 170.079,
+                    "y": -283.465
+                }
+            ],
+            "label": {
+                "value": "R_4 [1k\\Omega]",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 170.079,
+                    "y": -283.465
+                },
+                {
+                    "x": 236.22,
+                    "y": -283.465
+                }
+            ],
+            "id": "empty diode"
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 264.668,
+                    "y": -346.6
+                },
+                {
+                    "x": 265.424,
+                    "y": -273.844
+                }
+            ],
+            "id": "empty thyristor",
+            "scale": {
+                "x": 1,
+                "y": -1
+            }
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 264.668,
+                    "y": -346.6
+                },
+                {
+                    "x": 264.567,
+                    "y": -396.85
+                }
+            ],
+            "label": {
+                "value": "R_3 [1k\\Omega]",
+                "distance": "0.12cm"
+            },
+            "id": "american resistor"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 9.449,
+                    "y": -396.85
+                },
+                {
+                    "x": 9.449,
+                    "y": -425.197
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -396.85
+                },
+                {
+                    "x": 75.591,
+                    "y": -425.197
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 264.567,
+                    "y": -396.85
+                },
+                {
+                    "x": 75.591,
+                    "y": -425.197
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "|-"
+            ]
+        },
+        {
+            "type": "path",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -132.283
+                },
+                {
+                    "x": 75.591,
+                    "y": -179.528
+                }
+            ],
+            "label": {
+                "value": "C 4.7\\mu",
+                "distance": "0.12cm"
+            },
+            "id": "capacitor"
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 9.449,
+                    "y": -226.772
+                },
+                {
+                    "x": 9.449,
+                    "y": -264.567
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        },
+        {
+            "type": "wire",
+            "points": [
+                {
+                    "x": 75.591,
+                    "y": -132.283
+                },
+                {
+                    "x": 265.424,
+                    "y": -273.844
+                }
+            ],
+            "stroke": {
+                "width": "0.4pt"
+            },
+            "directions": [
+                "-|"
+            ]
+        }
+    ]
+}

@@ -206,6 +206,23 @@ text centered, draw=black, fill=gray!10]
 % ###########################################################################################################################
 % ###########################################################################################################################
 
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+$V_{CC}$ {[}V{]} & $V_{AK}$ {[}V{]} & $I_{AK}$ {[}A{]} \\ \hline
+100              & 730m             & 21,1m            \\
+90               & 729m             & 18,7m            \\
+80               & 726m             & 16,6m            \\
+70               & 724m             & 14,5m            \\
+60               & 721m             & 12,4m            \\
+50               & 721m             & 10,3m            \\
+40               & 728m             & 8,2m             \\
+35               & 742m             & 7,2m             \\
+30               & 805m             & 6m               \\
+28.4             & 28.4             & 0                \\ \hline
+\end{tabular}
+\end{center}
 
 \begin{center}
 \begin{tabular}{c|cccccccccc}
@@ -262,10 +279,11 @@ text centered, draw=black, fill=gray!10]
 \draw[arrow] (d) -- (e);
 \draw[arrow] (e) -- (f);
 \draw[arrow] (f) -- (g);
+\end{tikzpicture} 
 
-\end{tikzpicture}
-\imagen[Curva $I_G = f(V_G)$ LtSpice]{10cm}{./imagenes/actividadSCR/curvasIgFuncionVgSimulacion.png}
 \end{center}}
+\imagen[Curva $I_G = f(V_G)$ LtSpice]{10cm}{./imagenes/actividadSCR/curvasIgFuncionVgSimulacion.png}
+\imagen[Curva $I_A = f(V_{AK})$ LtSpice]{16cm}{./imagenes/actividadSCR/I_A-en-funcion-V_AK.png}
 \subsection{Obtención de curvas característica del SCR}
 \sangria{} El objetivo de esta actividad es lograr un relevamiento de los puntos de trabajo para graficar las curvas características.
 
@@ -314,6 +332,21 @@ text centered, draw=black, fill=gray!10]
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}\end{center}
+
+\begin{center}
+\begin{tabular}{|
+>{\columncolor[HTML]{ECF4FF}}c |c|c|c|}
+\hline
+\cellcolor[HTML]{FFFFC7}\textbf{$I_G$ $[\mu A]$} & \cellcolor[HTML]{FFFFC7}\textbf{$V_{CC}$ $[V]$} & \cellcolor[HTML]{FFFFC7}\textbf{$I_{AK}$ $[mA]$} & \cellcolor[HTML]{FFFFC7}\textbf{$V_{AK}$ $[V]$} \\ \hline
+\textbf{10}                                      &                                                 &                                                  &                                                 \\
+\textbf{20}                                      &                                                 &                                                  &                                                 \\
+\textbf{30}                                      &                                                 &                                                  &                                                 \\
+\textbf{40}                                      &                                                 &                                                  &                                                 \\
+\textbf{50}                                      &                                                 &                                                  &                                                 \\ \hline
+\end{tabular}
+\end{center}
+
+
 \begin{center}\begin{tikzpicture}[node distance=1.4cm]
 
     \node (2) [block] {Fijando el valor de $I_G$, se fue variando el valor de $V_{CC}$ para relevar $I_{AK}$ y $V_{AK}$ para cada caso.};
@@ -322,8 +355,23 @@ text centered, draw=black, fill=gray!10]
     \draw [arrow] (\i) -- (\j);
 
 \end{tikzpicture}\end{center}
-{\begin{center} \LARGE AQUI VA LA TABLA \end{center}}
-
+\begin{center}
+\begin{tabular}{|cc|cc|cc|cc|cc|}
+\hline
+\rowcolor[HTML]{FFFFC7} 
+\multicolumn{2}{|c|}{\cellcolor[HTML]{FFFFC7}$I_G = 50\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 40\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 30\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 20\mu A$}                                             & \multicolumn{2}{c|}{\cellcolor[HTML]{FFFFC7}$I_G = 10\mu A$}                                             \\ \hline
+\rowcolor[HTML]{FFCE93} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ & \multicolumn{1}{c|}{\cellcolor[HTML]{FFCE93}$V_{AK}$ $[V]$} & \cellcolor[HTML]{DAE8FC}$I_{AK}$ $[\mu A]$ \\ \hline
+\multicolumn{1}{|c|}{0}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{1}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{2}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{3}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{4}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{5}                                      &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{...}                                    &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\
+\multicolumn{1}{|c|}{15}                                     &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            & \multicolumn{1}{c|}{}                                       &                                            \\ \hline
+\end{tabular}
+\end{center}
 \midTitle{blue}{Preguntas}{}
 
 \begin{itemize}[nosep]
@@ -337,4 +385,88 @@ text centered, draw=black, fill=gray!10]
 \subsection{Funcionamiento del SCR con corrientes alternas}
 \sangria{} El objetivo de esta actividad es determinar el funcionamiento del SCR en corriente alterna y el proceso de apagado del mismo.
 \subsubsection{Actividad de simulación}
+\midTitle{teal}{Circuito para la simulación}{}
+\begin{center}
+\begin{tikzpicture}
+	% Paths, nodes and wires:
+	\node[oscillator](N1) at (0.73, 7.5){};
+	\draw (2, 10.5) to[american resistor, l={$R_1$}] (2, 7.5);
+	\draw (2, 7.5) to[american resistor, l={$R_2$}] (2, 4.5);
+	\node[ground] at (2, 3.5){};
+	\draw (0.25, 6) -| (0.25, 3.5) -- (2, 3.5);
+	\draw (0.25, 8) -| (0.25, 10.5);
+	\draw (0.25, 11.25) -- (2, 11.25);
+	\draw (2, 7.5) to[american resistor, l={$R_4 [1k\Omega]$}] (4.5, 7.5);
+	\draw (4.5, 7.5) to[empty diode] (6.25, 7.5);
+	\draw (7.003, 9.17) to[empty thyristor, mirror] (7.023, 7.245);
+	\draw (7.003, 9.17) to[american resistor, l={$R_3 [1k\Omega]$}] (7, 10.5);
+	\draw (0.25, 10.5) -| (0.25, 11.25);
+	\draw (2, 10.5) -| (2, 11.25);
+	\draw (7, 10.5) |- (2, 11.25);
+	\draw (2, 3.5) to[capacitor, l={$C 4.7\mu$}] (2, 4.75);
+	\draw (0.25, 6) -| (0.25, 7);
+	\draw (2, 3.5) -| (7.023, 7.245);
+\end{tikzpicture}\end{center}
+
+\midTitle{red}{Flujo de trabajo}{}
+{ 
+\tikzstyle{block} = [rectangle, rounded corners,
+                     draw=black, fill=gray!10,
+                     text width=8cm, minimum height=1cm,
+                     align=center, font=\small]
+
+\tikzstyle{arrow} = [thick, -{Latex[length=3mm,width=2mm]}]
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm]
+
+\node[block] (a) {Armar el circuito en un entorno de simulación.};
+\node[block, below of=a] (b) {Lanzar la simulación y graficar $V_{in}$, $V_{R3}$ e $I_G$.};
+\node[block, below of=b] (c) {Variar el parámetro $p$ que simula un potenciómetro de 5\,k$\Omega$.\\
+Se recomienda usar el comando \texttt{.STEP} con varios valores, por ejemplo: 100, 1k, 3k y 4.9k.};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+
+\end{tikzpicture}
+\end{center}
+
+}
+
+\midTitle{blue}{Preguntas}{}
+\begin{itemize}[nosep]
+    \item \textbf{Debe explicar brevemente el funcionamiento del circuito. Principalmente justificar el uso del capacitor en el circuito de la compuerta.}
+\end{itemize}
+
+\sangria{} El circuito es de un disparo de SCR con control de fase, permite regular la potencia entregada a una carga resistiva. El tiristor conduce solo durante parte del semiciclo de la señal senoidal $V_1$, al variar la fase de disparo se controla cuánta parte de la onda llega a la carga (potencia promedio se entrega). \\ \sangria{} El capacitor en la compuerta junto al divisor $R_1$ y $R_2$, con el diodo, permite retrasar el momento en el que el SCR recibe el pulso de disparo en cada semiciclo:
+\begin{enumerate}[nosep]
+    \item Al comienzo del semiciclo, el capacitor se carga por medio de $R_1, R_2 \text{ y } D_1$.
+    \item Cuando la tensión en el capacitor alcanza la tensión de disparo del diodo y del gate del SCR, el capacitor descarga a tirra. El $Gate$ del SCR ''vió'' un pulso, por lo que se enciende.
+    \item La carga queda conectada al suministro hasta que la corriente de línea cae a cero (sería el fin del semiciclo).\\
+\end{enumerate}
+\sangria{} El potenciometro modifica la constante de tiempo $\tau = R_{eq} \cdot C_1$. Así controla cuánto tarda el capacitor en cargarse y por lo tanto, en qué punto del semiciclo dispara el SCR:
+
+\begin{itemize}[nosep]
+    \item Menor resistencia $\rightarrow$ el capacitor carga más rápido $\rightarrow$ El SCR se dispara antes y hay más potencia en la carga.
+    \item Mayor resistencia $\rightarrow$ el capacitor se carga más lento $\rightarrow$ El SCR dispara más tarde y hay menos potencia en la carga.\\[5pt]
+\end{itemize}
+
+
+
+\begin{itemize}[nosep]
+    \item \textbf{Tome una de las simulaciones y analice las corrientes $I_G$ en el momento de disparo y la corriente $I_{AK}$ en el momento de apagado ¿Coincide con el valor esperado?}
+\end{itemize}
+
+\imagen[Corriente en el $Gate$ del SCR]{15cm}{./imagenes/actividadSCR/I_G_disparo_scr.png}
+\sangria{} Nótese cómo en milisegundos, la corriente en el $Gate$ sube hasta cierto valor hasta que el capacitor termina de cargarse y se descarga a tierra. Por lo que el $Gate$ ve un pulso de corriente lo suficiente para activdar el SCR.
+
+\imagen[Sinuidal de la fuente]{15cm}{./imagenes/actividadSCR/formaSinuidalUltimoSCR.png}
+
+\imagen[Corriente ánodo cátodo para distintos valores de $R_2$]{15cm}{./imagenes/actividadSCR/corrienteIAKUltimoSCR.png}
+
+\sangria{} Nótese que, para $R_2 = 0$, la onda sinuidal de la fuente entra casi completa a la carga y a medida que aumenta, entran solo ciertos semiciclos de la fuente (porque el capacitor se carga instantáneamente).
+
+\begin{itemize}[nosep]
+    \item \textbf{Identificar el ángulo mínimo y máximo que puede controlar. Exprese en grados ($\text{}^o$)}
+\end{itemize}
+
 

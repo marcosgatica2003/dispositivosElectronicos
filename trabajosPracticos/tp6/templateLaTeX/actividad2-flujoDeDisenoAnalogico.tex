@@ -1,0 +1,26 @@
+\section{ACT. 2: FLUJO DE DISEÑO ANALÓGICO}\sangria{} Se describe a continuación el procedimiento para desarrollar el inversor CMOS.\\[5pt]
+\midTitle{blue}{Flujo de trabajo:}{Diseño esquemático}
+
+\begin{center}\begin{tikzpicture}[node distance=0.8cm]
+
+\node[block] (a) {Se inició el entorno de diseño Xschem.};
+\node[block, right=of a] (b) {Se creó un nuevo esquema para el diseño del inversor CMOS.};
+\node[block, below=of b] (c) {Se incorporaron los transistores NMOS y PMOS correspondientes a la tecnología SKY130.};
+\node[block, left=of c] (d) {Se conectaron los terminales de ambos transistores formando el inversor, uniendo drenadores, compuertas y fuentes a sus nodos correspondientes.};
+\node[block, below=of d] (e) {Se agregaron los pines de entrada, salida, alimentación y tierra al esquema.};
+\node[block, below=of e] (f) {Se guardó el circuito esquemático del inversor.};
+\node[block, below=of f] (g) {Se generó el símbolo asociado al esquemático.};
+\node[block, below=of g] (h) {Se editó la apariencia del símbolo, representando el inversor y ubicando los pines correctamente.};
+\node[block, below=of h] (i) {Se verificó la correspondencia entre el símbolo y el esquemático, asegurando la coherencia de pines y conexiones.};
+\node[block, below=of i] (j) {Se empleó el símbolo creado para instanciar el inversor en esquemas jerárquicos posteriores.};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\draw[arrow] (d) -- (e);
+\draw[arrow] (e) -- (f);
+\draw[arrow] (f) -- (g);
+\draw[arrow] (g) -- (h);
+\draw[arrow] (h) -- (i);
+\draw[arrow] (i) -- (j);
+\end{tikzpicture}\end{center}

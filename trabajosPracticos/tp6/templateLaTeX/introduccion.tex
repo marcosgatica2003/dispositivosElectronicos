@@ -23,3 +23,26 @@ Defensa de las conclusiones                                         &           
 \subsection{Condiciones de trabajo y ensayo}
 \sangria{} El sistema operativo usado en este trabajo fue Gentoo GNU/Linux. Elegido por simple comodidad.
 \imagen[Logo Gentoo]{3cm}{./imagenes/logoGentoo.png}
+\subsection{Consigna del TP: Especificaciones de diseño}
+\sangria{} El inversor CMOS está diseñado para cumplir:\\[3pt]
+\begin{itemize}[nosep]
+    \item Tecnología SKY130 ($130$ $nm$ $CMOS$)
+    \item Voltaje de alimentación $V_{DD} = 1,8V$
+    \item Especificaciones de diseño para PMOS:
+        \begin{itemize}[nosep]
+            \item $L = 0,15$ (Longitud del canal del transistor en micrómetros).
+            \item $W_p = 2,1$ (Ancho del canal del transistor en micrómetros).
+            \item $nf = 1$ (Número de fingers).
+            \item $mult = 1$ (Multiplicidad).
+            \item model: $pfet_01v8$
+        \end{itemize}
+    \item Especificaciones de diseño para NMOS:
+        \begin{itemize}[nosep]
+            \item $L = 0,15$ (Longitud del canal del transistor en micrómetros).
+            \item $W_p = 1,05$ (Ancho del canal del transistor en micrómetros).
+            \item $nf = 1$ (Número de fingers).
+            \item $mult = 1$ (Multiplicidad).
+            \item model: $nfet_01v8$
+        \end{itemize}
+    \item Tiempo de transición objetivo: $<50 ns$ (subida y bajada)
+\end{itemize}

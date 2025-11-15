@@ -1,0 +1,16 @@
+\subsection{Simulación}
+\sangria{} El objetivo de este punto es usar Ngspice para verificar que la transferencia de tensión de entrada a salida sea la esperada: que se invierta. 
+
+\midTitle{blue}{Flujo de trabajo:}{Preparación para la simulación}
+
+\begin{center}\begin{tikzpicture}[node distance=0.8cm]
+
+\node[block] (a) {Se implementó el circuito propuesto en Ngspice.};
+\node[block, right=of a] (b) {Se ha configurado la fuente de señal de entrada para proporcionar una onda de pulsos mediante el formato ngspice \textit{PULSE(0 1.8 0 1n 1n 5n 10u 4)}};
+\node[block, below=of b] (c) {Se incorporaron los transistores NMOS y PMOS correspondientes a la tecnología SKY130.};
+\node[block, left=of c] (d) {Se ha configurado la fuente de alimentación con un valor fijo de $1.8V$ para $V_{DD}$};
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\end{tikzpicture}\end{center}
+\imagen[Circuito para simulación]{15cm}{./imagenes/4.2circuitoParaSimulacion.png}

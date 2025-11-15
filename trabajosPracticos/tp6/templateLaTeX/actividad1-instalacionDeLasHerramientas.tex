@@ -1,2 +1,4 @@
 \section{ACT. 1: INSTALACIÓN DE LAS HERRAMIENTAS}
 \sangria{} Para el diseño y simulación del inversor CMOS, se necesitaron de las siguientes herramientas \textit{Opensource} compatibles con el PDK SK130: \begin{itemize} \item \textbf{Xschem:} diseño y simulación de esquemáticos. \item \textbf{Ngspice:} modelos spice para la simulación eléctrica en el entorno Xschem. \item \textbf{Magic:} ruteo, layout y verificación del diseño físico (DRC). \item \textbf{Netgen:} comparación LVS (Layout versus Schematic).  \end{itemize} 
+\midTitle{red}{Notas del documentador: }{complicaciones $[X]$}
+\sangria{} ''En un principio, nos habíamos confiado en que los simuladores nombrados ya presentes en los repositorios de la distribución nos podrían servir. Fue cuando quisimos usar Xschem que nos dimos cuenta que faltaba los componentes de PDK SKY130, así que hicimos una adaptación del script \textit{iic-osic-setup.sh} y \textit{iic-init.sh} para usar el equipo completo.''

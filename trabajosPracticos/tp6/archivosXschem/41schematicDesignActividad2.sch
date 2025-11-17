@@ -20,7 +20,7 @@ N -10 30 60 30 {lab=VSS}
 N 60 30 60 80 {lab=VSS}
 N -10 80 60 80 {lab=VSS}
 C {sky130_fd_pr/nfet_01v8.sym} -30 30 0 0 {name=M1
-W=1
+W=1.05
 L=0.15
 nf=1 
 mult=1
@@ -34,7 +34,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} -30 -70 0 0 {name=M2
-W=1
+W=2.1
 L=0.15
 nf=1
 mult=1
@@ -50,4 +50,4 @@ spiceprefix=X
 C {ipin.sym} -10 -130 0 0 {name=p1 lab=Vdd}
 C {ipin.sym} -80 -20 0 0 {name=p2 lab=Vin}
 C {ipin.sym} -10 100 0 0 {name=p3 lab=VSS}
-C {iopin.sym} 10 -20 0 0 {name=p4 lab=Vout}
+C {opin.sym} 10 -20 0 0 {name=p4 lab=Vout}

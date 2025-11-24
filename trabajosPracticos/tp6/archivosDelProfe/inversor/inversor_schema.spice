@@ -1,0 +1,7 @@
+** sch_path: /home/leonardo/Descargas/inversor/inversor.sch
+.subckt inversor Vdd in out Vss
+*.PININFO in:I Vdd:I Vss:I out:O
+XM1 out in Vss Vss sky130_fd_pr__nfet_01v8 L=0.15 W=1.05 nf=1 m=1
+XM2 out in Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2.1 nf=1 m=1
+.ends
+

@@ -1,0 +1,15 @@
+* NGSPICE file created from inversor.ext - technology: sky130B
+
+.subckt sky130_fd_pr__nfet_01v8_6S25M9 a_n72_n104# a_n82_142# a_16_n104# a_n174_n278#
+X0 a_16_n104# a_n82_142# a_n72_n104# a_n174_n278# sky130_fd_pr__nfet_01v8 ad=0.2912 pd=2.64 as=0.3016 ps=2.66 w=1.04 l=0.15
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_DRQ6M2 a_n78_n210# a_n56_n315# a_14_n210# w_n210_n428#
+X0 a_14_n210# a_n56_n315# a_n78_n210# w_n210_n428# sky130_fd_pr__pfet_01v8 ad=0.609 pd=4.78 as=0.651 ps=4.82 w=2.1 l=0.15
+.ends
+
+.subckt inversor Vdd in out Vss
+XXM1 Vss in out Vss sky130_fd_pr__nfet_01v8_6S25M9
+XXM2 Vdd in out Vdd sky130_fd_pr__pfet_01v8_DRQ6M2
+.ends
+

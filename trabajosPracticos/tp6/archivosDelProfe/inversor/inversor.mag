@@ -1,0 +1,47 @@
+magic
+tech sky130B
+timestamp 1763581897
+<< pwell >>
+rect 530 49 632 80
+<< locali >>
+rect 565 75 600 80
+rect 565 54 570 75
+rect 596 54 600 75
+rect 565 50 600 54
+<< viali >>
+rect 573 433 590 456
+rect 570 54 596 75
+<< metal1 >>
+rect 500 456 634 460
+rect 500 433 573 456
+rect 590 433 634 456
+rect 500 427 634 433
+rect 691 424 807 455
+rect 652 230 669 289
+rect 540 209 669 230
+rect 652 150 669 209
+rect 530 75 632 80
+rect 785 79 807 424
+rect 530 54 570 75
+rect 596 54 632 75
+rect 530 49 632 54
+rect 693 48 807 79
+rect 630 -35 690 -6
+use sky130_fd_pr__nfet_01v8_6S25M9  XM1
+timestamp 1763500370
+transform 1 0 661 0 1 63
+box -105 -157 105 157
+use sky130_fd_pr__pfet_01v8_DRQ6M2  XM2
+timestamp 1763500370
+transform 1 0 661 0 1 435
+box -105 -214 105 214
+<< labels >>
+rlabel metal1 541 209 553 230 1 in
+port 2 nsew
+rlabel metal1 532 52 549 75 1 Vss
+port 4 nsew
+rlabel metal1 502 430 527 458 1 Vdd
+port 1 nsew
+rlabel metal1 790 208 804 231 1 out
+port 3 nsew
+<< end >>

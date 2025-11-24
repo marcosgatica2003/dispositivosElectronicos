@@ -1,6 +1,5 @@
 \section{ACT. 2: FLUJO DE DISEÑO ANALÓGICO}\subsection{Diseño esquemático}\sangria{} Se describe a continuación el procedimiento para desarrollar el inversor CMOS.\\[5pt]
 \midTitle{blue}{Flujo de trabajo:}{Diseño esquemático}
-
 \begin{center}\begin{tikzpicture}[node distance=0.8cm]
 
 \node[block] (a) {Se inició el entorno de diseño Xschem.};
@@ -29,3 +28,98 @@
 \end{tikzpicture}\end{center}
 
 \imagen[Simbolo del inversor]{10cm}{./imagenes/schematicDesignActividad2-simbolo.png}
+\subsection{Simulación}
+\sangria{} El objetivo de este punto es usar Ngspice para verificar que la transferencia de tensión de entrada a salida sea la esperada: que se invierta. 
+
+\midTitle{blue}{Flujo de trabajo:}{Preparación para la simulación}
+
+\begin{center}\begin{tikzpicture}[node distance=0.8cm]
+
+\node[block] (a) {Se implementó el circuito propuesto en Ngspice.};
+\node[block, right=of a] (b) {Se ha configurado la fuente de señal de entrada para proporcionar una onda de pulsos mediante el formato ngspice \textit{PULSE(0 1.8 0 1n 1n 5n 10u 4)}};
+\node[block, below=of b] (c) {Se incorporaron los transistores NMOS y PMOS correspondientes a la tecnología SKY130.};
+\node[block, left=of c] (d) {Se ha configurado la fuente de alimentación con un valor fijo de $1.8V$ para $V_{DD}$};
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\end{tikzpicture}\end{center}
+\imagen[Circuito para simulación]{15cm}{./imagenes/4.2circuitoParaSimulacion.png}
+\newpage
+
+\begin{center}\begin{tikzpicture}[node distance=0.8cm]
+\node[block] (a) {Se incluyó los archivos corner tt y modelos, apuntando a la variable de entorno \$PDK y al archivo sky130\_fd\_sc\_hd.spice};
+\node[block, right=of a] (b) {Se incluyó el archivo \textit{s1} con la configuración deltipo de simulación.};
+\draw[arrow] (a) -- (b);
+\end{tikzpicture}\end{center}
+\imagen[Archivo de configuración del simulador]{10cm}{./imagenes/archivoS1simulacionPunto42.png}
+\imagen[Gráfico obtenido en la simulación por NgSpice]{15cm}{./imagenes/graficoNgSpicePunto42.png}
+\sangria{} Notése que cuando en la entrada está en un pico (curva $V_{IN}$ roja), la salida del inversor (curva $V_{OUT}$ azul) hay un $0$ y viceversa. Podemos concluir que en este punto el diseño del amplificador funciona.
+
+\subsection{Layout: Placement / Routing}
+\sangria{} En este apartado se realizará el diseño físico de ambos transistores siguiendo las reglas del PDK SKY130. \\ \midTitle{black}{PLACEMENT}{}\sangria{} Tras importar el modelo spice, el simulador Magic ''acomodó'' automáticamente los componentes, sin embargo se decidió borrar las capas generadas para ir cargando los transistores manualmente, acomodarlos y conectarlos, de manera que el flujo de trabajo realizado fue:
+\begin{center}\begin{tikzpicture}[node distance=0.8cm]
+
+    \node[block] (a) {Se importó el archivo \textit{.spice} al Magic.};
+\node[block, right=of a] (b) {Se colocó el transistor NMOS};
+\node[block, below=of b] (c) {Se hizo lo mismo para el transistor PMOS, colocado arriba del NMOS};
+\node[block, left=of c] (d) {Añadido de las líneas de alimentación $V_{DD}$ arriba y \textit{GND} abajo.};
+
+\draw[arrow] (a) -- (b);
+\draw[arrow] (b) -- (c);
+\draw[arrow] (c) -- (d);
+\end{tikzpicture}\end{center}
+\imagen[Placement del inversor en Magic]{15cm}{./imagenes/placementInversorEnMagic.png}
+\midTitle{black}{ROUTING}{}
+\sangria{} Los puntos a cumplir en el \textit{routing} son: \begin{itemize}[nosep] \item Conectar las compuertas entre sí con polisilicio para formar las entradas comunes. \item Unir los drenadores de PMOS y NMOS con metal para crear la salida. \item Trazar rutas de metal para las líneas de alimentación $V_{DD}$ y $GND$, conectando las fuentes de los transistores. \end{itemize}
+
+\subsection{DRC}
+\sangria{} El DRC son las verificaciones de Magic para las reglas de diseño. Permite detectar capas sobrepuestas, distancias insuficientes y/o contactos incorrectos. \\ \sangria{} En la consola de Magic se puede activar las verificaciones con:
+\begin{verbatim}
+% drc check
+\end{verbatim}
+\midTitle{red}{Notas del documentador: }{complicaciones $X$}\\
+''Si bien la guía para desarrollar el trabajo menciona que el comando:''
+\begin{verbatim}
+% drc show
+\end{verbatim}
+''permite ver el resumen de los análisis de DRC, en el simulador Magic que instalamos usando la guía recomendada nos arroja error al no reconocer a show como argumento para el comando drc. Sin embargo, concluimos que el diseño está libre de errores al ver el box-check de Magic: si DRC=0, el diseño tiene 0 violaciones de reglas.''
+\imagen[DRC check]{5cm}{./imagenes/drcCheckBox.png}
+''Alternativamente se puede visualizar en la terminal un reporte de DRC en el menú:''
+\begin{center}\textit{DRC $\rightarrow$ DRC report} \end{center}
+\imagen[Salida de DRC report]{5cm}{./imagenes/salidaDRCReport.png}
+\subsection{LVS}
+\sangria{} LVS es la verificación de correspondencia entre layout y esquemático.
+\begin{enumerate}
+    \item \textbf{1) Generar netlist}
+        \begin{itemize}[nosep]
+            \item En Magic se extrae el netlist para LVS con:
+                \begin{verbatim}
+% extract all
+% ext2spice -lvs 
+                \end{verbatim}
+
+            \item Se exporta además el netlist del esquemático desde Xschem con:
+                \begin{verbatim}
+$ xschem --export ngspice schematic.sch -o schematic.spice
+                \end{verbatim}
+        \end{itemize}
+    \item \textbf{Preparación de archivos para Netgen}
+        \begin{itemize}[nosep]
+            \item Ambos archivos extraídos (los netlist) están en \textit{.spice}
+        \end{itemize}
+
+    \item \textbf{Ejecución de Netgen}
+\end{enumerate}
+
+\imagen[Primera comprobación de LVS]{15cm}{./imagenes/primeraComprobacionDeLVS.png}
+
+\begin{enumerate}[resume]
+    \item \textbf{Análisis}
+\end{enumerate}
+\sangria{}La ejecución de Netgen devolvió que la celda de nuestro archivo inversorLvsLayout.spice no posee elementos y/o nodos. El error que se cometió fue que no se terminó de escribir en disco el mencionado archivo, al abrirlo daba error. Por lo que se recuperó el archivo, se comprobó el DRC de antes y se intentó de nuevo. Devolviendo:
+
+\imagen[Segunda comprobación de LVS]{15cm}{./imagenes/segundaComrpobacionLVS.png}
+\sangria{} Se concluyó que al ver ''Resultado final: Los circuitos coinciden de forma única.'', el circuito pasa la comprobación de LVS.
+
+\subsection{Post-layout}
+

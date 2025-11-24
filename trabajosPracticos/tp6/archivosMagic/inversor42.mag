@@ -27,11 +27,11 @@ rect 596 54 632 75
 rect 530 49 632 54
 rect 693 48 807 79
 rect 630 -35 690 -6
-use sky130_fd_pr__nfet_01v8_6S25M9  XM1
+use sky130_fd_pr__nfet_01v8_6S25M9  XM1 ~/facultadUTN/dispositivosElectronicos/trabajosPracticos/tp6/archivosDelProfe/inversor
 timestamp 1763500370
 transform 1 0 661 0 1 63
 box -105 -157 105 157
-use sky130_fd_pr__pfet_01v8_DRQ6M2  XM2
+use sky130_fd_pr__pfet_01v8_DRQ6M2  XM2 ~/facultadUTN/dispositivosElectronicos/trabajosPracticos/tp6/archivosDelProfe/inversor
 timestamp 1763500370
 transform 1 0 661 0 1 435
 box -105 -214 105 214

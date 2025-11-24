@@ -1,0 +1,31 @@
+magic
+tech sky130B
+magscale 1 2
+timestamp 1763996288
+<< checkpaint >>
+rect -944 -2566 1998 812
+<< error_s >>
+rect 219 -966 222 -900
+<< metal1 >>
+rect 0 0 200 200
+rect 0 -400 200 -200
+rect 0 -800 200 -600
+rect 0 -1200 200 -1000
+use sky130_fd_pr__nfet_01v8_6S25M9  XM1 ~/facultadUTN/dispositivosElectronicos/trabajosPracticos/tp6/archivosDelProfe/inversor
+timestamp 1763500370
+transform 1 0 158 0 1 -938
+box -211 -315 211 315
+use sky130_fd_pr__pfet_01v8_DRQ6M2  XM2 ~/facultadUTN/dispositivosElectronicos/trabajosPracticos/tp6/archivosDelProfe/inversor
+timestamp 1763500370
+transform 1 0 527 0 1 -877
+box -211 -429 211 429
+<< labels >>
+flabel metal1 0 0 200 200 0 FreeSans 256 0 0 0 Vdd
+port 0 nsew
+flabel metal1 0 -400 200 -200 0 FreeSans 256 0 0 0 in
+port 1 nsew
+flabel metal1 0 -800 200 -600 0 FreeSans 256 0 0 0 out
+port 2 nsew
+flabel metal1 0 -1200 200 -1000 0 FreeSans 256 0 0 0 Vss
+port 3 nsew
+<< end >>

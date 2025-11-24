@@ -1,6 +1,6 @@
 magic
 tech sky130B
-timestamp 1763992698
+timestamp 1763998235
 << pwell >>
 rect 530 49 632 80
 << locali >>
@@ -32,7 +32,7 @@ timestamp 1763500370
 transform 1 0 661 0 1 63
 box -105 -157 105 157
 use sky130_fd_pr__pfet_01v8_DRQ6M2  XM2 ~/facultadUTN/dispositivosElectronicos/trabajosPracticos/tp6/archivosDelProfe/inversor
-timestamp 1763500370
+timestamp 1763998235
 transform 1 0 661 0 1 435
 box -105 -214 105 214
 << labels >>

@@ -121,5 +121,23 @@ $ xschem --export ngspice schematic.sch -o schematic.spice
 \imagen[Segunda comprobación de LVS]{15cm}{./imagenes/segundaComrpobacionLVS.png}
 \sangria{} Se concluyó que al ver ''Resultado final: Los circuitos coinciden de forma única.'', el circuito pasa la comprobación de LVS.
 
-\subsection{Post-layout}
+%%
+%% Bro no hay información de esto¿?
+%%
+% \subsection{Post-layout}
+% \sangria{} En este apartado se hacen simulaciones post-layout para validar el comportamiento eléctrico considerando efectos parasitismos del layout.
+
+% \begin{enumerate}
+%     \item \textbf{Extracción de parásitos}
+%         En la extracción de datos en la etapa de comprobación de LVS se ejecutó el comando:
+% \begin{verbatim}
+% % extract all
+% \end{verbatim}
+%     El netlist extraído contiene también los parasitismos (resistencias del metal y capacitancias entre capas).
+
+% \end{enumerate}
+
+\subsection{Generación del archivo .gds para fabricación}
+\sangria{} Se concluye el diseño generando el archivo $gds$, es el que se envía a las fabricas para comenzar el grabado de la oblea de silicio.
+\imagen[Archivo Gds]{15cm}{./imagenes/nuestroInversorGds.png}
 
